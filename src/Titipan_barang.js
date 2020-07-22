@@ -1,21 +1,47 @@
 import React,{Component} from "react";
 import Header from "./Components/Header";
+import InputBarang from "./Components/inputBarang";
 import Footer from "./Components/Footer";
 import "./Components/style.css";
 
+
 class titipanBarang extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            jumlah_barang : 0            
+        }
+        this.list_jumlah=this.list_jumlah.bind(this);
+    }
+
+    handleChange=(e)=>{
+        let barang = e.target.value;
+        this.setState({jumlah_barang:barang});
+    }
+
+    list_jumlah(){
+        let barang = this.state.jumlah_barang;
+        let list_input = document.getElementById("test");
+
+        for (let i = 0; i<barang; i++){
+            let elemen = document.createElement("input");
+            let spasi = document.createElement("br");
+            elemen.type = "text";
+            list_input.appendChild(elemen);
+            list_input.appendChild(spasi);
+        }
+    }
+
     render(){
         return(
             <div>
                 <Header />
-                <div class="request-list">
-                    <h1>List titipan barang</h1>
-                    <form action="list_barang.html" method="POST">
-                        <label>Berapa banyak barang yang mau anda titip?</label><br />
-                        <input type="number" id="jumlah_barang" name="jumlah_barang" />
-                        <button type="button" onclick="list_jumlah()">Oke</button>
-                    </form>
-                </div>
+                <InputBarang
+                    labelTitipanBarang="Silahkan masukan jumlah barang anda"
+                    handleChange={this.handleChange}
+                    list_jumlah={this.list_jumlah}
+                />
+                <div id="test"></div>
                 <Footer />
             </div>
         );

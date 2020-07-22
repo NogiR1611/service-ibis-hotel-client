@@ -60,7 +60,7 @@ class Home extends Component{
                         </a>
                     </div>
                     <div className="fitur" id="titipan-barang">
-                        <a href="#">
+                        <a href="/titipan-barang">
                             <h3>Penitipan barang di kamar</h3>
                             <img src={barang} alt="" />
                             <p>
