@@ -71,6 +71,7 @@ header img{
     padding:10px 20px;
     border:1px solid gray;
     background-color: white;
+    color:black;
     text-decoration:none;
     border-radius: 8%;
     transition:all .3s;
@@ -98,7 +99,7 @@ header img{
     transition:all .3s;
 }
 
-.button-login:hover{
+.button-signin-and-signup:hover{
     background-color: rgba(172, 5, 38, 0.877);
 }
 

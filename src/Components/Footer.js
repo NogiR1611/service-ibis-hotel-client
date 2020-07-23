@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from "react-router-dom";
 import "./style.css";
 
 class Footer extends Component{
@@ -7,28 +8,30 @@ class Footer extends Component{
             color: "#fc3f5e",
             fontSize:"15px"
         };
-
+        let time = new Date();
+        let years = time.getFullYear();
+        
         return(
             <footer>
                 <div class="top-footer">
                     <p>
-                        <a href="">privacy policy</a>
+                        <Link to="">privacy policy</Link>
                         <span id="mini-vertical-border"></span>
-                        <a href="">about us</a>
+                        <Link to="">about us</Link>
                         <span id="mini-vertical-border"></span>
-                        <a href="./contact.html">contact us</a>
+                        <Link to="/contact">contact us</Link>
                     </p>
                 </div>
                 <div class="middle-footer">
                     <div id="left-middle-footer">
-                        <a href="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
+                        <Link to="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
                             <p>
                                 Jl. Dr. Djunjunan No.22<br />
                                 Sukabungah, Kec. Sukajadi<br />
                                 Kota Bandung, Jawa Barat<br />
                                 40162
                             </p>
-                        </a>
+                        </Link>
                     </div>
                     <div id="right-middle-footer">
                         <ul>
@@ -40,7 +43,7 @@ class Footer extends Component{
                 </div>
                 <div id="big-horizontal-border"></div>
                 <div class="bottom-footer">
-                    <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span style={hearts}>&hearts;</span></p> 
+                    <p>&copy; Ibis Hotel {years} Made by nogi with <span style={hearts}>&hearts;</span></p> 
                 </div>
             </footer>
         );

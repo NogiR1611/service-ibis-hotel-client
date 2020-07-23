@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import "./Components/style.css";
@@ -41,33 +42,33 @@ class Home extends Component{
                 <div id="big-horizontal-border" />
                 <section id="col-fitur">
                     <div className="fitur" id="event">
-                        <a href="#">
+                        <Link to="">
                             <h3>Event terkini di kota bandung</h3>
                             <img src={event} alt="" />
                             <p>
                                 Ketahui beragam job fair,lomba,pameran,seminar dan workshop
                                 terkini yang ada di kota bandung
                             </p>
-                        </a>
+                        </Link>
                     </div>
                     <div className="fitur" id="wisata">
-                        <a href="#">
+                        <Link to="">
                             <h3>Tempat wisata terdekat di kota bandung</h3>
                             <img src={wisata} alt="" />
                             <p>
                                 Ketahui beragam tempat wisata unik dan menarik di seluruh bandung
                             </p>
-                        </a>
+                        </Link>
                     </div>
                     <div className="fitur" id="titipan-barang">
-                        <a href="/titipan-barang">
+                        <Link to="/titipan-barang">
                             <h3>Penitipan barang di kamar</h3>
                             <img src={barang} alt="" />
                             <p>
                                 Ingin tidak ketinggalan barang saat checkout?
                                 Silahkan di titip ke kami agar kami mengingatkan anda nanti
                             </p>
-                        </a>
+                        </Link>
                     </div>
                 </section>
                 <Footer />
