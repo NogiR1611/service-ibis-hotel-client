@@ -6,15 +6,16 @@ import "./Components/style.css";
 
 class titipanBarang extends Component{
     render(){
+        const movePage=function(){
+            window.location.href="/list-barang";
+        }
         return(
             <div>
                 <Header />
-                <InputBarang
+                <InputBarang 
                     labelTitipanBarang="Silahkan masukan jumlah barang anda"
-                    handleChange={this.props.handleChange}
-                    list_jumlah={this.props.list_jumlah}
+                    list_jumlah={movePage}    
                 />
-                <div id="test"></div>
                 <Footer />
             </div>
         );

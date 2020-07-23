@@ -42,6 +42,7 @@ class listBarang extends Component{
                     handleChange={this.handleChange}
                     list_jumlah={this.list_jumlah}
                 />
+                <div id="test" />
                 <Footer/>
             </div>
         );

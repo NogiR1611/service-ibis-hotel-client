@@ -24,14 +24,14 @@ class Footer extends Component{
                 </div>
                 <div class="middle-footer">
                     <div id="left-middle-footer">
-                        <Link to="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
+                        <a href="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
                             <p>
                                 Jl. Dr. Djunjunan No.22<br />
                                 Sukabungah, Kec. Sukajadi<br />
                                 Kota Bandung, Jawa Barat<br />
                                 40162
                             </p>
-                        </Link>
+                        </a>
                     </div>
                     <div id="right-middle-footer">
                         <ul>

@@ -1,5 +1,4 @@
 import React,{Component} from "react";
-import {Link} from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import instagram from "./Components/img/instagram.png";
@@ -37,9 +36,9 @@ class Contact extends Component{
                     </ul>
                     <div id="menu-sosmed">
                         <h3>Follow our social media</h3>
-                        <Link to="https://www.instagram.com/ibisbandungpasteur/"><img src={instagram} className="" alt="" /></Link>
-                        <Link to="https://web.facebook.com/ibisBandungPasteur/"><img src={facebook} className="" alt="" /></Link>
-                        <Link to="https://twitter.com/ibisBDGpasteur"><img src={twitter} className="" alt="" /></Link>
+                        <a href="https://www.instagram.com/ibisbandungpasteur/"><img src={instagram} className="" alt="" /></a>
+                        <a href="https://web.facebook.com/ibisBandungPasteur/"><img src={facebook} className="" alt="" /></a>
+                        <a href="https://twitter.com/ibisBDGpasteur"><img src={twitter} className="" alt="" /></a>
                     </div>
                 </div>
             <Footer />
