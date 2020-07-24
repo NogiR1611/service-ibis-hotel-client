@@ -9,7 +9,7 @@ import listBarang from "./List_barang";
 class Routes extends Component{
     render(){
         return(
-            <Router>
+            <Router basename="/ibishotel-with-react">
                 <Route exact path="/" component={Home} />
                 <Route path="/Login" component={Login} />
                 <Route path="/contact" component={Contact} />
