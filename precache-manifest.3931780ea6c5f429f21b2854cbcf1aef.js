@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9621361b6308c30e4453ccb006b17863",
+    "revision": "f339b70df6491bb5df9acf8ead700d29",
     "url": "/ibishotel-with-react/index.html"
   },
   {
-    "revision": "b13e2754206eb87cd365",
+    "revision": "85a18f6da08974fd27ae",
     "url": "/ibishotel-with-react/static/css/main.36667c27.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ibishotel-with-react/static/js/2.0caf22b3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b13e2754206eb87cd365",
-    "url": "/ibishotel-with-react/static/js/main.694669ff.chunk.js"
+    "revision": "85a18f6da08974fd27ae",
+    "url": "/ibishotel-with-react/static/js/main.9139d03e.chunk.js"
   },
   {
     "revision": "f65e9af697eb32780fee",

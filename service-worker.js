@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ibishotel-with-react/precache-manifest.1fcad967e2e0b0ccbc0a7cd730fa8e12.js"
+  "/ibishotel-with-react/precache-manifest.3931780ea6c5f429f21b2854cbcf1aef.js"
 );
 
 self.addEventListener('message', (event) => {
