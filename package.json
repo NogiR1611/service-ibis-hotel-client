@@ -1,7 +1,7 @@
 {
   "name": "service-ibis-hotel",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://nogir1611.github.io/ibishotel-with-react",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
