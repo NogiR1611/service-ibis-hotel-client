@@ -38,6 +38,7 @@ class titipanBarang extends Component{
             list_input.appendChild(spasi);
         }
 
+        button_nama_barang.className = "button-barang";
         element_button.innerHTML = "Oke";
         button_nama_barang.appendChild(element_button);
 
@@ -59,7 +60,13 @@ class titipanBarang extends Component{
                             handleChange={this.handleChange}
                             jumlah_barang={this.state.jumlah_barang}
                         />
-                        <button type="button" onClick={this.list_jumlah} disabled={this.state.disabled_button}>Oke</button>
+                        <button
+                            type="button"
+                            className="button-barang"
+                            onClick={this.list_jumlah}
+                            disabled={this.state.disabled_button}>
+                            Oke
+                        </button>
                     </form>
                     {this.state.judul_list}
                     <div id="list-nama-barang" />
