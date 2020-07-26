@@ -487,6 +487,19 @@ footer{
 .request-list{
     width:100%;
     height:30%;
-    padding:40px 0px;
-    text-align: center;
+    padding:40px 30px;
+    text-align: left;
+}
+
+#list-nama-barang{
+    padding:10px 0px;
+}
+
+#list-nama-barang input{
+    margin:5px 0px;
+}
+
+.request-list form{
+    text-align:left;
+    padding:10px 0px;
 }

@@ -9,7 +9,9 @@ class titipanBarang extends Component{
         super(props)
         this.state = {
             jumlah_barang : 0,
-            enabled : false
+            disabled : false,
+            disabled_button:false,
+            judul_list : ""
 
         }
         this.list_jumlah=this.list_jumlah.bind(this);
@@ -22,16 +24,26 @@ class titipanBarang extends Component{
 
     list_jumlah(){
         let barang = this.state.jumlah_barang;
-        let list_input = document.getElementById("test");
+        let judul = <span>Silahkan isi nama barang</span>
+        let list_input = document.getElementById("list-nama-barang");
+        let button_nama_barang = document.getElementById("button-nama-barang");
+        let element_button = document.createElement("button");
 
         for (let i = 0; i<barang; i++){
             let elemen = document.createElement("input");
             let spasi = document.createElement("br");
             elemen.type = "text";
+            elemen.className = "input-barang";
             list_input.appendChild(elemen);
             list_input.appendChild(spasi);
         }
-        this.setState({enabled:!this.state.enabled});
+
+        element_button.innerHTML = "Oke";
+        button_nama_barang.appendChild(element_button);
+
+        this.setState({disabled:!this.state.disabled});
+        this.setState({disabled_button:!this.state.disabled_button});
+        this.setState({judul_list:judul});
     }
 
     render(){
@@ -43,13 +55,15 @@ class titipanBarang extends Component{
                     <form action="list_barang.html" method="POST">
                         <label>Silahkan masukan jumlah barang</label><br />
                         <InputBarang
-                            disabled={this.state.enabled}
+                            disabled={this.state.disabled}
                             handleChange={this.handleChange}
                             jumlah_barang={this.state.jumlah_barang}
                         />
-                        <button type="button" onClick={this.list_jumlah}>Oke</button>
+                        <button type="button" onClick={this.list_jumlah} disabled={this.state.disabled_button}>Oke</button>
                     </form>
-                    <div id="test" />
+                    {this.state.judul_list}
+                    <div id="list-nama-barang" />
+                    <div id="button-nama-barang" />
                 </div>
                 <Footer />
             </div>
