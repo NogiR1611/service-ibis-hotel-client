@@ -26,7 +26,6 @@ class titipanBarang extends Component{
         let barang = this.state.jumlah_barang;
         let judul = <span>Silahkan isi nama barang</span>
         let list_input = document.getElementById("list-nama-barang");
-        let button_nama_barang = document.getElementById("button-nama-barang");
         let element_button = document.createElement("button");
 
         for (let i = 0; i<barang; i++){
@@ -38,9 +37,10 @@ class titipanBarang extends Component{
             list_input.appendChild(spasi);
         }
 
-        button_nama_barang.className = "button-barang";
+
+        element_button.className = "button-barang";
         element_button.innerHTML = "Oke";
-        button_nama_barang.appendChild(element_button);
+        list_input.appendChild(element_button);
 
         this.setState({disabled:!this.state.disabled});
         this.setState({disabled_button:!this.state.disabled_button});
@@ -70,7 +70,6 @@ class titipanBarang extends Component{
                     </form>
                     {this.state.judul_list}
                     <div id="list-nama-barang" />
-                    <div id="button-nama-barang" />
                 </div>
                 <Footer />
             </div>
