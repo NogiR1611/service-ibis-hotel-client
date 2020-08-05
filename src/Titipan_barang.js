@@ -37,7 +37,6 @@ class titipanBarang extends Component{
             list_input.appendChild(spasi);
         }
 
-
         element_button.className = "button-barang";
         element_button.innerHTML = "Oke";
         list_input.appendChild(element_button);
@@ -65,7 +64,7 @@ class titipanBarang extends Component{
                             className="button-barang"
                             onClick={this.list_jumlah}
                             disabled={this.state.disabled_button}>
-                            Oke
+                            Submit
                         </button>
                     </form>
                     {this.state.judul_list}
