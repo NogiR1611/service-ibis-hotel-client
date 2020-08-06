@@ -32,6 +32,7 @@ class titipanBarang extends Component{
             let elemen = document.createElement("input");
             let spasi = document.createElement("br");
             elemen.type = "text";
+            elemen.name = "nama_barang";
             elemen.className = "input-barang";
             list_input.appendChild(elemen);
             list_input.appendChild(spasi);
