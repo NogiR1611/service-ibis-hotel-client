@@ -24,7 +24,7 @@ class titipanBarang extends Component{
 
     list_jumlah(){
         let barang = this.state.jumlah_barang;
-        let judul = <span>Silahkan isi nama barang</span>
+        let judul = <span>Silahkan isi nama barang anda</span>
         let list_input = document.getElementById("list-nama-barang");
         let element_button = document.createElement("button");
 
@@ -49,17 +49,22 @@ class titipanBarang extends Component{
 
     render(){
         return(
-            <div>
-                <Header />
+            <container>
+            <Header />
+            <div className="bg-paper">
                 <div className="request-list">
                     <h1>List titipan barang</h1>
+                    <p>
+                        <b>Note </b>:Barang yang anda titip kami jamin kerahasiaannya sehingga tidak akan
+                        diberitahukan kepada siapapun.
+                    </p>
                     <form action="list_barang.html" method="POST">
-                        <label>Silahkan masukan jumlah barang</label><br />
+                        <label>Silahkan masukan jumlah barang anda</label><br />
                         <InputBarang
                             disabled={this.state.disabled}
                             handleChange={this.handleChange}
                             jumlah_barang={this.state.jumlah_barang}
-                        />
+                        /><br/>
                         <button
                             type="button"
                             className="button-barang"
@@ -73,6 +78,7 @@ class titipanBarang extends Component{
                 </div>
                 <Footer />
             </div>
+        </container>
         );
     }
 }
