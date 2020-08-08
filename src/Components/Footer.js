@@ -15,11 +15,11 @@ class Footer extends Component{
             <footer>
                 <div class="top-footer">
                     <p>
-                        <Link to="">privacy policy</Link>
+                        <Link to="">Privacy Policy</Link>
                         <span id="mini-vertical-border"></span>
-                        <Link to="">about us</Link>
+                        <Link to="">About Us</Link>
                         <span id="mini-vertical-border"></span>
-                        <Link to="/contact">contact us</Link>
+                        <Link to="/contact">Contact Us</Link>
                     </p>
                 </div>
                 <div class="middle-footer">
