@@ -40,6 +40,7 @@ class titipanBarang extends Component{
             elemen.type = "text";
             elemen.name = "nama_barang";
             elemen.className = "input-barang";
+            elemen.required = "required";
             list_input.appendChild(elemen);
             list_input.appendChild(spasi);
         }
@@ -65,7 +66,7 @@ class titipanBarang extends Component{
                             <b>Note </b>:Barang yang anda titip selalu kami jamin kerahasiaannya sehingga tidak akan
                             diberitahukan kepada siapapun.
                         </p>
-                        <form action="list_barang.html" method="POST">
+                        <form action="" method="POST">
                             {this.state.alert}
                             <label>Silahkan masukan jumlah barang anda</label><br />
                             <InputBarang
