@@ -66,7 +66,7 @@ class titipanBarang extends Component{
                             <b>Note </b>:Barang yang anda titip selalu kami jamin kerahasiaannya sehingga tidak akan
                             diberitahukan kepada siapapun.
                         </p>
-                        <form action="" method="POST">
+                        <form action="http://localhost:8080/" method="POST">
                             {this.state.alert}
                             <label>Silahkan masukan jumlah barang anda</label><br />
                             <InputBarang
