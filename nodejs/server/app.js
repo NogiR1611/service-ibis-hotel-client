@@ -4,14 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./services');
-const orderRouter = require('./services/test');
+const indexRouter = require('services');
 
 const mysql= require('mysql');
 const env = require('dotenv/config');
-
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 
 const app = express();
 
