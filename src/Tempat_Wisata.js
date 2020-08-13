@@ -8,6 +8,9 @@ class TempatWisata extends Component{
         return(
             <container>
                 <Header />
+                <div className="">
+                    <h1>Tempat wisata terbaru</h1>
+                </div>
                 <Footer />
             </container>
         );
