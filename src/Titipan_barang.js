@@ -8,7 +8,7 @@ class titipanBarang extends Component{
     constructor(props){
         super(props)
         this.state = {
-            nama_barang : "",
+            titipan_barang : "",
             jumlah_barang : 0,
             disabled : false,
             disabled_button:false,
@@ -24,7 +24,7 @@ class titipanBarang extends Component{
     }
 
     list_jumlah = () =>{
-        let nama_barang = this.state.nama_barang;
+        let titipan_barang = this.state.titipan_barang;
         let show_alert = "";
         let barang = this.state.jumlah_barang;
         let judul = <span>Silahkan isi nama barang anda</span>
@@ -39,7 +39,7 @@ class titipanBarang extends Component{
             let elemen = document.createElement("input");
             let spasi = document.createElement("br");
             elemen.type = "text";
-            elemen.name = {nama_barang};
+            elemen.name = {titipan_barang};
             elemen.className = "input-barang";
             elemen.required = "required";
             list_input.appendChild(elemen);
@@ -56,23 +56,19 @@ class titipanBarang extends Component{
         this.setState({judul_list:judul});
     }
 
+    /*
     uploadData = e => {
+        let titipan_barang = this.state.titipan_barang;
         e.preventDefault();
-        const data = new FormData();
-        let nama_barang = this.state.nama_barang;
-        data.append('nama_barang',nama_barang.value);
-
-        fetch('http://127.0.0.1:4000/',{
-            method : 'POST',
-            body : nama_barang
-        })
+        fetch('http://127.0.0.1:8080/Titipan-barang/input',{method : 'POST'})
         .then(response => {
-            response.json(nama_barang)
+            response.json(titipan_barang);
         })
         .then( body => {
-            this.setState({nama_barang : body.nama_barang});
+            this.setState({titipan_barang : body.titipan_barang});
         })
     }
+    */
 
     render(){
         return(
@@ -102,7 +98,7 @@ class titipanBarang extends Component{
                             </button>
                         </form>
                         {this.state.judul_list}
-                    <form onSubmit={this.uploadData} id="list-nama-barang"></form>
+                    <form action="http://127.0.0.1:8080/Titipan-barang/input" method="post" id="list-nama-barang"></form>
                 </div>
             </div>
             <Footer />
