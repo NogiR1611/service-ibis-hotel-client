@@ -5,31 +5,42 @@ import "./Components/style.css";
 
 class TempatWisata extends Component{
     constructor(props){
-        super(props);
+        super(props)
         this.state = {
-            testAPI : ""
+            Items : []
         };
     }
-
-    API = () => {
-        fetch('http://127.0.0.1:4000/testAPI')
-        .then(res => res.text())
-        .then(res => this.setState({testAPI : res}));
-    }
-
+    /*
     componentDidMount(){
-        this.API();
+        fetch('http://127.0.0.1:4000/list')
+        .then(res => res.text())
+        .then(data => this.setState({ Items : data}))
     }
+    */
+   componentDidMount(){
+        fetch("http://127.0.0.1/json/index.php",{
+        header : {
+            "Content-Type" : "application/json",
+            "Access-Control-Allow-Origin" : "*"
+        }
+        })
+            .then(response=>response.json())
+            .then(data=>this.setState({Items : data}))
+    }
+
 
 
     render(){
+        const Items = this.state.Items;
         return(
             <container>
                 <Header />
-                <div className="">
+                <div>
                     <h1>Tempat wisata terbaru</h1>
-                    <button onClick={this.API}>Oke</button>
-                    {this.state.testAPI}
+                    <ul>
+                        { Items.map( (element,index) =>
+                        <li key={index}>{element.id}-{element.Harga}-{element.Nama_tempat_wisata}-{element.Deskripsi}</li>)}
+                    </ul>
                 </div>
                 <Footer />
             </container>
