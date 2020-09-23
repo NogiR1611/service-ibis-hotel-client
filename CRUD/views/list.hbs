@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nama tempat wisata</th>
+                    <th>Lokasi</th>
+                    <th>Harga</th>
+                    <th>Deskripsi</th>
+                </tr>
+            </thead>
+            {{#each results}}
+            <tbody>
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>{{ nama_tempat_wisata}}</td>
+                    <td>{{ harga }}</td>
+                    <td>{{ lokasi }}</td>
+                    <td>{{ deskripsi }}</td>
+                    <td>
+                        <a href='/delete/{{ id }}'>delete</a>
+                        <a href='/edit/{{ id }}'>edit</a>
+                    </td>
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+    </body>
+</html>
