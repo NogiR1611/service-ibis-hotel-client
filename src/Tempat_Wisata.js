@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import "./Components/style.css";
@@ -18,7 +19,7 @@ class TempatWisata extends Component{
     }
     */
    componentDidMount(){
-        fetch("http://localhost:4000/",{
+        fetch("http://localhost:4000/json",{
         header : {
             "Content-Type" : "application/json",
             "Access-Control-Allow-Origin" : "*"
@@ -37,9 +38,17 @@ class TempatWisata extends Component{
                 <Header />
                 <div>
                     <h1>Tempat wisata terbaru</h1>
-                    <ul>
+                    <ul class="">
                         { Items.map( (element,index) =>
-                        <li key={index}>{element.id}-{element.harga}-{element.nama_tempat_wisata}-{element.lokasi}-{element.deskripsi}</li>)}
+                        <li key={index}>
+                            <Link to="">
+                                <img src={element.urlimage} alt="" />
+                                <h4>{element.nama_tempat_wisata}</h4>
+                                <p>{element.harga}</p>
+                                <p>{element.lokasi}</p>
+                            </Link>
+                        </li>
+                        )}
                     </ul>
                 </div>
                 <Footer />

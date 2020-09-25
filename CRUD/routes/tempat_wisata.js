@@ -1,8 +1,22 @@
 let express = require('express');
+let multer = require('multer');
 let conn = require('./conn');
 let router = express.Router();
 let model = require('../models');
 let list_wisata = model.list_tempat_wisata;
+
+const uploadDir = '/img/';
+const storage = multer.diskStorage({
+  destination : "./public"+uploadDir,
+  filename : function (req,res,cb) {
+    crypto.pseudoRandomBytes(16, function (err, raw) {
+      if (err) return cb(err)  
+
+      cb(null, raw.toString('hex') + path.extname(file.originalname))
+  })
+  }
+});
+const upload = multer({storage : storage,dest : uploadDir});
 
 //data json
 router.get('/json',(req,res,next) => {
@@ -15,7 +29,25 @@ router.get('/json',(req,res,next) => {
     });
 });
 
-//lihat data
+//konfirmasi hapus
+router.get('/delete/:id',(req,res) => {
+    const id = req.params.id;
+
+    list_wisata.findByPk(id)
+    .then(data => {
+        res.render('delete',{
+            results : data
+        });
+    })
+    .catch(err => {
+        res.json({
+            'status' : 'error',
+            'messages' : err.messages
+        })
+    })
+});
+
+//lihat data semuanya
 router.get('/list',(req,res,next) => {
     list_wisata.findAll({})
     .then(data => {
@@ -35,11 +67,15 @@ router.get('/tambah',(req,res,next) => {
 });
 
 //tambah data
-router.post('/kirim',(req,res,next) => {
+router.post('/kirim',[
+    upload.single('image')
+    ],
+    (req,res,next) => {
     const tempat_wisata = {
         nama_tempat_wisata : req.body.nama_tempat_wisata,
         lokasi : req.body.lokasi,
         harga : req.body.harga,
+        urlimage : req.file.urlimage,
         deskripsi : req.body.deskripsi
     };
 
@@ -52,13 +88,13 @@ router.post('/kirim',(req,res,next) => {
     });
 });
 
-//update data
+//konfirmasi edit data
 router.get('/edit/:id',(req,res) => {
     const id = req.params.id;
 
     list_wisata.findByPk(id)
     .then(data => {
-        res.render('findOne',{
+        res.render('update',{
             results : data
         });
     })
@@ -69,8 +105,41 @@ router.get('/edit/:id',(req,res) => {
     });
 });
 
+//edit data
+router.post('/update/:id',(req,res) => {
+    const id = req.params.id;
+    const {
+        nama_tempat_wisata,
+        lokasi,
+        harga,
+        urlimage,
+        deskripsi
+    } = req.body;
+
+    list_wisata.update({
+        nama_tempat_wisata,
+        lokasi,
+        harga,
+        urlimage,
+        deskripsi
+    },{
+        where : { id : id}
+    })
+    .then( data => {
+        res.send({
+            message : 'Data telah di update',
+            data : data
+        });
+    })
+    .catch( err => {
+        res.send({
+            message : err.message
+        });
+    });
+});
+
 //hapus data
-router.delete('/delete/:id',(req,res) => {
+router.post('/hapus/:id',(req,res) => {
     const id = req.params.id;
 
     list_wisata.destroy({
