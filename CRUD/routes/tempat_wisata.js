@@ -1,22 +1,24 @@
 let express = require('express');
 let multer = require('multer');
+let crypto = require('crypto');
+let path = require('path');
 let conn = require('./conn');
 let router = express.Router();
 let model = require('../models');
 let list_wisata = model.list_tempat_wisata;
+const dirUpload = './../../src/Components/img/tempat_wisata/';
 
-const uploadDir = '/img/';
 const storage = multer.diskStorage({
-  destination : "./public"+uploadDir,
-  filename : function (req,res,cb) {
-    crypto.pseudoRandomBytes(16, function (err, raw) {
+  destination : path.join(__dirname + dirUpload ),
+  filename : function (req,file,cb) {
+    crypto.pseudoRandomBytes(8, function (err, raw) {
       if (err) return cb(err)  
 
       cb(null, raw.toString('hex') + path.extname(file.originalname))
   })
   }
 });
-const upload = multer({storage : storage,dest : uploadDir});
+const upload = multer({storage : storage});
 
 //data json
 router.get('/json',(req,res,next) => {
@@ -68,14 +70,14 @@ router.get('/tambah',(req,res,next) => {
 
 //tambah data
 router.post('/kirim',[
-    upload.single('image')
+    upload.single('urlimage')
     ],
     (req,res,next) => {
     const tempat_wisata = {
         nama_tempat_wisata : req.body.nama_tempat_wisata,
         lokasi : req.body.lokasi,
         harga : req.body.harga,
-        urlimage : req.file.urlimage,
+        urlimage : req.file.filename,
         deskripsi : req.body.deskripsi
     };
 

@@ -1,10 +1,12 @@
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Form input data</title>
 </head>
 <body>
-    <form action='/kirim' method='post'>
+    <form action='/kirim' enctype='multipart/form-data' method='post'>
         <label>Nama tempat wisata : </label>
         <input type="text" name="nama_tempat_wisata">
         <label>Lokasi : </label>
@@ -12,7 +14,7 @@
         <label>Harga : </label>
         <input type="text" name="harga">
         <label>Foto : </label>
-        <input type="file" name="urlimage">
+        <input type="file" action="/upload" name="urlimage" id="image">
         <label>Deskripsi : </label>
         <textarea cols="80" row="10" name="deskripsi"></textarea>
         <button type="submit">Oke</button>

@@ -1,13 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var hbs = require('hbs');
-var bodyParser = require('body-parser');
-var tempat_wisata = require('./routes/tempat_wisata');
-var cors = require('cors');
-var app = express();
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let hbs = require('hbs');
+let bodyParser = require('body-parser');
+let tempat_wisata = require('./routes/tempat_wisata');
+let cors = require('cors');
+let app = express();
 
 app.use(cors());
 //set views file

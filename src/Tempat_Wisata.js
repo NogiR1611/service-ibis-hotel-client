@@ -25,20 +25,18 @@ class TempatWisata extends Component{
             "Access-Control-Allow-Origin" : "*"
         }
         })
-            .then(response=>response.json())
-            .then(data=>this.setState({Items : data}))
+        .then(response=>response.json())
+        .then(data=>this.setState({Items : data}))
     }
-
-
 
     render(){
         const Items = this.state.Items;
         return(
             <container>
                 <Header />
-                <div>
+                <div className="">
                     <h1>Tempat wisata terbaru</h1>
-                    <ul class="">
+                    <ul className="">
                         { Items.map( (element,index) =>
                         <li key={index}>
                             <Link to="">
