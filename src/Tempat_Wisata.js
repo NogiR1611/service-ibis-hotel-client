@@ -11,13 +11,7 @@ class TempatWisata extends Component{
             Items : []
         };
     }
-    /*
-    componentDidMount(){
-        fetch('http://127.0.0.1:4000/list')
-        .then(res => res.text())
-        .then(data => this.setState({ Items : data}))
-    }
-    */
+    
    componentDidMount(){
         fetch("http://localhost:4000/json",{
         header : {
@@ -40,7 +34,7 @@ class TempatWisata extends Component{
                         { Items.map( (element,index) =>
                         <li key={index}>
                             <Link to="">
-                                <img src={element.urlimage} alt="" />
+                                <img src={'./Components/img/tempat_wisata/' + element.urlimage } alt="" />
                                 <h4>{element.nama_tempat_wisata}</h4>
                                 <p>{element.harga}</p>
                                 <p>{element.lokasi}</p>
