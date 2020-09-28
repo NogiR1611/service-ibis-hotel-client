@@ -17,7 +17,7 @@ app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //set folder public sebagai static folder untuk static file
-app.use('/assets',express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 app.use('/',tempat_wisata);
 
 

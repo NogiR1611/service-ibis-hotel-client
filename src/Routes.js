@@ -3,7 +3,7 @@ import { BrowserRouter as Router,Route} from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import Contact from "./Contact";
-import TempatWisata from "./Tempat_Wisata";
+import ListWisata from "./List_Tempat_Wisata";
 import Events from "./Events";
 import titipanBarang from "./Titipan_barang";
 import listBarang from "./List_barang";
@@ -15,7 +15,7 @@ class Routes extends Component{
                 <Route exact path="/" component={Home} />
                 <Route path="/Login" component={Login} />
                 <Route path="/Contact" component={Contact} />
-                <Route path="/Tempat-wisata" component={TempatWisata} />
+                <Route path="/List-wisata" component={ListWisata} />
                 <Route path="/Event" component={Events} />
                 <Route path="/Titipan-barang" component={titipanBarang} />
                 <Route path="/List-barang" component={listBarang} />

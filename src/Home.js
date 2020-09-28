@@ -52,7 +52,7 @@ class Home extends Component{
                         </Link>
                     </div>
                     <div className="fitur" id="wisata">
-                        <Link to="/tempat-wisata">
+                        <Link to="/List-wisata">
                             <h3>Tempat wisata terdekat di kota bandung</h3>
                             <img src={wisata} alt="" />
                             <p>

@@ -6,15 +6,17 @@ let conn = require('./conn');
 let router = express.Router();
 let model = require('../models');
 let list_wisata = model.list_tempat_wisata;
+/*
 const dirUpload = './../../src/Components/img/tempat_wisata/';
+*/
 
 const storage = multer.diskStorage({
-  destination : path.join(__dirname + dirUpload ),
+  destination : "./public/images/" ,
   filename : function (req,file,cb) {
     crypto.pseudoRandomBytes(8, function (err, raw) {
       if (err) return cb(err)  
 
-      cb(null, dirUpload + raw.toString('hex'))
+      cb(null, raw.toString('hex') + path.extname(file.originalname))
   })
   }
 });

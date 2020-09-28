@@ -4,7 +4,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import "./Components/style.css";
 
-class TempatWisata extends Component{
+class ListWisata extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -28,13 +28,13 @@ class TempatWisata extends Component{
         return(
             <container>
                 <Header />
-                <div className="">
+                <div className='tempat_wisata'>
                     <h1>Tempat wisata terbaru</h1>
-                    <ul className="">
+                    <ul className=''>
                         { Items.map( (element,index) =>
                         <li key={index}>
-                            <Link to="">
-                                <img src={'./Components/img/tempat_wisata/' + element.urlimage } alt="" />
+                            <Link to={'/Tempat-wisata/' + element.id}>
+                                <img src={'http://localhost:4000/images/' + element.urlimage} className="list_img_wisata" alt="" />
                                 <h4>{element.nama_tempat_wisata}</h4>
                                 <p>{element.harga}</p>
                                 <p>{element.lokasi}</p>
@@ -49,4 +49,4 @@ class TempatWisata extends Component{
     }
 }
 
-export default TempatWisata;
+export default ListWisata;

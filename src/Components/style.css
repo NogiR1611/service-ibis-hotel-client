@@ -542,3 +542,12 @@ footer{
     background-color: #ebebf2;
     border:1px solid #ebebf2;
 }
+
+.tempat_wisata{
+    height:1000px;
+}
+
+.list_img_wisata{
+    height : 50px;
+    width : 50px;
+}
