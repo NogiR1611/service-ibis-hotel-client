@@ -33,6 +33,19 @@ router.get('/json',(req,res,next) => {
     });
 });
 
+//ambil data json dengan id
+router.get('/json/:id',(req,res,next) => {
+    const id = req.params.id;
+
+    list_wisata.findByPk(id)
+    .then(data => res.json(data))
+    .catch( err => {
+        res.status(500).send({
+            'message' : err.message
+        });
+    });
+})
+
 //konfirmasi hapus
 router.get('/delete/:id',(req,res) => {
     const id = req.params.id;

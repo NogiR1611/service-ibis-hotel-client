@@ -4,6 +4,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Contact from "./Contact";
 import ListWisata from "./List_Tempat_Wisata";
+import LandingPage from "./Tempat_wisata";
 import Events from "./Events";
 import titipanBarang from "./Titipan_barang";
 import listBarang from "./List_barang";
@@ -16,6 +17,7 @@ class Routes extends Component{
                 <Route path="/Login" component={Login} />
                 <Route path="/Contact" component={Contact} />
                 <Route path="/List-wisata" component={ListWisata} />
+                <Route path="/Tempat-wisata/:id" component={LandingPage} />
                 <Route path="/Event" component={Events} />
                 <Route path="/Titipan-barang" component={titipanBarang} />
                 <Route path="/List-barang" component={listBarang} />

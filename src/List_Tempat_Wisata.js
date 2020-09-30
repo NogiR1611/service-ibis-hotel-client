@@ -30,15 +30,14 @@ class ListWisata extends Component{
                 <Header />
                 <div className='tempat_wisata'>
                     <h1>Tempat wisata terbaru</h1>
-                    <ul className=''>
+                    <ul className='Item-List'>
                         { Items.map( (element,index) =>
                         <li key={index}>
-                            <Link to={'/Tempat-wisata/' + element.id}>
-                                <img src={'http://localhost:4000/images/' + element.urlimage} className="list_img_wisata" alt="" />
-                                <h4>{element.nama_tempat_wisata}</h4>
-                                <p>{element.harga}</p>
-                                <p>{element.lokasi}</p>
-                            </Link>
+                            <img src={'http://localhost:4000/images/' + element.urlimage} className="list_img_wisata" alt="" />
+                            <h4>{element.nama_tempat_wisata}</h4>
+                            <p>{element.harga}</p>
+                            <p>{element.lokasi}</p>
+                            <Link to={'/Tempat-wisata/' + element.id}>Lihat</Link>
                         </li>
                         )}
                     </ul>
