@@ -25,19 +25,30 @@ class ListWisata extends Component{
 
     render(){
         const Items = this.state.Items;
+        const border_list = {
+            "border" : "1px solid black"
+        };
         return(
             <container>
                 <Header />
-                <div className='tempat_wisata'>
+                <div className='item_page'>
                     <h1>Tempat wisata terbaru</h1>
-                    <ul className='Item-List'>
+                    <ul className='item_list'>
                         { Items.map( (element,index) =>
                         <li key={index}>
-                            <img src={'http://localhost:4000/images/' + element.urlimage} className="list_img_wisata" alt="" />
-                            <h4>{element.nama_tempat_wisata}</h4>
-                            <p>{element.harga}</p>
-                            <p>{element.lokasi}</p>
-                            <Link to={'/Tempat-wisata/' + element.id}>Lihat</Link>
+                            <span style={border_list}></span>
+                            <Link to={'/Tempat-wisata/' + element.id}>
+                                <img src={'http://localhost:4000/images/' + element.urlimage} className="list-image-item" alt="" />
+                                <div className='item'>
+                                    <h3>{element.nama_tempat_wisata}</h3>
+                                    <p><b>Harga</b> : {element.harga}</p>
+                                    <p><b>Lokasi</b> : {element.lokasi}</p>
+                                </div>
+                                <div className='deskripsi'>
+                                    <p>{element.deskripsi}</p>
+                                </div>
+                            </Link>
+                            <span style={border_list}></span>
                         </li>
                         )}
                     </ul>

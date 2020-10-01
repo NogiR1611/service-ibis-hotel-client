@@ -59,6 +59,7 @@ class LandingPage extends Component{
                 <Header />
                 <h1>Tempat wisata kami</h1>
                 <h1>{Data.nama_tempat_wisata}</h1>
+                <p>{Data.deskripsi}</p>
                 <Footer />
             </container>
         );
