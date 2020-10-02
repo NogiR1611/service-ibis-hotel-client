@@ -8,7 +8,8 @@ class ListWisata extends Component{
     constructor(props){
         super(props)
         this.state = {
-            Items : []
+            Items : [],
+            description : ""
         };
     }
     
@@ -21,6 +22,11 @@ class ListWisata extends Component{
         })
         .then(response=>response.json())
         .then(data=>this.setState({Items : data}))
+
+        let bawa = document.getElementById("Deskripsi").innerHTML;
+        let str = bawa.substr(0,50);
+        let wow = document.getElementById("hasil").innerHTML = str;
+        this.setState({description : wow});
     }
 
     render(){
@@ -28,6 +34,10 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
+        const none_description = {
+            "display" : "none"
+        }
+
         return(
             <container>
                 <Header />
@@ -45,7 +55,7 @@ class ListWisata extends Component{
                                     <p><b>Lokasi</b> : {element.lokasi}</p>
                                 </div>
                                 <div className='deskripsi'>
-                                    <p>{element.deskripsi}</p>
+                        <p><span id='Deskripsi' style={none_description}>{element.deskripsi}</span><span id="hasil">{this.state.description}</span>...[]</p>
                                 </div>
                             </Link>
                             <span style={border_list}></span>
