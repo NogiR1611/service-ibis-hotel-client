@@ -13,7 +13,7 @@ class Footer extends Component{
         
         return(
             <footer>
-                <div class="top-footer">
+                <div className="top-footer">
                     <p>
                         <Link to="">Privacy Policy</Link>
                         <span id="mini-vertical-border"></span>
@@ -22,7 +22,7 @@ class Footer extends Component{
                         <Link to="/contact">Contact Us</Link>
                     </p>
                 </div>
-                <div class="middle-footer">
+                <div className="middle-footer">
                     <div id="left-middle-footer">
                         <a href="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
                             <p>
@@ -42,7 +42,7 @@ class Footer extends Component{
                     </div>
                 </div>
                 <div id="big-horizontal-border"></div>
-                <div class="bottom-footer">
+                <div className="bottom-footer">
                     <p>&copy; Ibis Hotel {years} Made by nogi with <span style={hearts}>&hearts;</span></p> 
                 </div>
             </footer>

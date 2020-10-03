@@ -4,6 +4,27 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import "./Components/style.css";
 
+class Deskripsi extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            value : ""
+        }
+    }
+
+    componentDidMount(){
+        let req = this.props.deskripsi;
+        let str = req.substr(0,300);
+        this.setState({value : str});
+    }
+
+    render(){
+        return(
+            <p>{this.state.value} ...[]</p>
+        );
+    }
+}
+
 class ListWisata extends Component{
     constructor(props){
         super(props)
@@ -22,11 +43,6 @@ class ListWisata extends Component{
         })
         .then(response=>response.json())
         .then(data=>this.setState({Items : data}))
-
-        let bawa = document.getElementById("Deskripsi").innerHTML;
-        let str = bawa.substr(0,50);
-        let wow = document.getElementById("hasil").innerHTML = str;
-        this.setState({description : wow});
     }
 
     render(){
@@ -34,20 +50,16 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-        const none_description = {
-            "display" : "none"
-        }
-
         return(
-            <container>
+            <React.Fragment>    
                 <Header />
                 <div className='item_page'>
-                    <h1>Tempat wisata terbaru</h1>
+                    <h1>Tempat wisata terbaru di wilayah bandung dan sekitarnya</h1>
                     <ul className='item_list'>
                         { Items.map( (element,index) =>
                         <li key={index}>
                             <span style={border_list}></span>
-                            <Link to={'/Tempat-wisata/' + element.id}>
+                            <a href={'/Tempat-wisata/' + element.id} className='link-item'>
                                 <img src={'http://localhost:4000/images/' + element.urlimage} className="list-image-item" alt="" />
                                 <div className='item'>
                                     <h3>{element.nama_tempat_wisata}</h3>
@@ -55,16 +67,16 @@ class ListWisata extends Component{
                                     <p><b>Lokasi</b> : {element.lokasi}</p>
                                 </div>
                                 <div className='deskripsi'>
-                        <p><span id='Deskripsi' style={none_description}>{element.deskripsi}</span><span id="hasil">{this.state.description}</span>...[]</p>
+                                    <Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
-                            </Link>
+                            </a>
                             <span style={border_list}></span>
                         </li>
                         )}
                     </ul>
                 </div>
                 <Footer />
-            </container>
+            </React.Fragment>
         );
     }
 }

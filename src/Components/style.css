@@ -549,6 +549,7 @@ footer{
 
 .item_page h1{
     text-align: center;
+    font-size: 28px;
 }
 
 .item_page ul li{
@@ -557,10 +558,18 @@ footer{
     margin: 30px 0px;
     padding: 20px 0px;
     text-decoration: none;
-}
+}   
 
 .item_page ul li a{
+    padding: 10px 10px;
     margin: 20px 0px;
+    text-decoration: none;
+    background-color: white;
+    transition: all .3s;
+}
+
+.item_page ul li a:hover{
+    background-color: #e6ebe7;
 }
 
 .item_page ul li img{
@@ -571,7 +580,7 @@ footer{
 .item_page ul li .item{
     display:inline-block;
     color: black;
-    margin: 35px 15px;
+    margin: 10px 15px;
     padding: 10px 0px;
 }
 
@@ -581,6 +590,11 @@ footer{
 }
 
 .deskripsi{
-    display: inline-block;
+    display: block;
     color: black;
+    margin: 0;
+}
+
+.deskripsi p{
+    margin: 0;
 }
