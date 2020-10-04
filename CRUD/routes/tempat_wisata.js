@@ -9,6 +9,20 @@ let list_wisata = model.list_tempat_wisata;
 /*
 const dirUpload = './../../src/Components/img/tempat_wisata/';
 */
+const getPagination = (page,size) => {
+    const limit = size ? +size : 3;
+    const offset = page ? page*limit : 0;
+
+    return {offset,limit};
+};
+
+const getPagingData = (data,page,limit) => {
+    const {count : totalItems,row : list_wisata} = data;
+    const currentPage = page ? +page : 0;
+    const totalPage = Math.ceil(totalItems/limit);
+
+    return { totalItems,list_wisata,totalPage,currentPage };
+}
 
 const storage = multer.diskStorage({
   destination : "./public/images/" ,
@@ -63,6 +77,17 @@ router.get('/delete/:id',(req,res) => {
         })
     })
 });
+
+router.get('/publish/',(req,res) => {
+    const {page,size} = req.query;
+    const {offset,limit} = getPagination(page,size);
+
+    list_wisata.findAndCountAll({ limit,offset })
+    .then(data => res.json(data))
+    .catch(err => {
+        res.send(err);
+    })
+})
 
 //lihat data semuanya
 router.get('/list',(req,res,next) => {
@@ -179,6 +204,9 @@ router.post('/hapus/:id',(req,res) => {
         });
     });
 });
+
+//pagination data
+
 
 /*
 router.delete('/delete/:id',(req,res) => {
