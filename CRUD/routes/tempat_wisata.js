@@ -17,7 +17,7 @@ const getPagination = (page,size) => {
 };
 
 const getPagingData = (data,page,limit) => {
-    const {count : totalItems,row : list_wisata} = data;
+    const {count : totalItems,rows : list_wisata} = data;
     const currentPage = page ? +page : 0;
     const totalPage = Math.ceil(totalItems/limit);
 
@@ -80,10 +80,13 @@ router.get('/delete/:id',(req,res) => {
 
 router.get('/publish/',(req,res) => {
     const {page,size} = req.query;
-    const {offset,limit} = getPagination(page,size);
+    const {limit,offset} = getPagination(page,size);
 
     list_wisata.findAndCountAll({ limit,offset })
-    .then(data => res.json(data))
+    .then(data => {
+        const response = getPagingData(data,page,limit);
+        res.send(response);
+    })
     .catch(err => {
         res.send(err);
     })

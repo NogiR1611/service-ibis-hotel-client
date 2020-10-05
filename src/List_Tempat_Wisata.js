@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import Pagination from "@material-ui/lab/Pagination";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import "./Components/style.css";
@@ -29,26 +30,62 @@ class ListWisata extends Component{
         super(props)
         this.state = {
             Items : [],
+            page : 1,
+            count : 0,
+            pageSize : 3,
             description : ""
         };
     }
     
    componentDidMount(){
-        fetch("http://localhost:4000/json",{
-        header : {
-            "Content-Type" : "application/json",
-            "Access-Control-Allow-Origin" : "*"
+        this.fetchListWisata();
+    }
+
+    getRequestParams = (page,pageSize) =>{
+        let params = {};
+
+        if(page){
+            params["page"] = page - 1;
         }
+        if(pageSize){
+            params["pageSize"] = pageSize;
+        }
+
+        return params;
+    }
+
+    fetchListWisata = () => {
+        const {page,pageSize} = this.state;
+        const params = this.getRequestParams(page,pageSize);
+        fetch("http://localhost:4000/publish",params)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                Items : data.list_wisata,
+                count : data.totalPage
+            });
         })
-        .then(response=>response.json())
-        .then(data=>this.setState({Items : data}))
+        .catch((err) =>{
+            console.log(err)
+        });
+    }
+
+    handlePageChange = (event,value) => {
+        this.setState(
+        {
+            page : value
+        },
+        () => {
+            this.fetchListWisata();
+        }
+    )
     }
 
     render(){
-        const Items = this.state.Items;
         const border_list = {
             "border" : "1px solid black"
         };
+       const {Items,page,pageSize,count} = this.state;
         return(
             <React.Fragment>    
                 <Header />
@@ -73,6 +110,7 @@ class ListWisata extends Component{
                         </li>
                         )}
                     </ul>
+                    <Pagination count={count} page={page} onChange={this.handlePageChange} variant="outlined" shape="rounded" />
                 </div>
                 <Footer />
             </React.Fragment>
