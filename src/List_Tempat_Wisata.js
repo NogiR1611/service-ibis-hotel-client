@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import ListWisataService from "./list_wisata.service";
 import Pagination from "@material-ui/lab/Pagination";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -57,12 +58,13 @@ class ListWisata extends Component{
     fetchListWisata = () => {
         const {page,pageSize} = this.state;
         const params = this.getRequestParams(page,pageSize);
-        fetch("http://localhost:4000/publish",params)
-        .then(response => response.json())
-        .then(data => {
+        
+        ListWisataService.getAll(params)
+        .then(response => {
+            const {list_wisata,totalPage} = response.data;
             this.setState({
-                Items : data.list_wisata,
-                count : data.totalPage
+                Items : list_wisata,
+                count : totalPage
             });
         })
         .catch((err) =>{
