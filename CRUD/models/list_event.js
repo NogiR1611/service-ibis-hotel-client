@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     deskripsi: DataTypes.STRING,
     nomor: DataTypes.STRING,
     email: DataTypes.STRING,
-    website: DataTypes.STRING
+    website: DataTypes.STRING,
+    foto: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'list_event',

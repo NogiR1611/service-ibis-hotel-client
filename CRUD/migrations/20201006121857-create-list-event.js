@@ -29,6 +29,9 @@ module.exports = {
       website: {
         type: Sequelize.STRING(30)
       },
+      foto: {
+        type: Sequelize.STRING(50)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

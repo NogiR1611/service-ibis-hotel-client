@@ -1,30 +1,10 @@
 import React,{Component} from "react";
 import ListWisataService from "./list_wisata.service";
 import Pagination from "@material-ui/lab/Pagination";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import "./Components/style.css";
-
-class Deskripsi extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            value : ""
-        }
-    }
-
-    componentDidMount(){
-        let req = this.props.deskripsi;
-        let str = req.substr(0,300);
-        this.setState({value : str});
-    }
-
-    render(){
-        return(
-            <p>{this.state.value} ...[]</p>
-        );
-    }
-}
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import Deskripsi from "../Components/Deskripsi";
+import "../Components/style.css";
 
 class ListWisata extends Component{
     constructor(props){
@@ -87,7 +67,7 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-       const {Items,page,pageSize,count} = this.state;
+       const {Items,page,count} = this.state;
         return(
             <React.Fragment>    
                 <Header />

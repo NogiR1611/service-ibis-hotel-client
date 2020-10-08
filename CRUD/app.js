@@ -5,7 +5,8 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let hbs = require('hbs');
 let bodyParser = require('body-parser');
-let tempat_wisata = require('./routes/tempat_wisata');
+let list_wisata = require('./routes/tempat_wisata');
+let list_event = require('./routes/event');
 let cors = require('cors');
 let app = express();
 
@@ -18,8 +19,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //set folder public sebagai static folder untuk static file
 app.use(express.static(__dirname + '/public'));
-app.use('/',tempat_wisata);
 
+app.use('/tempat-wisata',list_wisata);
+app.use('/event',list_event)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

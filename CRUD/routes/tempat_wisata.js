@@ -6,9 +6,22 @@ let conn = require('./conn');
 let router = express.Router();
 let model = require('../models');
 let list_wisata = model.list_tempat_wisata;
-/*
-const dirUpload = './../../src/Components/img/tempat_wisata/';
-*/
+let list_events = model.list_events;
+
+//untuk upload foto list wisata
+const storage = multer.diskStorage({
+    destination : "./public/images/" ,
+    filename : function (req,file,cb) {
+      crypto.pseudoRandomBytes(8, function (err, raw) {
+        if (err) return cb(err)  
+  
+        cb(null, raw.toString('hex') + path.extname(file.originalname))
+    })
+    }
+  });
+const upload = multer({storage : storage});
+
+//untuk membuat dan menjalankan pagination pada list wisata
 const getPagination = (page,size) => {
     const limit = size ? +size : 3;
     const offset = page ? page*limit : 0;
@@ -17,27 +30,30 @@ const getPagination = (page,size) => {
 };
 
 const getPagingData = (data,page,limit) => {
-    const {count : totalItems,rows : list_wisata} = data;
+    const {count : totalItems,rows : list_wisata,list_events} = data;
     const currentPage = page ? +page : 0;
     const totalPage = Math.ceil(totalItems/limit);
 
-    return { totalItems,list_wisata,totalPage,currentPage };
+    return { totalItems,list_wisata,list_events,totalPage,currentPage };
 }
 
-const storage = multer.diskStorage({
-  destination : "./public/images/" ,
-  filename : function (req,file,cb) {
-    crypto.pseudoRandomBytes(8, function (err, raw) {
-      if (err) return cb(err)  
+//untuk membuat API yang menyetting banyaknya item list pada pagination secara otomatis
+router.get('/publish',(req,res) => {
+    const {page,size} = req.query;
+    const {limit,offset} = getPagination(page,size);
 
-      cb(null, raw.toString('hex') + path.extname(file.originalname))
-  })
-  }
-});
-const upload = multer({storage : storage});
+    list_wisata.findAndCountAll({ limit,offset })
+    .then(data => {
+        const response = getPagingData(data,page,limit);
+        res.send(response);
+    })
+    .catch(err => {
+        res.send(err);
+    })
+})
 
 //data json
-router.get('/json',(req,res,next) => {
+router.get('/list-wisata',(req,res,next) => {
     list_wisata.findAll({})
     .then(data => res.json(data))
     .catch( err => {
@@ -48,7 +64,7 @@ router.get('/json',(req,res,next) => {
 });
 
 //ambil data json dengan id
-router.get('/json/:id',(req,res,next) => {
+router.get('/list-wisata/:id',(req,res,next) => {
     const id = req.params.id;
 
     list_wisata.findByPk(id)
@@ -78,20 +94,6 @@ router.get('/delete/:id',(req,res) => {
     })
 });
 
-router.get('/publish/',(req,res) => {
-    const {page,size} = req.query;
-    const {limit,offset} = getPagination(page,size);
-
-    list_wisata.findAndCountAll({ limit,offset })
-    .then(data => {
-        const response = getPagingData(data,page,limit);
-        res.send(response);
-    })
-    .catch(err => {
-        res.send(err);
-    })
-})
-
 //lihat data semuanya
 router.get('/list',(req,res,next) => {
     list_wisata.findAll({})
@@ -107,12 +109,12 @@ router.get('/list',(req,res,next) => {
     });
 });
 
-router.get('/tambah',(req,res,next) => {
-    res.render('data');
+router.get('/tambah-data-wisata',(req,res,next) => {
+    res.render('datawisata');
 });
 
 //tambah data
-router.post('/kirim',[
+router.post('/kirim-data-wisata',[
     upload.single('urlimage')
     ],
     (req,res,next) => {

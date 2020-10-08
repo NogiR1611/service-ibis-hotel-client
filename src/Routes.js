@@ -3,9 +3,9 @@ import { BrowserRouter as Router,Route} from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import Contact from "./Contact";
-import ListWisata from "./List_Tempat_Wisata";
-import LandingPage from "./Tempat_wisata";
-import Events from "./Events";
+import ListWisata from "./tempat_wisata/List_Tempat_Wisata";
+import LandingPage from "./tempat_wisata/Tempat_wisata";
+import Events from "./event/List_Events";
 import titipanBarang from "./Titipan_barang";
 import listBarang from "./List_barang";
 
