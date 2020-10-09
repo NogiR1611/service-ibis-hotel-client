@@ -1,24 +1,39 @@
-let express = require('express');
-let multer = require('multer');
-let crypto = require('crypto');
-let path = require('path');
+let express = require("express");
+let upload = require("./img_storage");
 let router = express.Router();
 let model = require("../models");
 let list_event = model.list_event;
 
-const storage = multer.diskStorage({
-    destination : "/public/images/event",
-    filename : function (req,file,cb) {
-        crypto.pseudoRandomBytes(8, function (err, raw) {
-          if (err) return cb(err)  
-    
-          cb(null, raw.toString('hex') + path.extname(file.originalname))
-      })
-    }
-});
-const upload = multer({storage : storage});
+const getPagination = (page,size) => {
+    const limit = size ? +size : 3;
+    const offset = page ? page*limit : 0;
 
-router.get('/',(req,res) => {
+    return {offset,limit};
+};
+
+const getPagingData = (data,page,limit) => {
+    const {count : totalItems,rows : list_events} = data;
+    const currentPage = page ? +page : 0;
+    const totalPage = Math.ceil(totalItems/limit);
+
+    return { totalItems,list_events,totalPage,currentPage };
+}
+
+router.get('/json',(req,res) => {
+    const {page,size} = req.query;
+    const {limit,offset} = getPagination(page,size);
+
+    list_event.findAndCountAll({ limit,offset })
+    .then( data => {
+        const response = getPagingData(data,page,limit);
+        res.send(response);
+    })
+    .catch( err => {
+        res.send(err);
+    })
+})
+
+router.get('/tambah',(req,res) => {
     res.render('dataevents');
 });
 

@@ -1,25 +1,8 @@
 let express = require('express');
-let multer = require('multer');
-let crypto = require('crypto');
-let path = require('path');
-let conn = require('./conn');
+let upload = require('./img_storage');
 let router = express.Router();
 let model = require('../models');
 let list_wisata = model.list_tempat_wisata;
-let list_events = model.list_events;
-
-//untuk upload foto list wisata
-const storage = multer.diskStorage({
-    destination : "./public/images/" ,
-    filename : function (req,file,cb) {
-      crypto.pseudoRandomBytes(8, function (err, raw) {
-        if (err) return cb(err)  
-  
-        cb(null, raw.toString('hex') + path.extname(file.originalname))
-    })
-    }
-  });
-const upload = multer({storage : storage});
 
 //untuk membuat dan menjalankan pagination pada list wisata
 const getPagination = (page,size) => {
@@ -30,15 +13,15 @@ const getPagination = (page,size) => {
 };
 
 const getPagingData = (data,page,limit) => {
-    const {count : totalItems,rows : list_wisata,list_events} = data;
+    const {count : totalItems,rows : list_wisata} = data;
     const currentPage = page ? +page : 0;
     const totalPage = Math.ceil(totalItems/limit);
 
-    return { totalItems,list_wisata,list_events,totalPage,currentPage };
+    return { totalItems,list_wisata,totalPage,currentPage };
 }
 
 //untuk membuat API yang menyetting banyaknya item list pada pagination secara otomatis
-router.get('/publish',(req,res) => {
+router.get('/json',(req,res) => {
     const {page,size} = req.query;
     const {limit,offset} = getPagination(page,size);
 
@@ -48,7 +31,7 @@ router.get('/publish',(req,res) => {
         res.send(response);
     })
     .catch(err => {
-        res.send(err);
+         res.send(err);
     })
 })
 
@@ -74,7 +57,7 @@ router.get('/list-wisata/:id',(req,res,next) => {
             'message' : err.message
         });
     });
-})
+});
 
 //konfirmasi hapus
 router.get('/delete/:id',(req,res) => {

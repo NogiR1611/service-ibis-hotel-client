@@ -1,16 +1,16 @@
 import React,{Component} from "react";
-import ListEventService from "event.service";
+import ListEventService from "./event.service";
 import Deskripsi from "../Components/Deskripsi";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import Pagination from "@material-ui/lab/Pagination";
-import "./Components/style.css";
+import "../Components/style.css";
 
 class ListEvents extends Component{
     constructor(props){
         super(props)
         this.state = {
-            Items : [],
+            Data : [],
             page : 1,
             count : 0,
             pageSize : 3,
@@ -41,9 +41,9 @@ class ListEvents extends Component{
         
         ListEventService.getAll(params)
         .then(response => {
-            const {list_event,totalPage} = response.data;
+            const {list_events,totalPage} = response.data;
             this.setState({
-                Items : list_event,
+                Data : list_events,
                 count : totalPage
             });
         })
@@ -67,17 +67,17 @@ class ListEvents extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-        const {Items,count,page} = this.state;
+        const {Data,count,page} = this.state;
         return(
             <React.Fragment>
                 <Header />
                 <div className="item-page">
-                    <h1>Event terbaru yang akan diadakan di Kota Bandung</h1>
+                    <h1>Event terbaru yang a kan diadakan di Kota Bandung</h1>
                     <ul className="item-list">
-                        {Items.map( (index,element) => {
+                        {Data.map( (element,index) =>
                             <li key={index}>
                                 <span style={border_list} />
-                                <a href={'/Tempat-wisata/' + element.id} className='link-item'>
+                                <a href={'/event/' + element.id} className='link-item'>
                                     <img src={'http://localhost:4000/images/' + element.foto} className="list-image-item" alt="" />
                                     <div className='item'>
                                         <h3>{element.nama_event}</h3>
@@ -90,7 +90,6 @@ class ListEvents extends Component{
                                 </a>
                                 <span style={border_list} />
                             </li>
-                        }
                         )}
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-import http from "./http-common";
+import http from "./http";
 
 class ListEventService {
     getAll(params) {
@@ -6,4 +6,4 @@ class ListEventService {
     }
 }
 
-export default new ListEventService;
+export default new ListEventService();
