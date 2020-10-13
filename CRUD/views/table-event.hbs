@@ -1,0 +1,56 @@
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Tabel Data Event</title>
+        <link rel="stylesheet" href="./stylesheets/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"><img src="./image_event/logo-ibis.png"></img></a>
+        </header>
+        <table class="table_data">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Event</th>
+                    <th>Tempat</th>
+                    <th>Tanggal</th>
+                    <th>Nomor</th>
+                    <th>Email</th>
+                    <th>Website</th>
+                    <th>Foto</th>
+                    <th>Deskripsi</th>
+                </tr>
+            </thead>
+            {{#each results}}
+            <tbody>
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>{{ nama_event }}</td>
+                    <td>{{ tempat }}</td>
+                    <td>{{ tanggal }}</td>
+                    <td>{{ nomor }}</td>
+                    <td>{{ email }}</td>
+                    <td>{{ website }}</td>
+                    <td>{{ foto }}</td>
+                    <td>{{ deskripsi }}</td>
+                    <td>
+                        <a href="/event/edit/{{ id }}">Edit</a>
+                        <a href="/event/delete/{{ id }}">Hapus</a>
+                    </td>
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+    </body>
+    <footer>
+        <div className="bottom-footer">
+            <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
+        </div>
+    </footer>
+    <script>
+        let time = new Date();
+        let years = time.getFullYear();
+        document.getElementById("years").innerHTML = years;
+    </script>
+</html>

@@ -1,8 +1,69 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+header{
+  padding:20px 20px;
+  text-align:center;
+  border:1px solid gray;
+  box-shadow: 0px 0px 5px 0px gray;
 }
 
-a {
-  color: #00B7FF;
+header a{
+  display:inline-block;
+  text-align:center;
+}
+
+header img{
+  height:100px;
+  width:100px;
+  justify-self: center;
+}
+
+.Item-menu{
+  margin : 20px 40px;
+  padding : 10px 40px;
+  text-align : center;
+  border : 1px solid gray;
+  box-shadow : 1px 1px 1px 1px;
+}
+
+.Item-column{
+  display : grid;
+  grid-template-columns: repeat(2,auto);
+}
+
+.Item{
+  border: 1px solid black;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  border-radius: 5%;
+}
+
+.Item a{
+  text-decoration: none;
+  color: black;
+}
+
+.item-image{
+  height : 50px;
+  width : 50px;
+}
+
+footer{
+  background-color: #333;
+  color : white;
+  text-align : center;
+  padding : 20px 40px;
+}
+
+.heart-icon{
+  color: #fc3f5e;
+  font-size: 15px;
+}
+
+.mytable{
+  color : yellowgreen;
+  border-collapse : collapse;
+}
+
+.mytable thead{
+  border: 1px solid #999;
+  padding: 8px 20px;
 }

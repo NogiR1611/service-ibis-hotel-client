@@ -1,10 +1,9 @@
 import React,{Component} from "react";
 import ListWisataService from "./list_wisata.service";
-import Pagination from "@material-ui/lab/Pagination";
 import Header from "../Components/Header";
+import ListPage from "../Components/ListPage";
 import Footer from "../Components/Footer";
 import Deskripsi from "../Components/Deskripsi";
-import "../Components/style.css";
 
 class ListWisata extends Component{
     constructor(props){
@@ -67,17 +66,16 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-       const {Items,page,count} = this.state;
+       const {Items} = this.state;
         return(
             <React.Fragment>    
                 <Header />
-                <div className='item_page'>
-                    <h1>Tempat wisata terbaru di wilayah bandung dan sekitarnya</h1>
-                    <ul className='item_list'>
-                        { Items.map( (element,index) =>
+                <ListPage 
+                    title="Tempat Wisata Terpopuler di Wilayah Bandung dan sekitarnya"
+                    list_item={Items.map( (element,index) =>
                         <li key={index}>
-                            <span style={border_list}></span>
-                            <a href={'/Tempat-wisata/' + element.id} className='link-item'>
+                            <span style={border_list} />
+                            <a href={'/tempat-wisata/' + element.id} className='link-item'>
                                 <img src={'http://localhost:4000/images/' + element.urlimage} className="list-image-item" alt="" />
                                 <div className='item'>
                                     <h3>{element.nama_tempat_wisata}</h3>
@@ -88,12 +86,10 @@ class ListWisata extends Component{
                                     <Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
                             </a>
-                            <span style={border_list}></span>
+                            <span style={border_list} />
                         </li>
-                        )}
-                    </ul>
-                    <Pagination count={count} page={page} onChange={this.handlePageChange} variant="outlined" shape="rounded" />
-                </div>
+                    )}
+                />
                 <Footer />
             </React.Fragment>
         );

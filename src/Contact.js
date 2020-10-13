@@ -6,6 +6,37 @@ import facebook from "./Components/img/facebook.png";
 import twitter from "./Components/img/twitter.png";
 
 class Contact extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            nama_kontak : "",
+            email : "",
+            pesan : ""
+        }
+    }
+
+    /*
+    componentDidMount(){
+        this.postMessageClient();
+    }
+
+    postMessageClient = () => {
+        let data = {
+            nama_kontak : this.state.nama_kontak,
+            email   : this.state.email,
+            pesan   : this.state.pesan
+        };
+
+        fetch("http://localhost:4000/pesan/kirim",{
+            method  : "POST",
+            "Content-type" : "application/json",
+            "Access-Allow-Control-Origin" : "*"
+        },data)
+        .then( data => console.log(data))
+        .catch(err => console.log(err));
+    }
+    */
+
     render(){
         return(
             <section>
@@ -19,12 +50,16 @@ class Contact extends Component{
                     </p>
                 </div>
                 <div id="contact">
-                    <label>email anda: </label><br />
-                    <input type="email" placeholder="Contoh:example@gmail.com" />
-                    <br/>
-                    <label>Pesan : </label><br />
-                    <textarea cols="40" rows="5" placeholder="Silahkan isi pesan anda disini"></textarea><br />
-                    <button onClick="">Kirim</button>
+                    <form onSubmit="http://localhost:4000/pesan/kirim" enctype='multipart/form-data' method='post'>
+                        <label>Nama : </label><br />
+                        <input type="text" onChange={this.onChange} name="nama_kontak" /><br />
+                        <label>email anda : </label><br />
+                        <input type="email" onChange={this.onChange} name="email" placeholder="Contoh:example@gmail.com" />
+                        <br/>
+                        <label>Pesan : </label><br />
+                        <textarea cols="40" rows="5" onChange={this.onChange} name="pesan" placeholder="Silahkan isi pesan anda disini"></textarea><br />
+                        <button type="submit">Kirim</button>
+                    </form>
                 </div>
                 <div id="big-horizontal-border" />
                 <div class="menu-contact">

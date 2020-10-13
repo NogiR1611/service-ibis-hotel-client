@@ -32,7 +32,7 @@ class TempatWisata extends Component{
 }
 */
 
-class LandingPage extends Component{
+class DeskripsiWisata extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -42,7 +42,7 @@ class LandingPage extends Component{
 
     componentDidMount(){
         const {id} = this.props.match.params;
-        fetch(`http://localhost:4000/json/${id}`,{
+        fetch(`http://localhost:4000/tempat-wisata/${id}`,{
             headers : {
                 'Content-Type' : 'application/json',
                 'Access-Allow-Control-Origin' : '*'
@@ -66,4 +66,4 @@ class LandingPage extends Component{
     }
 }
 
-export default LandingPage;
+export default DeskripsiWisata;

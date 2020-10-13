@@ -36,7 +36,7 @@ router.get('/json',(req,res) => {
 })
 
 //data json
-router.get('/list-wisata',(req,res,next) => {
+router.get('/',(req,res,next) => {
     list_wisata.findAll({})
     .then(data => res.json(data))
     .catch( err => {
@@ -47,7 +47,7 @@ router.get('/list-wisata',(req,res,next) => {
 });
 
 //ambil data json dengan id
-router.get('/list-wisata/:id',(req,res,next) => {
+router.get('/json/:id',(req,res,next) => {
     const id = req.params.id;
 
     list_wisata.findByPk(id)
@@ -81,7 +81,7 @@ router.get('/delete/:id',(req,res) => {
 router.get('/list',(req,res,next) => {
     list_wisata.findAll({})
     .then(data => {
-        res.render('list',{
+        res.render('table-wisata',{
             results : data
         });
     })
@@ -93,7 +93,7 @@ router.get('/list',(req,res,next) => {
 });
 
 router.get('/tambah-data-wisata',(req,res,next) => {
-    res.render('datawisata');
+    res.render('data_wisata');
 });
 
 //tambah data
@@ -112,7 +112,7 @@ router.post('/kirim-data-wisata',[
     list_wisata.create(tempat_wisata)
         .then(data => res.send(data))
         .catch( err => {
-            res.status(500).res.send({
+            res.status(500).send({
                 'message' : err.message || "Terjadi Error pada program yang dibuat"
         });
     });
@@ -124,7 +124,7 @@ router.get('/edit/:id',(req,res) => {
 
     list_wisata.findByPk(id)
     .then(data => {
-        res.render('update',{
+        res.render('edit_wisata',{
             results : data
         });
     })

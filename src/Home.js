@@ -42,7 +42,7 @@ class Home extends Component{
                 <div id="big-horizontal-border" />
                 <section id="col-fitur">
                     <div className="fitur" id="event">
-                        <Link to="/Event">
+                        <Link to="/List-Event">
                             <h3>Event terkini di kota bandung</h3>
                             <img src={event} alt="" />
                             <p>

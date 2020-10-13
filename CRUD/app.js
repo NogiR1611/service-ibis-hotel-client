@@ -3,8 +3,10 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let pesan_klien = require('./routes/pesan_klien');
 let hbs = require('hbs');
 let bodyParser = require('body-parser');
+let index = require("./routes/index");
 let list_wisata = require('./routes/tempat_wisata');
 let list_event = require('./routes/event');
 let cors = require('cors');
@@ -20,8 +22,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //set folder public sebagai static folder untuk static file
 app.use(express.static(__dirname + '/public'));
 
+app.use('/',index);
 app.use('/tempat-wisata',list_wisata);
-app.use('/event',list_event)
+app.use('/event',list_event);
+app.use('/pesan',pesan_klien);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

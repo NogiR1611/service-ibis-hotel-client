@@ -19,6 +19,7 @@ const getPagingData = (data,page,limit) => {
     return { totalItems,list_events,totalPage,currentPage };
 }
 
+//mengambil data json
 router.get('/json',(req,res) => {
     const {page,size} = req.query;
     const {limit,offset} = getPagination(page,size);
@@ -33,10 +34,51 @@ router.get('/json',(req,res) => {
     })
 })
 
-router.get('/tambah',(req,res) => {
-    res.render('dataevents');
+//mengambil data untuk pagination
+router.get('/',(req,res,next) => {
+    list_event.findAll({})
+    .then(data => res.json(data))
+    .catch( err => {
+        res.status(500).send({
+            'message' : err.message
+        });
+    });
 });
 
+//mengambil data dalam bentuk tabel
+router.get('/list',(req,res,next) => {
+    list_event.findAll({})
+    .then(data =>{
+        res.render('table-event',{
+        results : data
+        })}
+    )
+    .catch( err => {
+        res.status(500).send({
+            'message' : err.message
+        });
+    });
+});
+
+//mengambil data dengan id
+router.get('/json/:id',(req,res,next) => {
+    const id = req.params.id;
+
+    list_event.findByPk(id)
+    .then(data => res.json(data))
+    .catch( err => {
+        res.status(500).send({
+            'message' : err.message
+        });
+    });
+});
+
+//menampilkan file yang berfungsi untuk menambah data
+router.get('/tambah-data-event',(req,res) => {
+    res.render('data_events');
+});
+
+//kirim data
 router.post('/kirim-data-event',[
     upload.single('foto')
     ],
@@ -58,6 +100,23 @@ router.post('/kirim-data-event',[
                 'message' : err.message || "Terjadi Error pada program yang dibuat"
         })
     })
-})
+});
 
+//render form edit data
+router.get("/edit/:id",(req,res) => {
+    const id = req.params.id;
+
+    list_event.findByPk(id)
+    .then(data => {
+        res.render('edit_event',{
+            results : data
+        })
+    })
+    .catch(err => {
+        res.json({
+            "messages" : err.messages
+        })
+    })
+})
+ 
 module.exports = router;
