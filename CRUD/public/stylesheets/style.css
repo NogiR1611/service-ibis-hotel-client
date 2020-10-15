@@ -24,6 +24,14 @@ header img{
   box-shadow : 1px 1px 1px 1px;
 }
 
+.Item-menu-inbox{
+  margin: 20px 300px;
+  padding: 10px 40px;
+  text-align: center;
+  border : 1px solid gray;
+  box-shadow : 1px 1px 1px 1px;
+}
+
 .Item-column{
   display : grid;
   grid-template-columns: repeat(2,auto);
@@ -33,7 +41,7 @@ header img{
   border: 1px solid black;
   padding: 10px 10px;
   margin: 10px 10px;
-  border-radius: 5%;
+  border-radius: 8px;
 }
 
 .Item a{

@@ -1,0 +1,54 @@
+header{
+  padding:20px 20px;
+  text-align:center;
+  border:1px solid gray;
+  box-shadow: 0px 0px 5px 0px gray;
+}
+
+header a{
+  display:inline-block;
+  text-align:center;
+}
+
+header img{
+  height:100px;
+  width:100px;
+  justify-self: center;
+}
+
+.list-inbox{
+  border: 1px solid black;
+  padding: 20px 10px;
+}
+
+.list-inbox ul li{
+  padding: 20px 10px;
+  list-style-type: none;
+  border: 1px solid black;
+}
+
+.list-inbox ul li a{
+  display: inline-block;
+  padding: 10px 10px;
+  margin : 20px 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  transition: all .6s;
+}
+
+.list-inbox ul li a:hover{
+  background-color: #f2eee4;
+}
+
+footer{
+  background-color: #333;
+  color : white;
+  text-align : center;
+  padding : 20px 40px;
+}
+
+.heart-icon{
+  color: #fc3f5e;
+  font-size: 15px;
+}

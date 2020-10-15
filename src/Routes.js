@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import { BrowserRouter as Router,Route} from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
-import Contact from "./Contact";
+import Contact from "./contact/Contact";
 import ListWisata from "./tempat_wisata/List_Tempat_Wisata";
 import DeskripsiWisata from "./tempat_wisata/Tempat_wisata";
 import Events from "./event/List_Events";

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Kotak Masuk Feedback Klien</title>
+        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/"><img src="./image_index/logo-ibis.png"></img></a>
+        </header>
+        <container>
+            <div class="list-inbox">
+                <ul>
+                    {{#each results}}
+                    </br>
+                    <li>
+                        <a href="">
+                            <p><b>Nama Pengirim</b> : {{ nama_kontak }}</p>
+                            <p><b>E-mail</b> : {{ email }}</p>
+                            <p><b>Tanggal&waktu</b> : {{ createdAt }}</p>
+                        </a> 
+                    </li>
+                    </br>
+                    {{/each}}    
+                </ul>
+            </div>
+        </container>
+        <footer>
+            <div className="bottom-footer">
+                <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
+            </div>
+        </footer>
+        <script>
+            let time = new Date();
+            let years = time.getFullYear();
+            document.getElementById("years").innerHTML = years;
+        </script>
+    </body>
+</html>

@@ -1,9 +1,9 @@
 import React,{Component} from "react";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import instagram from "./Components/img/instagram.png";
-import facebook from "./Components/img/facebook.png";
-import twitter from "./Components/img/twitter.png";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import instagram from "../Components/img/instagram.png";
+import facebook from "../Components/img/facebook.png";
+import twitter from "../Components/img/twitter.png";
 
 class Contact extends Component{
     constructor(props){
@@ -15,9 +15,14 @@ class Contact extends Component{
         }
     }
 
-    /*
     componentDidMount(){
         this.postMessageClient();
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
     }
 
     postMessageClient = () => {
@@ -28,14 +33,15 @@ class Contact extends Component{
         };
 
         fetch("http://localhost:4000/pesan/kirim",{
-            method  : "POST",
-            "Content-type" : "application/json",
-            "Access-Allow-Control-Origin" : "*"
-        },data)
+            method : "POST",
+            body : JSON.stringify(data),
+            headers : {
+                "Content-type" : "application/json"
+            }
+        })
         .then( data => console.log(data))
         .catch(err => console.log(err));
     }
-    */
 
     render(){
         return(
@@ -50,14 +56,16 @@ class Contact extends Component{
                     </p>
                 </div>
                 <div id="contact">
-                    <form onSubmit="http://localhost:4000/pesan/kirim" enctype='multipart/form-data' method='post'>
+                    <p>{this.state.nama_kontak}</p>
+                    <p>{this.state.email}</p>
+                    <form onSubmit={this.postMessageClient}>
                         <label>Nama : </label><br />
-                        <input type="text" onChange={this.onChange} name="nama_kontak" /><br />
+                        <input type="text" name="nama_kontak" onChange={this.handleChange}/><br />
                         <label>email anda : </label><br />
-                        <input type="email" onChange={this.onChange} name="email" placeholder="Contoh:example@gmail.com" />
+                        <input type="email" name="email" onChange={this.handleChange} placeholder="Contoh:example@gmail.com" />
                         <br/>
                         <label>Pesan : </label><br />
-                        <textarea cols="40" rows="5" onChange={this.onChange} name="pesan" placeholder="Silahkan isi pesan anda disini"></textarea><br />
+                        <textarea cols="40" rows="5" name="pesan" onChange={this.handleChange} placeholder="Silahkan isi pesan anda disini"></textarea><br />
                         <button type="submit">Kirim</button>
                     </form>
                 </div>
