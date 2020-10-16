@@ -56,8 +56,6 @@ class Contact extends Component{
                     </p>
                 </div>
                 <div id="contact">
-                    <p>{this.state.nama_kontak}</p>
-                    <p>{this.state.email}</p>
                     <form onSubmit={this.postMessageClient}>
                         <label>Nama : </label><br />
                         <input type="text" name="nama_kontak" onChange={this.handleChange}/><br />

@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <title>Kotak Masuk Feedback Klien</title>
         <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
     </head>
@@ -13,16 +14,36 @@
                     {{#each results}}
                     </br>
                     <li>
-                        <a href="">
+                        <a href="/pesan/{{ id }}">
                             <p><b>Nama Pengirim</b> : {{ nama_kontak }}</p>
                             <p><b>E-mail</b> : {{ email }}</p>
                             <p><b>Tanggal&waktu</b> : {{ createdAt }}</p>
-                        </a> 
+                        </a>
+                        <form action="/pesan/hapus/{{ id }}" method="POST">
+                            <button type="submit">Hapus</button>
+                        </form>
                     </li>
                     </br>
                     {{/each}}    
                 </ul>
             </div>
+            {{#if paginator }}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {{#paginator paginator type="prev"}}
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    {{/paginator}}
+
+                    {{#paginator paginator type="links" limit="10"}}
+                    <li class="page-item {{#if active}}active{{/if}}"><a class="page-link" href="{{href}}">{{n}}</a></li>
+                    {{/paginator}}
+                    
+                    {{#paginator paginator type="next"}}
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    {{/paginator}}
+                </ul>
+            </nav>
+            {{/if}}
         </container>
         <footer>
             <div className="bottom-footer">
@@ -34,5 +55,8 @@
             let years = time.getFullYear();
             document.getElementById("years").innerHTML = years;
         </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     </body>
 </html>

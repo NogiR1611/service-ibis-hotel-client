@@ -3,13 +3,9 @@ let router =express.Router();
 let models = require('../models');
 let pesan_klien = models.pesan_klien;
 
-/*
-router.get('/json',() => {
-})
-*/
-
 //tampilkan data pesan masuk
-router.get('/',(req,res) => {
+router.get('/',(req,res,next) => {
+
     pesan_klien.findAll({})
     .then(data => {
         res.render('data_inbox',{
@@ -22,6 +18,20 @@ router.get('/',(req,res) => {
         })
     });
 })
+
+router.get('/:id',(req,res,next) => {
+    const id = req.params.id;
+
+    pesan_klien.findByPk(id)
+    .then( data => {
+        res.render('pesan_klien',{
+            results : data
+        });
+    })
+    .catch( err => {
+        res.send(err);
+    });
+});
 
 //Kirim pesan feedback klien dari web klien
 router.post('/kirim',(req,res) => {
@@ -39,5 +49,29 @@ router.post('/kirim',(req,res) => {
         });
     });
 });
+
+//hapus item
+router.post('/hapus/:id',(req,res) => {
+    const id = req.params.id;
+
+    pesan_klien.destroy({
+        where : {id : id}
+    })
+    .then(num => {
+        if(num === 1){
+            res.redirect('/pesan');
+        }
+        else{
+        res.send({
+            message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+        });
+        }
+    })
+    .catch( err => {
+        res.status.send({
+            "message " : err.message
+        });
+    });
+})
 
 module.exports = router;
