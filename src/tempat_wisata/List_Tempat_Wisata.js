@@ -33,7 +33,7 @@ class ListWisata extends Component{
 
         return params;
     }
-
+ 
     fetchListWisata = () => {
         const {page,pageSize} = this.state;
         const params = this.getRequestParams(page,pageSize);
@@ -66,7 +66,7 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-       const {Items} = this.state;
+       const {Items,count,page} = this.state;
         return(
             <React.Fragment>    
                 <Header />
@@ -89,6 +89,9 @@ class ListWisata extends Component{
                             <span style={border_list} />
                         </li>
                     )}
+                    count={count}
+                    page={page}
+                    onChange={this.handlePageChange}
                 />
                 <Footer />
             </React.Fragment>

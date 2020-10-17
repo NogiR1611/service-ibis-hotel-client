@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">s
         <title>Kotak Masuk Feedback Klien</title>
         <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
     </head>
@@ -10,7 +10,7 @@
         </header>
         <container>
             <div class="list-inbox">
-                <ul>
+                <ul id="demo">
                     {{#each results}}
                     </br>
                     <li>
@@ -27,23 +27,29 @@
                     {{/each}}    
                 </ul>
             </div>
+            {{#test}}
+                <p>{{ hel1 }}</p>
+                <p>{{ hel2 }}</p>
+            {{/test}}
+    
             {{#if paginator }}
-            <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation">
                 <ul class="pagination">
                     {{#paginator paginator type="prev"}}
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="{{prev}}">Previous</a></li>
                     {{/paginator}}
 
-                    {{#paginator paginator type="links" limit="10"}}
+                    {{#paginator paginator type="links" limit="5"}}
                     <li class="page-item {{#if active}}active{{/if}}"><a class="page-link" href="{{href}}">{{n}}</a></li>
                     {{/paginator}}
                     
                     {{#paginator paginator type="next"}}
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="{{next}}">Next</a></li>
                     {{/paginator}}
                 </ul>
             </nav>
             {{/if}}
+
         </container>
         <footer>
             <div className="bottom-footer">

@@ -3,14 +3,33 @@ let router =express.Router();
 let models = require('../models');
 let pesan_klien = models.pesan_klien;
 
+const getPagination = (page,size) => {
+    const limit = size ? +size : 5;
+    const offset = page ? page*limit : 0;
+
+    return {limit,offset};
+};
+
+const getPagingData = (data,page,limit) => {
+    const {count : totalItems,rows : pesan_klien} = data;
+    const currentPage = page ? +page : 0;
+    const totalPages = Math.ceil(totalItems/limit);
+
+    return {totalItems,pesan_klien,currentPage,totalPages};
+}
+
 //tampilkan data pesan masuk
 router.get('/',(req,res,next) => {
+    const { page, size } = req.query;
+    const { limit, offset } = getPagination(page, size);
 
-    pesan_klien.findAll({})
+    pesan_klien.findAndCountAll({limit,offset})
     .then(data => {
+        const response = getPagingData(data,page,limit);
+
         res.render('data_inbox',{
-            results : data
-        })
+            results : response
+        });
     })
     .catch(err =>{
         res.json({

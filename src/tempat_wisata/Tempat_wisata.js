@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import '../Components/style.css';
-
+ 
 /*
 class TempatWisata extends Component{
     constructor(props){
@@ -42,7 +42,7 @@ class DeskripsiWisata extends Component{
 
     componentDidMount(){
         const {id} = this.props.match.params;
-        fetch(`http://localhost:4000/tempat-wisata/${id}`,{
+        fetch(`http://localhost:4000/tempat-wisata/json/${id}`,{
             headers : {
                 'Content-Type' : 'application/json',
                 'Access-Allow-Control-Origin' : '*'

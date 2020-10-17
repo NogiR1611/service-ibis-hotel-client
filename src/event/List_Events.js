@@ -16,7 +16,7 @@ class ListEvents extends Component{
             Description : ""
         }
     }
-
+ 
     componentDidMount(){
         this.fetchListEvent();
     }

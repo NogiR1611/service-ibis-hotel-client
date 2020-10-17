@@ -11,6 +11,7 @@
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-handlebars": "^5.1.0",
     "express-paginatorjs": "^1.0.1",
     "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
@@ -19,6 +20,7 @@
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
+    "paginatorjs": "0.0.2",
     "path": "^0.12.7",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0"
