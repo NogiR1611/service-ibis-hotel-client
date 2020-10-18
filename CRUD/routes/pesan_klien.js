@@ -1,10 +1,10 @@
 let express = require('express');
 let router =express.Router();
 let models = require('../models');
-let pesan_klien = models.pesan_klien;
+let pesan_klien = models.inbox_clients;
 
 const getPagination = (page,size) => {
-    const limit = size ? +size : 5;
+    const limit = size ? +size : 5; 
     const offset = page ? page*limit : 0;
 
     return {limit,offset};

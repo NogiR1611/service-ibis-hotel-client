@@ -6,31 +6,32 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(50)
+        type: Sequelize.INTEGER(255)
       },
       nama_event: {
-        type: Sequelize.STRING(25)
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       tempat: {
-        type: Sequelize.STRING(15)
+        allowNull: false,
+        type: Sequelize.STRING(25)
       },
       tanggal: {
-        type: Sequelize.DATE
+        allowNull: false,
+        type: Sequelize.DATE  
       },
       deskripsi: {
+        allowNull: false,
         type: Sequelize.STRING(2000)
       },
       nomor: {
-        type: Sequelize.STRING(16)
-      },
-      email: {
         type: Sequelize.STRING(25)
       },
-      website: {
+      email: {
         type: Sequelize.STRING(30)
       },
       foto: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(32)
       },
       createdAt: {
         allowNull: false,

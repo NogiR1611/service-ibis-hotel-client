@@ -2,7 +2,7 @@ let express = require("express");
 let upload = require("./img_storage");
 let router = express.Router();
 let model = require("../models");
-let list_event = model.list_event;
+let list_event = model.list_events;
 
 const getPagination = (page,size) => {
     const limit = size ? +size : 3;

@@ -6,25 +6,26 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER(50)
+        type: Sequelize.INTEGER(255)
       },
       nama_tempat_wisata: {
+        allowNull: false,
         type: Sequelize.STRING(25)
       },
       lokasi: {
-        type: Sequelize.STRING(15)
+        allowNull: false,
+        type: Sequelize.STRING(25)
       },
       harga: {
-        type: Sequelize.STRING(15)
+        allowNull: false,
+        type: Sequelize.STRING(25)
       },
       urlimage: {
-        type: Sequelize.STRING(50),
-        get(){
-          const image = this.getDataValue('image');
-          return '/image/'+image;
-        }
+        allowNull: false,
+        type: Sequelize.STRING(50)
       },
       deskripsi: {
+        allowNull: false,
         type: Sequelize.STRING(2000)
       },
       createdAt: {
