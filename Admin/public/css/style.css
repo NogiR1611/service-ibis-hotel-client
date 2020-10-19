@@ -1,0 +1,119 @@
+header{
+  padding:20px 20px;
+  text-align:center;
+  border:1px solid gray;
+  box-shadow: 0px 0px 5px 0px gray;
+}
+
+header a{
+  display:inline-block;
+  text-align:center;
+}
+
+header img{
+  height:100px;
+  width:100px;
+  justify-self: center;
+}
+
+.Item-menu{
+  margin : 20px 40px;
+  padding : 10px 40px;
+  text-align : center;
+  border : 1px solid gray;
+  box-shadow : 1px 1px 1px 1px;
+}
+
+.Item-menu-inbox{
+  margin: 20px 300px;
+  padding: 10px 40px;
+  text-align: center;
+  border : 1px solid gray;
+  box-shadow : 1px 1px 1px 1px;
+}
+
+.Item-column{
+  display : grid;
+  grid-template-columns: repeat(2,auto);
+}
+
+.Item{
+  border: 1px solid black;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  border-radius: 8px;
+}
+
+.Item a{
+  text-decoration: none;
+  color: black;
+}
+
+.item-image{
+  height : 50px;
+  width : 50px;
+}
+
+.table_data{
+  color: #232323;
+  border-collapse : collapse;
+}
+
+.table_data,th,td{
+  border: 1px solid #999;
+  padding: 8px 20px;
+}
+
+.card{
+  padding : 30px 30px;
+  margin : 25px 40px;
+  border-radius : 8px;
+  box-shadow : 1px 2px 8px rgba(0,0,0,0.65);
+}
+
+.card-title{
+  text-align : center;
+}
+
+.card form input,textarea{
+  margin: 10px 0px;
+}
+
+.card form input{
+  width: 400px;
+}
+
+.button-confirm{
+  padding : 10px 10px;
+  border-radius : 8px;
+  background-color: #e81a2e;
+  color: #f0e9e9;
+  transition: all .3s;
+}
+
+.button-confirm:hover{
+  cursor: pointer;
+  background-color: #800505;
+}
+
+footer{
+  background-color: #333;
+  color : white;
+  text-align : center;
+  padding : 20px 40px;
+}
+
+.heart-icon{
+  color: #fc3f5e;
+  font-size: 15px;
+}
+
+.mytable{
+  color : yellowgreen;
+  border-collapse : collapse;
+}
+
+.mytable thead{
+  border: 1px solid #999;
+  padding: 8px 20px;
+}

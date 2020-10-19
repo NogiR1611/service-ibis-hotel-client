@@ -58,12 +58,12 @@ class Contact extends Component{
                 <div id="contact">
                     <form onSubmit={this.postMessageClient}>
                         <label>Nama : </label><br />
-                        <input type="text" name="nama_kontak" onChange={this.handleChange}/><br />
+                        <input type="text" name="nama_kontak" onChange={this.handleChange} required="required"/><br />
                         <label>email anda : </label><br />
-                        <input type="email" name="email" onChange={this.handleChange} placeholder="Contoh:example@gmail.com" />
+                        <input type="email" name="email" onChange={this.handleChange} placeholder="Contoh:example@gmail.com" required="required"/>
                         <br/>
                         <label>Pesan : </label><br />
-                        <textarea cols="40" rows="5" name="pesan" onChange={this.handleChange} placeholder="Silahkan isi pesan anda disini"></textarea><br />
+                        <textarea cols="40" rows="5" name="pesan" onChange={this.handleChange} placeholder="Silahkan isi pesan anda disini" required="required"></textarea><br />
                         <button type="submit">Kirim</button>
                     </form>
                 </div>
