@@ -12,14 +12,14 @@ class PesanKlien extends Controller
         return view('data_inbox',['pesan_klien' => $pesan_klien]);
     }
 
-    public function post_messages(){
+    public function post_messages(Request $request){
         //insert data ke database
-        DB::table('inbox_clients')->insert([
+        DB::table('testing')->insert([
             'nama_kontak'=> $request->nama_kontak,
             'email'=> $request->email,
             'pesan'=>$request->pesan
         ]);
 
-        return redirect('/');
+        return response($data)->header('Access-Control-Allow-Origin','*');
     }
 }

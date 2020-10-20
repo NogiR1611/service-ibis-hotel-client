@@ -14,7 +14,7 @@
         <div class="card-title">
             <h2>Silahkan Isi Tempat Wisata yang ingin ditampilkan pada website sisi klien</h2>
         </div>
-        <form action='/tempat-wisata/kirim' method='post'>
+        <form action='/tempat-wisata/kirim' method='post' enctype="multipart/form-data">
             {{ csrf_field() }}
             <label>Nama tempat wisata : </label></br>
             <input type="text" name="nama_tempat_wisata" required="required"></br>

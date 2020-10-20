@@ -19,14 +19,16 @@ use App\Http\Controllers\PesanKlien;
 Route::get('/',[IndexController::class,'get_data']);
 
 //Tempat Wisata
-Route::get('/tempat-wisata',[TempatWisata::class,'get_tempat_wisata']);
-Route::get('/tempat-wisata/tambah',[TempatWisata::class,'get_form']);
+Route::get('/wisata/json',[TempatWisata::class,'json']);
+Route::get('/wisata',[TempatWisata::class,'get_tempat_wisata'])->name('wisata');
+Route::get('/wisata/tambah',[TempatWisata::class,'get_form'])->name('tambah-wisata');
 Route::post('/tempat-wisata/kirim',[TempatWisata::class,'post_tempat_wisata']);
 
 //Event
 Route::get('/event',[Event::class,'get_event'])->name('event');
-Route::get('/event/tambah',[Event::class,'get_form'])->name('tambah');
+Route::get('/event/tambah',[Event::class,'get_form'])->name('tambah-event');
 Route::post('/event/kirim',[Event::class,'post_event']);
 
 //pesan klien
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
+Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);

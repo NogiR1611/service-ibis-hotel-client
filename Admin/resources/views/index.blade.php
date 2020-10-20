@@ -13,13 +13,13 @@
                 <h2>Tempat Wisata</h2>
                 <div class="Item-column">
                     <div class="Item">
-                        <a href="/tempat-wisata/tambah">
+                        <a href="{{ route('tambah-wisata') }}">
                             <img src="{{ asset('img/document.png') }}" class="item-image" alt="">
                             <h3>Input Data</h3>
                         </a>
                     </div>
                     <div class="Item">
-                        <a href="/tempat-wisata">
+                        <a href="{{ route('tambah-wisata') }}">
                             <img src="{{ asset('img/table.png') }}" class="item-image" alt="">
                             <h3>Lihat Data</h3>
                         </a>
@@ -30,7 +30,7 @@
                 <h2>Event</h2>
                 <div class="Item-column">
                     <div class="Item">
-                        <a href="{{ route('tambah') }}">
+                        <a href="{{ route('tambah-event') }}">
                             <img src="{{ asset('img/document.png') }}" class="item-image" alt="">
                             <h3>Input Data</h3>
                         </a>
