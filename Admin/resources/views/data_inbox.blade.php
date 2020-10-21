@@ -27,6 +27,7 @@
                     @endforeach
                 </ul>
             </div>
+            {{ $pesan_klien->links() }}
         </container>
         <footer>
             <div className="bottom-footer">

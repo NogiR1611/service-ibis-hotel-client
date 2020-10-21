@@ -11,9 +11,8 @@ class TempatWisata extends Controller
     public function json(){
         $tempat_wisata = DB::table('list_tempat_wisata')->get();
         return response() -> json([
-            'success' => true,
             'data' => $tempat_wisata
-        ],200);
+        ],200) -> header('Access-Control-Allow-Origin','*');
     }
 
     public function get_tempat_wisata(){

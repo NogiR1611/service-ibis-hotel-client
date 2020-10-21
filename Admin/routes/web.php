@@ -25,10 +25,11 @@ Route::get('/wisata/tambah',[TempatWisata::class,'get_form'])->name('tambah-wisa
 Route::post('/tempat-wisata/kirim',[TempatWisata::class,'post_tempat_wisata']);
 
 //Event
+Route::get('event/json',[Event::class,'json']);
 Route::get('/event',[Event::class,'get_event'])->name('event');
 Route::get('/event/tambah',[Event::class,'get_form'])->name('tambah-event');
 Route::post('/event/kirim',[Event::class,'post_event']);
 
 //pesan klien
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
-Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
+Route::post('/inbox/kirim',[PesanKlien::class,'post_messages','middleware' => 'Cors']);

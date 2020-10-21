@@ -14,24 +14,24 @@
         <div class="card-title">
             <h2>Silahkan Isi Event yang ingin ditampilkan pada website sisi klien</h2>
         </div>
-        <form action='/event/kirim' method='post'>
+        <form action='/event/kirim' method='post' enctype="multipart/form-data">
             {{ csrf_field() }}
             <label>Nama event : </label></br>
-            <input type="text" name="nama_event"></br>
+            <input type="text" name="nama_event" required="required"></br>
             <label>Tempat : </label></br>
-            <input type="text" name="tempat"></br>
+            <input type="text" name="tempat" required="required"></br>
             <label>Tanggal : </label></br>
-            <input type="date" name="tanggal"></br>
+            <input type="date" name="tanggal" required="required"></br>
             <label>Foto : </label></br>
-            <input type="file" action="/upload" name="foto" id="foto"></br>
+            <input type="file" action="/upload" name="foto" id="foto" required="required"></br>
             <label>nomor : </label></br>
-            <input type="text" name="nomor"></br>
+            <input type="text" name="nomor" required="required"></br>
             <label>email : </label></br>
-            <input type="email" name="email"></br>
+            <input type="email" name="email" required="required"></br>
             <label>website : </label></br>
-            <input type="text" name="website"></br>
+            <input type="text" name="website" required="required"></br>
             <label>Deskripsi : </label></br>
-            <textarea cols="80" rows="20" name="deskripsi"></textarea></br>
+            <textarea cols="80" rows="20" name="deskripsi" required="required"></textarea></br>
             <button type="submit">Oke</button>
         </form>
     </div>

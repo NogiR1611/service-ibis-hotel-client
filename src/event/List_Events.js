@@ -21,6 +21,7 @@ class ListEvents extends Component{
         this.fetchListEvent();
     }
 
+    /*
     getRequestParams = (page,pageSize) =>{
         let params = {};
 
@@ -33,17 +34,13 @@ class ListEvents extends Component{
 
         return params;
     }
-
+    */
     fetchListEvent = () => {
-        const {page,pageSize} = this.state;
-        const params = this.getRequestParams(page,pageSize);
-        
-        ListEventService.getAll(params)
+        ListEventService.getAll()
         .then(response => {
-            const {list_events,totalPage} = response.data;
+            const {data} = response.data;
             this.setState({
-                Data : list_events,
-                count : totalPage
+                Data : data
             });
         })
         .catch((err) =>{
@@ -51,6 +48,7 @@ class ListEvents extends Component{
         });
     }
 
+    /*
     handlePageChange = (event,value) => {
         this.setState(
         {
@@ -61,7 +59,7 @@ class ListEvents extends Component{
         }
     )
     }
-
+    */
     render(){
         const border_list = {
             "border" : "1px solid black"
@@ -76,7 +74,7 @@ class ListEvents extends Component{
                         <li key={index}>
                             <span style={border_list} />
                             <a href={'/event/' + element.id} className='link-item'>
-                                <img src={'http://localhost:4000/images/' + element.foto} className="list-image-item" alt="" />
+                                <img src={'http://localhost:8000/img/' + element.foto} className="list-image-item" alt="" />
                                 <div className='item'>
                                     <h3>{element.nama_event}</h3>
                                     <p><b>Tanggal</b> : {element.tanggal}</p>

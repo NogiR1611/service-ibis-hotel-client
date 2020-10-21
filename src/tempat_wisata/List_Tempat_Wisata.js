@@ -10,9 +10,6 @@ class ListWisata extends Component{
         super(props)
         this.state = {
             Items : [],
-            page : 1,
-            count : 0,
-            pageSize : 3,
             description : ""
         };
     }
@@ -21,6 +18,7 @@ class ListWisata extends Component{
         this.fetchListWisata();
     }
 
+    /*
     getRequestParams = (page,pageSize) =>{
         let params = {};
 
@@ -33,17 +31,14 @@ class ListWisata extends Component{
 
         return params;
     }
+    */
  
     fetchListWisata = () => {
-        const {page,pageSize} = this.state;
-        const params = this.getRequestParams(page,pageSize);
-        
-        ListWisataService.getAll(params)
+        ListWisataService.getAll()
         .then(response => {
-            const {list_wisata,totalPage} = response.data;
+            const {data} = response.data;
             this.setState({
-                Items : list_wisata,
-                count : totalPage
+                Items : data
             });
         })
         .catch((err) =>{
@@ -66,7 +61,8 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-       const {Items,count,page} = this.state;
+       let Items = this.state.Items;
+
         return(
             <React.Fragment>    
                 <Header />
@@ -86,11 +82,8 @@ class ListWisata extends Component{
                                     <Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
                             </a>
-                            <span style={border_list} />
                         </li>
                     )}
-                    count={count}
-                    page={page}
                     onChange={this.handlePageChange}
                 />
                 <Footer />

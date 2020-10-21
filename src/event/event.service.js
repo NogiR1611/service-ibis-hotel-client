@@ -1,8 +1,8 @@
 import http from "./http";
 
 class ListEventService {
-    getAll(params) {
-        return http.get("/json",{params});
+    getAll() {
+        return http.get("/json");
     }
 }
 

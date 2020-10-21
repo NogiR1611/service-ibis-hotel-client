@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class PesanKlien extends Controller
 {
     public function get_inbox(){
-        $pesan_klien = DB::table('inbox_clients')->get();
+        $pesan_klien = DB::table('inbox_clients')->paginate(5);
         return view('data_inbox',['pesan_klien' => $pesan_klien]);
     }
 
