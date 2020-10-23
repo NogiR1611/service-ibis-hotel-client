@@ -14,7 +14,7 @@ class PesanKlien extends Controller
 
     public function post_messages(Request $request){
         //insert data ke database
-        DB::table('testing')->insert([
+        DB::table('inbox_clients')->insert([
             'nama_kontak'=> $request->nama_kontak,
             'email'=> $request->email,
             'pesan'=>$request->pesan

@@ -5,6 +5,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TempatWisata;
 use App\Http\Controllers\Event;
 use App\Http\Controllers\PesanKlien;
+use App\Http\Controllers\Tester;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,4 +33,7 @@ Route::post('/event/kirim',[Event::class,'post_event']);
 
 //pesan klien
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
-Route::post('/inbox/kirim',[PesanKlien::class,'post_messages','middleware' => 'Cors']);
+Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
+
+Route::get('/testing',[Tester::class,'get_test']);
+Route::post('testing/kirim',[Tester::class,'post_testing']);
