@@ -15,12 +15,12 @@
                     @foreach($pesan_klien as $pk)
                     </br>
                     <li>
-                        <a href="/pesan/{{ $pk->id }}">
-                            <p><b>Nama Pengirim</b> : {{ $pk->nama_kontak }}</p>
+                        <a href="/inbox/{{ $pk->id }}">
+                            <p><b>Nama Pengirim</b> : {{ $pk->nama_klien }}</p>
                             <p><b>E-mail</b> : {{ $pk->email }}</p>
-                            <p><b>Tanggal&waktu</b> : {{ $pk->createdAt }}</p>
+                            <p><b>Tanggal&waktu</b> : {{ $pk->created_at }}</p>
                         </a>
-                        <form action="/pesan/hapus/{{ $pk->id }}" method="POST">
+                        <form action="/pesan/hapus/{{ $pk->email }}" method="POST">
                             <button type="submit">Hapus</button>
                         </form>
                     </li>

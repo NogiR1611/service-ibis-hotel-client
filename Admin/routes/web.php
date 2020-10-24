@@ -33,6 +33,7 @@ Route::post('/event/kirim',[Event::class,'post_event']);
 
 //pesan klien
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
+Route::get('/inbox/{id}',[PesanKlien::class,'get_id_inbox']);
 Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
 
 Route::get('/testing',[Tester::class,'get_test']);

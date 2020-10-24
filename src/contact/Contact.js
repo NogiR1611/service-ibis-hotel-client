@@ -4,12 +4,13 @@ import Footer from "../Components/Footer";
 import instagram from "../Components/img/instagram.png";
 import facebook from "../Components/img/facebook.png";
 import twitter from "../Components/img/twitter.png";
+import pesanService from "./pesan.service";
 
 class Contact extends Component{
     constructor(props){
         super(props)
         this.state = {
-            nama_kontak : "",
+            nama_klien : "",
             email : "",
             pesan : ""
         }
@@ -27,12 +28,12 @@ class Contact extends Component{
 
     postMessageClient = () => {
         let data = {
-            nama_kontak : this.state.nama_kontak,
+            nama_klien : this.state.nama_klien,
             email   : this.state.email,
             pesan   : this.state.pesan
         };
-
-        fetch("http://localhost:4000/pesan/kirim",{
+        /*
+        fetch("http://localhost:8000/inbox/kirim",{
             method : "POST",
             body : JSON.stringify(data),
             headers : {
@@ -41,6 +42,17 @@ class Contact extends Component{
         })
         .then( data => console.log(data))
         .catch(err => console.log(err));
+        */
+       pesanService.sendAll(data)
+        .then( res => {
+            this.setState({
+                nama_klien : res.data.nama_klien,
+                email : res.data.email,
+                pesan : res.data.pesan
+            });
+            console.log(data);
+        })
+        .catch( err => console.log(err));
     }
 
     render(){
@@ -48,7 +60,7 @@ class Contact extends Component{
             <section>
                 <Header />
                 <div id="descript-contact">
-                    <h3>Silahkan hubungi kami</h3>
+                    <h3>Silahkan hubungi kami yah</h3>
                     <p>
                         Bila anda memiliki ulasan berupa pujian,saran maupun keluhan
                         seputar layanan maupun fasilitas
@@ -58,7 +70,7 @@ class Contact extends Component{
                 <div id="contact">
                     <form onSubmit={this.postMessageClient}>
                         <label>Nama : </label><br />
-                        <input type="text" name="nama_kontak" onChange={this.handleChange} required="required"/><br />
+                        <input type="text" name="nama_klien" onChange={this.handleChange} required="required"/><br />
                         <label>email anda : </label><br />
                         <input type="email" name="email" onChange={this.handleChange} placeholder="Contoh:example@gmail.com" required="required"/>
                         <br/>

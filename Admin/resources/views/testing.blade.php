@@ -14,12 +14,14 @@
         <div class="card-title">
             <h2>Silahkan Isi Tempat Wisata yang ingin ditampilkan pada website sisi klien</h2>
         </div>
-        <form action='/testing/kirim' method='post'>
+        <form action='/inbox/kirim' method='post'>
             {{ csrf_field() }}
-            <label>Nama Tester : </label></br>
-            <input type="text" name="nama_tester" required="required"></br>
-            <label>Alamat : </label></br>
-            <input type="text" name="alamat" required="required"></br>
+            <label>Nama : </label></br>
+            <input type="text" name="nama_klien" required="required"></br>
+            <label>Email : </label></br>
+            <input type="email" name="email" required="required"></br>
+            <label>Pesan : </label></br>
+            <textarea name="pesan" cols="80" rows="10" require="require"></textarea></br>
             <button type="submit" class="button-confirm">Tambahkan</button>
         </form>
     </div>
