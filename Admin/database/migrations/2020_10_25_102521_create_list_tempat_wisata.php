@@ -17,10 +17,11 @@ class CreateListTempatWisata extends Migration
             $table->id();
             $table->string('nama_tempat_wisata',25);
             $table->string('lokasi',25);
-            $table->char('harga',30);
-            $table->char('urlimage',50);
-            $table->string('deskripsi',2000);
-            $table->timestamps();
+            $table->string('harga',30);
+            $table->string('urlimage',30);
+            $table->text('deskripsi',2000);
+            $table->timestamp('createdAt')->useCurrent();
+            $table->timestamp('updatedAt')->useCurrent();
         });
     }
 

@@ -15,14 +15,15 @@ class CreateListEvents extends Migration
     {
         Schema::create('list_events', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_event',25);
+            $table->string('nama_event',50);
             $table->string('tempat',25);
             $table->date('tanggal');
             $table->char('nomor',25);
             $table->char('email',25);
             $table->char('foto',50);
             $table->string('deskripsi',2000);
-            $table->timestamps();
+            $table->timestamp('createdAt')->useCurrent();
+            $table->timestamp('updatedAt')->useCurrent();
         });
     }
 

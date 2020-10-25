@@ -64,7 +64,11 @@ class ListEvents extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
+        const color_date = {
+            "color" : "#292b29"
+        };
         const {Data,count,page} = this.state;
+
         return(
             <React.Fragment>
                 <Header />
@@ -74,14 +78,14 @@ class ListEvents extends Component{
                         <li key={index}>
                             <span style={border_list} />
                             <a href={'/event/' + element.id} className='link-item'>
-                                <img src={'http://localhost:8000/img/' + element.foto} className="list-image-item" alt="" />
+                                <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt="" />
                                 <div className='item'>
                                     <h3>{element.nama_event}</h3>
                                     <p><b>Tanggal</b> : {element.tanggal}</p>
                                     <p><b>Tempat</b> : {element.tempat}</p>
                                 </div>
                                 <div className='deskripsi'>
-                                    <Deskripsi deskripsi={element.deskripsi}/>
+                                    <span style={color_date}>{element.createdAt}</span><Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
                             </a>
                             <span style={border_list} />

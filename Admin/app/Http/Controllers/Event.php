@@ -27,6 +27,8 @@ class Event extends Controller
     public function post_event(Request $request){
         $file = $request->file('foto');
         $foto = $file->getClientOriginalName();
+        $tujuan_upload = "img_event";
+        $file->move($tujuan_upload,$file->getClientOriginalName());
 
         DB::table('list_events')->insert([
             'nama_event' => $request->nama_event,

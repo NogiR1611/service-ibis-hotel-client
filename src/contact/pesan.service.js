@@ -1,7 +1,7 @@
 import http from "./http-common";
 
 class PesanService{
-    sendAll(data){
+    create(data){
         return http.post('/kirim',data);
     }
 }

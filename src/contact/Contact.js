@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 import instagram from "../Components/img/instagram.png";
 import facebook from "../Components/img/facebook.png";
 import twitter from "../Components/img/twitter.png";
-import pesanService from "./pesan.service";
+import axios from "axios";
 
 class Contact extends Component{
     constructor(props){
@@ -27,32 +27,15 @@ class Contact extends Component{
     }
 
     postMessageClient = () => {
-        let data = {
+        const data = {
             nama_klien : this.state.nama_klien,
             email   : this.state.email,
             pesan   : this.state.pesan
         };
-        /*
-        fetch("http://localhost:8000/inbox/kirim",{
-            method : "POST",
-            body : JSON.stringify(data),
-            headers : {
-                "Content-type" : "application/json"
-            }
-        })
+
+        axios.post("http://localhost:4000/pesan/kirim",data)
         .then( data => console.log(data))
         .catch(err => console.log(err));
-        */
-       pesanService.sendAll(data)
-        .then( res => {
-            this.setState({
-                nama_klien : res.data.nama_klien,
-                email : res.data.email,
-                pesan : res.data.pesan
-            });
-            console.log(data);
-        })
-        .catch( err => console.log(err));
     }
 
     render(){

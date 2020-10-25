@@ -27,6 +27,8 @@ class TempatWisata extends Controller
     public function post_tempat_wisata(Request $request){
         $file = $request->file('urlimage');
         $urlimage = $file->getClientOriginalName();
+        $tujuan_upload = "img_wisata";
+        $file->move($tujuan_upload,$file->getClientOriginalName());
 
         //insert data ke table list_tempat_wisata
         DB::table('list_tempat_wisata')->insert([

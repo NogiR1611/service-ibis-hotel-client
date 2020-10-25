@@ -58,6 +58,9 @@ class ListWisata extends Component{
     }
 
     render(){
+        const color_date={
+            "color" : "#292b29"
+        };
         const border_list = {
             "border" : "1px solid black"
         };
@@ -72,14 +75,14 @@ class ListWisata extends Component{
                         <li key={index}>
                             <span style={border_list} />
                             <a href={'/tempat-wisata/' + element.id} className='link-item'>
-                                <img src={'http://localhost:4000/images/' + element.urlimage} className="list-image-item" alt="" />
+                                <img src={'http://localhost:8000/img_wisata/' + element.urlimage} className="list-image-item" alt="" />
                                 <div className='item'>
                                     <h3>{element.nama_tempat_wisata}</h3>
                                     <p><b>Harga</b> : {element.harga}</p>
                                     <p><b>Lokasi</b> : {element.lokasi}</p>
                                 </div>
                                 <div className='deskripsi'>
-                                    <Deskripsi deskripsi={element.deskripsi}/>
+                                    <span style={color_date}>{element.createdAt}</span><Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
                             </a>
                         </li>
