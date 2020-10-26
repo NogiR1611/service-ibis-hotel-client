@@ -8,6 +8,15 @@
         <header>
             <a href="/"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
+        <div class="card-title">
+            <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>
+        </div>
+        @if ($message = Session::get('sukses'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button> 
+            <strong>{{ $message }}</strong>
+        </div>
+        @endif
         <table class="table_data">
             <thead>
                 <tr>
@@ -15,10 +24,13 @@
                     <th>Nama Event</th>
                     <th>Tempat</th>
                     <th>Tanggal</th>
+                    <th>Waktu</th>
+                    <th>Harga</th>
                     <th>Nomor</th>
                     <th>Email</th>
                     <th>Foto</th>
                     <th>Deskripsi</th>
+                    <th>Diperbarui</th>
                 </tr>
             </thead>
             @foreach($events as $e)
@@ -28,13 +40,16 @@
                     <td>{{ $e -> nama_event }}</td>
                     <td>{{ $e -> tempat }}</td>
                     <td>{{ $e -> tanggal }}</td>
+                    <td>{{ $e -> waktu }}</td>
+                    <td>{{ $e -> harga }}</td>
                     <td>{{ $e -> nomor }}</td>
                     <td>{{ $e -> email }}</td>
                     <td>{{ $e -> foto }}</td>
                     <td>{{ $e -> deskripsi }}</td>
+                    <td>{{ $e -> updatedAt }}</td>
                     <td>
                         <a href="/event/edit/{{ $e->id }}">Edit</a>
-                        <a href="/event/delete/{{ $e->id }}">Hapus</a>
+                        <a href="/event/delete/{{ $e->id }}">Hapus</a> 
                     </td>
                 </tr>
             </tbody>

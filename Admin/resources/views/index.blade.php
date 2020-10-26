@@ -19,7 +19,7 @@
                         </a>
                     </div>
                     <div class="Item">
-                        <a href="{{ route('tambah-wisata') }}">
+                        <a href="{{ route('wisata') }}">
                             <img src="{{ asset('img/table.png') }}" class="item-image" alt="">
                             <h3>Lihat Data</h3>
                         </a>

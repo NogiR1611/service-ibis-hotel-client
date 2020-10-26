@@ -18,6 +18,8 @@ class CreateListEvents extends Migration
             $table->string('nama_event',50);
             $table->string('tempat',25);
             $table->date('tanggal');
+            $table->char('waktu',20);
+            $table->char('harga',20);
             $table->char('nomor',25);
             $table->char('email',25);
             $table->char('foto',50);

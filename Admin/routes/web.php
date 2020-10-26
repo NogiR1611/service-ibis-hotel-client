@@ -23,18 +23,26 @@ Route::get('/',[IndexController::class,'get_data']);
 Route::get('/wisata/json',[TempatWisata::class,'json']);
 Route::get('/wisata',[TempatWisata::class,'get_tempat_wisata'])->name('wisata');
 Route::get('/wisata/tambah',[TempatWisata::class,'get_form'])->name('tambah-wisata');
+Route::get('tempat-wisata/edit/{id}',[TempatWisata::class,'edit_form']);
 Route::post('/tempat-wisata/kirim',[TempatWisata::class,'post_tempat_wisata']);
+Route::post('/tempat-wisata/update/{id}',[TempatWisata::class,'update_tempat_wisata']);
+Route::get('/tempat-wisata/delete/{id}',[TempatWisata::class,'delete_wisata']);
 
 //Event
 Route::get('event/json',[Event::class,'json']);
 Route::get('/event',[Event::class,'get_event'])->name('event');
 Route::get('/event/tambah',[Event::class,'get_form'])->name('tambah-event');
+Route::get('/event/edit/{id}',[Event::class,'edit_form']);
 Route::post('/event/kirim',[Event::class,'post_event']);
+Route::post('/event/update/{id}',[Event::class,'update_event']);
+Route::get('/event/delete/{id}',[Event::class,'delete_event']);
 
 //pesan klien
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
 Route::get('/inbox/{id}',[PesanKlien::class,'get_id_inbox']);
 Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
+
+//Notifikasi Controller
 
 Route::get('/testing',[Tester::class,'get_test']);
 Route::post('testing/kirim',[Tester::class,'post_testing']);

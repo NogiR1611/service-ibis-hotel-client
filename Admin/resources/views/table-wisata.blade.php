@@ -8,6 +8,15 @@
         <header>
             <a href="/"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
+        <div class="card-title">
+            <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>
+        </div>
+        @if ($message = Session::get('sukses'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button> 
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <table class="table_data">
             <thead>
                 <tr>
@@ -15,7 +24,7 @@
                     <th>Nama tempat wisata</th>
                     <th>Lokasi</th>
                     <th>Harga</th>
-                    <th>URL Foto</th>
+                    <th>Foto</th>
                     <th>Deskripsi</th>
                 </tr>
             </thead>
@@ -27,9 +36,9 @@
                     <td>{{ $tw->harga }}</td>
                     <td>{{ $tw->lokasi }}</td>
                     <td>{{ $tw->urlimage }}</td>
-                    <td id="str">{{ $tw->deskripsi }}</td>
+                    <td id="str">{{ $tw->deskripsi }}...</td>
                     <td>
-                        <a href='/tempat-wisata/edit/{{ $tw->id}}'>Edit</a>
+                        <a href='/tempat-wisata/edit/{{ $tw->id }}'>Edit</a>
                         <a href='/tempat-wisata/delete/{{ $tw->id }}'>Delete</a>
                     </td>
                 </tr>

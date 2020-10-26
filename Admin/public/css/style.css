@@ -57,6 +57,10 @@ header img{
 .table_data{
   color: #232323;
   border-collapse : collapse;
+  margin-top : 50px;
+  margin-left : 10px;
+  margin-right : 10px;
+  margin-bottom : 200px;
 }
 
 .table_data,th,td{
@@ -84,6 +88,7 @@ header img{
 }
 
 .button-confirm{
+  margin : 10px 0px;
   padding : 10px 10px;
   border-radius : 8px;
   background-color: #e81a2e;

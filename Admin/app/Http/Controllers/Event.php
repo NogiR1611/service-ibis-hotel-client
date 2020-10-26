@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use app\FotoEvent;
+use Session;
 
 class Event extends Controller
 { 
@@ -25,15 +26,31 @@ class Event extends Controller
     }
 
     public function post_event(Request $request){
+        //untuk save dan upload foto
         $file = $request->file('foto');
         $foto = $file->getClientOriginalName();
         $tujuan_upload = "img_event";
         $file->move($tujuan_upload,$file->getClientOriginalName());
 
+        //untuk membuat validasi form yang dibuat
+        $messages = [
+            'required' => ':attribute wajib di isi kak :)',
+            'max' => ':attribute maksimal wajib di isi :max karakter ya kak :)',
+            'min' => ':attribute minimal wajib di isi :min karakter ya kak :)'
+        ];
+
+        $request->validate([
+            'nama_event' => 'required|max:50',
+            'deskripsi' => 'required|min:10|max:2000'
+        ],$messages);
+        
+        //insert data ke database
         DB::table('list_events')->insert([
             'nama_event' => $request->nama_event,
             'tempat' => $request->tempat,
             'tanggal'=> $request->tanggal,
+            'waktu' => $request->waktu,
+            'harga' => $request->harga,            
             'nomor' => $request->nomor,
             'email' => $request->email,
             'foto' => $foto,
@@ -41,5 +58,42 @@ class Event extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function edit_form($id){
+        $events = DB::table('list_events')->where('id',$id)->get();
+        return view('edit_event',['events' => $events]);
+    }
+
+    public function update_event(Request $request){
+        $file = $request->file('foto');
+        $foto = $file->getClientOriginalName();
+        $tujuan_upload = "img_event";
+        $file->move($tujuan_upload,$foto);
+
+        //update data ke database
+        DB::table('list_events')->where('id',$request->id)->update([
+            'nama_event' => $request->nama_event,
+            'tempat' => $request->tempat,
+            'tanggal' => $request->tanggal,
+            'waktu' => $request->waktu,
+            'harga' => $request->harga,
+            'nomor' => $request->nomor,
+            'email' => $request->email,
+            'foto' => $foto,
+            'deskripsi' => $request->deskripsi
+        ]);
+        
+        Session::flash('sukses','Data berhasil di update kak :)');
+        return redirect('wisata');
+    }
+
+    public function delete_event($id){
+        DB::table('list_events')->where('id',$id)->delete();
+        return redirect()->back();
+    }
+
+    public function berhasil(){
+
     }
 }
