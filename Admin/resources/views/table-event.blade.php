@@ -11,11 +11,19 @@
         <div class="card-title">
             <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>
         </div>
+        <!-- menampilkan pesan berhasil di update -->
         @if ($message = Session::get('sukses'))
         <div class="alert alert-success alert-block">
             <button type="button" class="close" data-dismiss="alert">×</button> 
             <strong>{{ $message }}</strong>
         </div>
+        @endif
+         <!-- menampilkan pesan berhasil di tambahkan-->
+         @if ($message = Session::get('berhasil'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button> 
+                <strong>{{ $message }}</strong>
+            </div>
         @endif
         <table class="table_data">
             <thead>
@@ -48,8 +56,8 @@
                     <td>{{ $e -> deskripsi }}</td>
                     <td>{{ $e -> updatedAt }}</td>
                     <td>
-                        <a href="/event/edit/{{ $e->id }}">Edit</a>
-                        <a href="/event/delete/{{ $e->id }}">Hapus</a> 
+                        <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
+                        <a class="btn btn-success" href='/event/delete/{{ $e->id }}' role="button">Hapus</a>
                     </td>
                 </tr>
             </tbody>
@@ -61,6 +69,10 @@
             <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
         let time = new Date();
         let years = time.getFullYear();

@@ -12,7 +12,7 @@ body{
     grid-template-columns: 40% auto;
     height:100%;
 }
-
+ 
 #bg-login{
     background-image: url("./img/1.jpg");
     background-repeat: no-repeat;
@@ -319,7 +319,7 @@ header img{
 
 #col-fitur{
     display:grid;
-    grid-template-columns:repeat(3,auto);
+    grid-template-columns:repeat(2,auto);
 }
 
 .fitur{

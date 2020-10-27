@@ -12,7 +12,8 @@ class Contact extends Component{
         this.state = {
             nama_klien : "",
             email : "",
-            pesan : ""
+            pesan : "",
+            notification : ""
         }
     }
 
@@ -32,9 +33,19 @@ class Contact extends Component{
             email   : this.state.email,
             pesan   : this.state.pesan
         };
+        const messages = 
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button> 
+            <strong>Pesan anda sudah dikirim</strong>
+        </div>
 
         axios.post("http://localhost:4000/pesan/kirim",data)
-        .then( data => console.log(data))
+        .then( data => {
+            this.setState({
+                notification : messages
+            })
+            console.log(data)
+        })
         .catch(err => console.log(err));
     }
 
@@ -50,6 +61,7 @@ class Contact extends Component{
                         yang diberikan kami,Silahkan hubungi kontak kami.
                     </p>
                 </div>
+                {this.state.notification}
                 <div id="contact">
                     <form onSubmit={this.postMessageClient}>
                         <label>Nama : </label><br />

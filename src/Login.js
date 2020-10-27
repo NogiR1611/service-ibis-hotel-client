@@ -6,7 +6,7 @@ import facebook_icon from "./Components/img/facebook.png";
 
 class Login extends Component{
     render(){
-        return(
+        return( 
             <section>
                 <div className="signin-and-signup">
                     <div id="bg-login" />

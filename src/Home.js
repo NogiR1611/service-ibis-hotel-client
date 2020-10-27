@@ -5,7 +5,6 @@ import Footer from "./Components/Footer";
 import "./Components/style.css";
 import event from "./Components/img/event.png";
 import  wisata from "./Components/img/wisata.png";
-import barang from "./Components/img/barang.png";
 
 class Home extends Component{
     render(){
@@ -57,16 +56,6 @@ class Home extends Component{
                             <img src={wisata} alt="" />
                             <p>
                                 Ketahui beragam tempat wisata unik dan menarik di seluruh bandung
-                            </p>
-                        </Link>
-                    </div>
-                    <div className="fitur" id="titipan-barang">
-                        <Link to="/titipan-barang">
-                            <h3>Penitipan barang di kamar</h3>
-                            <img src={barang} alt="" />
-                            <p>
-                                Ingin tidak ketinggalan barang saat checkout?
-                                Silahkan di titip ke kami agar kami mengingatkan anda nanti
                             </p>
                         </Link>
                     </div>

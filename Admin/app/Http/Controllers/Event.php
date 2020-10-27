@@ -57,7 +57,8 @@ class Event extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->back();
+        Session::flash('berhasil','Data berhasil di tambah kak :)');
+        return redirect('event');
     }
 
     public function edit_form($id){

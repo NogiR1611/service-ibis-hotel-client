@@ -17,7 +17,7 @@ class Footer extends Component{
                     <p>
                         <Link to="">Privacy Policy</Link>
                         <span id="mini-vertical-border"></span>
-                        <Link to="">About Us</Link>
+                        <Link to="/About">About Us</Link>
                         <span id="mini-vertical-border"></span>
                         <Link to="/contact">Contact Us</Link>
                     </p>

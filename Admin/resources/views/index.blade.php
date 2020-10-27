@@ -7,7 +7,7 @@
         <header>
             <a href="/"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
         </header>
-        <container>
+        <container> 
             <h1 style="text-align : center;">Selamat Datang di website khusus Admin</h1>
             <div class="Item-menu">
                 <h2>Tempat Wisata</h2>

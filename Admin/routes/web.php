@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TempatWisata;
 use App\Http\Controllers\Event;
@@ -16,8 +17,8 @@ use App\Http\Controllers\Tester;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',[IndexController::class,'get_data']);
+Route::get('/',[LoginController::class,'login']);
+Route::get('/index',[IndexController::class,'get_data']);
 
 //Tempat Wisata
 Route::get('/wisata/json',[TempatWisata::class,'json']);

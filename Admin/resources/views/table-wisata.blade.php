@@ -1,4 +1,4 @@
-<html>
+s<html>
     <head>
         <title>Tabel Data Wisata</title>
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -11,7 +11,15 @@
         <div class="card-title">
             <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>
         </div>
+        <!-- menampilkan pesan berhasil di update -->
         @if ($message = Session::get('sukses'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button> 
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+        <!-- menampilkan pesan berhasil di tambahkan-->
+        @if ($message = Session::get('berhasil'))
             <div class="alert alert-success alert-block">
                 <button type="button" class="close" data-dismiss="alert">×</button> 
                 <strong>{{ $message }}</strong>
@@ -26,6 +34,7 @@
                     <th>Harga</th>
                     <th>Foto</th>
                     <th>Deskripsi</th>
+                    <th>Diperbarui</th>
                 </tr>
             </thead>
             @foreach($tempat_wisata as $tw)
@@ -37,9 +46,10 @@
                     <td>{{ $tw->lokasi }}</td>
                     <td>{{ $tw->urlimage }}</td>
                     <td id="str">{{ $tw->deskripsi }}...</td>
+                    <td>{{ $tw->updatedAt}}</td>
                     <td>
-                        <a href='/tempat-wisata/edit/{{ $tw->id }}'>Edit</a>
-                        <a href='/tempat-wisata/delete/{{ $tw->id }}'>Delete</a>
+                        <a class="btn btn-primary" href='/tempat-wisata/edit/{{ $tw->id }}' role="button">Edit</a>
+                        <a class="btn btn-success" href='/tempat-wisata/delete/{{ $tw->id }}' role="button">Hapus</a>
                     </td>
                 </tr>
             </tbody>

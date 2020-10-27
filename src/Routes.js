@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import { BrowserRouter as Router,Route} from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
+import About from "./About";
 import Contact from "./contact/Contact";
 import ListWisata from "./tempat_wisata/List_Tempat_Wisata";
 import DeskripsiWisata from "./tempat_wisata/Tempat_wisata";
@@ -16,6 +17,7 @@ class Routes extends Component{
             <Router basename="/ibishotel-with-react">
                 <Route exact path="/" component={Home} />
                 <Route path="/Login" component={Login} />
+                <Route path="/About" component={About} />
                 <Route path="/Contact" component={Contact} />
                 <Route path="/List-wisata" component={ListWisata} />
                 <Route path="/Tempat-wisata/:id" component={DeskripsiWisata} />
