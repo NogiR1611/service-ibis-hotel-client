@@ -47,3 +47,6 @@ Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
 
 Route::get('/testing',[Tester::class,'get_test']);
 Route::post('testing/kirim',[Tester::class,'post_testing']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

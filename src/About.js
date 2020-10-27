@@ -1,18 +1,54 @@
 import React,{Component} from "react";
+import bedroom from "./Components/img/bedroom.png";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import cleaningService from "./Components/img/cleaning-service.png";
+import restaurant from "./Components/img/restaurant.png";
+import wifi from "./Components/img/wifi.png";
+import parking from "./Components/img/parking.png";
+import roomService from "./Components/img/room-service.png";
 import "./Components/style.css";
 
 class About extends Component{
     render(){
+        const title = {
+            "text-align" : "center",
+            "margin" : "10px 0px"
+        };
+
         return(
             <React.Fragment>
                 <Header />
-                <h1>Tentang Kami</h1>
+                <h1 style={title}>Tentang Kami</h1>
                 <div className="About">
                     <div className="spesification">
+                        <div className="built-years">
+                            <h4><b>Tahun Dibuat : </b></h4>
+                            <span>2014</span>
+                        </div>
+                        <div className="bedroom">
+                            <img src={bedroom} alt="" />
+                            <span class="amount-bedroom"><b>Jumlah Kamar</b> : 147</span>
+                        </div>
+                        <div className="facility">
+                            <div className="img-facility">
+                                <img src={cleaningService} alt="" />
+                                <img src={restaurant} alt="" />
+                                <img src={wifi} alt="" />
+                                <img src={parking} alt="" />
+                                <img src={roomService} alt="" />
+                            </div>
+                            <div className="descript-facility">
+                                <span><b>Cleaning Service</b></span>
+                                <span><b>Restaurant</b></span>
+                                <span><b>Wifi</b></span>
+                                <span><b>Parking</b></span>
+                                <span><b>Room Service</b></span>
+                            </div>
+                        </div>
                     </div>
                     <div className="info-hotel">
+                        <h3 style={title}>Profil</h3>
                         <p>
                         Ibis Bandung Pasteur terletak di kawasan strategis,
                         dekat dengan jalan layang Pasupati merupakan pilihan terbaik bagi Anda yang ingin menikmati kenyamanan dan kemudahan selama berlibur.
