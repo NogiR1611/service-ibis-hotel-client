@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TempatWisata;
 use App\Http\Controllers\Event;
 use App\Http\Controllers\PesanKlien;
+use App\Http\Controllers\Livewire\Auth\Login;
 use App\Http\Controllers\Tester;
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use App\Http\Controllers\Tester;
 */
 Route::get('/',[LoginController::class,'login']);
 Route::get('/index',[IndexController::class,'get_data']);
-
+ 
 //Tempat Wisata
 Route::get('/wisata/json',[TempatWisata::class,'json']);
 Route::get('/wisata',[TempatWisata::class,'get_tempat_wisata'])->name('wisata');
@@ -43,10 +44,6 @@ Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
 Route::get('/inbox/{id}',[PesanKlien::class,'get_id_inbox']);
 Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
 
-//Notifikasi Controller
-
-Route::get('/testing',[Tester::class,'get_test']);
-Route::post('testing/kirim',[Tester::class,'post_testing']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

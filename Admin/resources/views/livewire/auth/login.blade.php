@@ -11,12 +11,12 @@
                 <div id="login"> 
                     <b><h1>Login</h1></b>
                     <p>Silahkan Bagi Karyawan yang memiliki akun untuk isi username dan password yang sudah diberikan</p>
-                    <form action="" method="post">
+                    <form wire:submit.prevent="login">
                         <label>Username : </label>
-                        <input type="text" name="username" alt="">
+                        <input type="text" wire:model.lazy="username" alt="">
                         <div id="form-border"></div>
                         <label>Password : </label>
-                        <input type="password" name="password" alt="">
+                        <input type="password" wire:model.lazy="password" alt="">
                         <div id="form-border"></div>
                         <button type="submit" class="button-signin-and-signup">Login</button>
                     </form>
