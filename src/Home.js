@@ -5,7 +5,7 @@ import Footer from "./Components/Footer";
 import "./Components/style.css";
 import event from "./Components/img/event.png";
 import  wisata from "./Components/img/wisata.png";
-
+ 
 class Home extends Component{
     render(){
         return(

@@ -1,4 +1,4 @@
-s<html>
+<html>
     <head>
         <title>Tabel Data Wisata</title>
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -66,7 +66,7 @@ s<html>
             document.getElementById("years").innerHTML = years;
         
             let req = document.getElementById("str").innerHTML;
-            let str = req.substr(0,2);
+            let str = req.substr(0,15);
             document.getElementById("str").innerHTML = str;
         </script>
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

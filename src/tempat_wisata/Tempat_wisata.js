@@ -54,11 +54,12 @@ class DeskripsiWisata extends Component{
 
     render(){
         let Data = this.state.Data;
+        
         return(
             <React.Fragment>
                 <Header />
                 <h1>Tempat wisata kami</h1>
-                <h1>{Data.nama_tempat_wisata}</h1>
+                <h1>{Data.nama_tempat_wisata}</h1><br/>
                 <p>{Data.deskripsi}</p>
                 <Footer />
             </React.Fragment>

@@ -37,7 +37,7 @@
             <label>Foto : </label></br>
             <input type="file" action="/upload" name="urlimage" required="required" value="{{ old('urlimage') }}" id="image"></br>
             <label>Deskripsi : </label></br>
-            <textarea cols="80" rows="20" name="deskripsi" value="{{ old('deskripsi') }}"></textarea></br>
+            <textarea cols="80" rows="20" name="deskripsi" value="{{ old('deskripsi') }}" id="deskripsi"></textarea></br>
             <button type="submit" class="button-confirm">Tambahkan</button>
         </form>
     </div>
@@ -50,6 +50,9 @@
         let time = new Date();
         let years = time.getFullYear();
         document.getElementById("years").innerHTML = years;
+        let deskripsi = document.getElementById("deskripsi").innerHTML;
+        let enter = deskripsi.replace(\r\n,<br/>);
+        document.getElementById("deskripsi").innerHTML = enter;
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

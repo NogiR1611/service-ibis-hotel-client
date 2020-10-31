@@ -19,7 +19,7 @@ class About extends Component{
         return(
             <React.Fragment>
                 <Header />
-                <h1 style={title}>Tentang Kami yah</h1>
+                <h1 style={title}>Tentang Kami</h1>
                 <div className="About">
                     <div className="spesification">
                         <div className="built-years">

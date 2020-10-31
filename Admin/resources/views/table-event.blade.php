@@ -43,7 +43,7 @@
             </thead>
             @foreach($events as $e)
             <tbody>
-                <tr>
+                <tr> 
                     <td>{{ $e -> id }}</td>
                     <td>{{ $e -> nama_event }}</td>
                     <td>{{ $e -> tempat }}</td>
@@ -53,7 +53,7 @@
                     <td>{{ $e -> nomor }}</td>
                     <td>{{ $e -> email }}</td>
                     <td>{{ $e -> foto }}</td>
-                    <td>{{ $e -> deskripsi }}</td>
+                    <td id="deskripsi">{{ $e -> deskripsi }}</td>
                     <td>{{ $e -> updatedAt }}</td>
                     <td>
                         <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
