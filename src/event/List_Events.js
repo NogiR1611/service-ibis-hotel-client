@@ -22,7 +22,6 @@ class ListEvents extends Component{
         this.fetchListEvent();
     }
 
-    /*
     getRequestParams = (page,pageSize) =>{
         let params = {};
 
@@ -35,13 +34,17 @@ class ListEvents extends Component{
 
         return params;
     }
-    */
+    
     fetchListEvent = () => {
-        ListEventService.getAll()
+        const {page,pageSize} = this.state;
+        const params = this.getRequestParams(page,pageSize);
+
+        ListEventService.getAll(params)
         .then(response => {
-            const {data} = response.data;
+            const {list_events,totalPage} = response.data;
             this.setState({
-                Data : data,
+                Data : list_events,
+                count : totalPage,
                 isLoading : false
             });
         })
@@ -50,7 +53,6 @@ class ListEvents extends Component{
         });
     }
 
-    /*
     handlePageChange = (event,value) => {
         this.setState(
         {
@@ -61,7 +63,7 @@ class ListEvents extends Component{
         }
     )
     }
-    */
+
     render(){
         const border_list = {
             "border" : "1px solid black"
@@ -81,7 +83,7 @@ class ListEvents extends Component{
                 <ListPage 
                     title="Jadwal Event Terbaru di Kota Bandung"
                     list_item={Data.map( (element,index) =>
-                        <li key={index}>
+                        <li key={index}> 
                             <span style={border_list} />
                             <a href={'/event/' + element.id} className='link-item'>
                                 <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt="" />

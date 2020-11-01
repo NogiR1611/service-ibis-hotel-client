@@ -1,8 +1,8 @@
 import http from "./http-common";
 
 class ListWisataService {
-  getAll() {
-    return http.get("/json");
+  getAll(params) {
+    return http.get("/json",{params});
   }
 
   // other CRUD methods

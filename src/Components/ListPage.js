@@ -7,12 +7,19 @@ class ListPage extends Component{
         return(
             <div className='item_page'>
                 <h1>{this.props.title}</h1>
-                    <ul className='item_list'>
+                <ul className='item_list'>
                     {this.props.list_item}
-                    </ul>
-                    
-                    <Pagination count={this.props.count} page={this.props.page} onChange={this.props.onChange} variant="outlined" shape="rounded" />
-                    
+                </ul>
+                     
+                <Pagination
+                    count={this.props.count}
+                    page={this.props.page}
+                    onChange={this.props.onChange}
+                    siblingCount={1}
+                    boundaryCount={1}
+                    variant="outlined"
+                    shape="rounded"
+                />    
             </div>
         );
     }

@@ -10,7 +10,7 @@ import Events from "./event/List_Events";
 import DeskripsiEvents from "./event/Events";
 import titipanBarang from "./Titipan_barang";
 import listBarang from "./List_barang";
-
+ 
 class Routes extends Component{
     render(){
         return(

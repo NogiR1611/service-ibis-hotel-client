@@ -23,6 +23,7 @@ Route::get('/index',[IndexController::class,'get_data']);
  
 //Tempat Wisata
 Route::get('/wisata/json',[TempatWisata::class,'json']);
+Route::get('/wisata/json/{id}',[TempatWisata::class,'get_id_json']);
 Route::get('/wisata',[TempatWisata::class,'get_tempat_wisata'])->name('wisata');
 Route::get('/wisata/tambah',[TempatWisata::class,'get_form'])->name('tambah-wisata');
 Route::get('tempat-wisata/edit/{id}',[TempatWisata::class,'edit_form']);

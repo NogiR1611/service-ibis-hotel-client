@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import '../Components/style.css';
- 
 /*
 class TempatWisata extends Component{
     constructor(props){
@@ -46,7 +45,8 @@ class DeskripsiWisata extends Component{
             headers : {
                 'Content-Type' : 'application/json',
                 'Access-Allow-Control-Origin' : '*'
-            }
+            },
+            method : 'GET'
         })
         .then(res => res.json())
         .then(data => this.setState({Data : data}))
@@ -54,13 +54,26 @@ class DeskripsiWisata extends Component{
 
     render(){
         let Data = this.state.Data;
-        
+        const update = {
+            "margin" : "0px",
+            "justify-self" : "center"
+        };
+
         return(
             <React.Fragment>
                 <Header />
-                <h1>Tempat wisata kami</h1>
-                <h1>{Data.nama_tempat_wisata}</h1><br/>
-                <p>{Data.deskripsi}</p>
+                <div className="Item-styling">
+                    <h1>Tempat wisata yang Kami rekomendasikan di Bandung</h1>
+                    <h3>{Data.nama_tempat_wisata}</h3><br/>
+                    <div className="update">
+                        <span style={update}>Update : </span><br/>
+                        <span style={update}>{Data.updatedAt}</span>
+                    </div>
+                    <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />
+                    <p><strong>Lokasi : </strong>{Data.lokasi}</p>
+                    <p><strong>Harga : </strong>{Data.harga}</p>
+                    <p>{Data.deskripsi}</p>
+                </div>
                 <Footer />
             </React.Fragment>
         );
