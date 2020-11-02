@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import tempat from "../Components/img/location.png";
+import harga from "../Components/img/price.png";
 import '../Components/style.css';
 /*
 class TempatWisata extends Component{
@@ -69,9 +71,23 @@ class DeskripsiWisata extends Component{
                         <span style={update}>Update : </span><br/>
                         <span style={update}>{Data.updatedAt}</span>
                     </div>
-                    <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />
-                    <p><strong>Lokasi : </strong>{Data.lokasi}</p>
-                    <p><strong>Harga : </strong>{Data.harga}</p>
+                    <div className="img-and-facility">
+                        <div>
+                            <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />
+                        </div>
+                        <div>
+                            <div className="lokasi-item" id="Lokasi">
+                                <img src={tempat} alt="" />
+                                <span><b>Lokasi : </b></span>
+                                <span>{Data.lokasi}</span>
+                            </div>
+                            <div className="lokasi-item" id="Harga">
+                                <img src={harga} alt="" />
+                                <span><b>Harga : </b></span>
+                                <span>{Data.harga}</span>
+                            </div>
+                        </div>
+                    </div>
                     <p>{Data.deskripsi}</p>
                 </div>
                 <Footer />

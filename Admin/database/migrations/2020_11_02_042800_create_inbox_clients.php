@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInboxClient extends Migration
+class CreateInboxClients extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateInboxClient extends Migration
      */
     public function up()
     {
-        Schema::create('inbox_client', function (Blueprint $table) {
+        Schema::create('inbox_clients', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_klien',30);
+            $table->string('nama_kontak',30);
             $table->string('email',30);
             $table->text('pesan',2000);
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('createdAt')->useCurrent();
+            $table->timestamp('updatedAt')->useCurrent();
         });
     }
 
@@ -30,6 +30,6 @@ class CreateInboxClient extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inbox_client');
+        Schema::dropIfExists('inbox_clients');
     }
 }

@@ -10,7 +10,7 @@ class Contact extends Component{
     constructor(props){
         super(props)
         this.state = {
-            nama_klien : "",
+            nama_kontak : "",
             email : "",
             pesan : "",
             notification : ""
@@ -29,23 +29,13 @@ class Contact extends Component{
 
     postMessageClient = () => {
         const data = {
-            nama_klien : this.state.nama_klien,
+            nama_kontak : this.state.nama_kontak,
             email   : this.state.email,
             pesan   : this.state.pesan
         };
-        const messages = 
-        <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert">×</button> 
-            <strong>Pesan anda sudah dikirim</strong>
-        </div>
 
         axios.post("http://localhost:4000/pesan/kirim",data)
-        .then( data => {
-            this.setState({
-                notification : messages
-            })
-            console.log(data)
-        })
+        .then( data => console.log(data))
         .catch(err => console.log(err));
     }
 
@@ -65,7 +55,7 @@ class Contact extends Component{
                 <div id="contact">
                     <form onSubmit={this.postMessageClient}>
                         <label>Nama : </label><br />
-                        <input type="text" name="nama_klien" onChange={this.handleChange} required="required"/><br />
+                        <input type="text" name="nama_kontak" onChange={this.handleChange} required="required"/><br />
                         <label>email anda : </label><br />
                         <input type="email" name="email" onChange={this.handleChange} placeholder="Contoh:example@gmail.com" required="required"/>
                         <br/>

@@ -20,7 +20,7 @@ use App\Http\Controllers\Tester;
 */
 Route::get('/',[LoginController::class,'login']);
 Route::get('/index',[IndexController::class,'get_data']);
- 
+  
 //Tempat Wisata
 Route::get('/wisata/json',[TempatWisata::class,'json']);
 Route::get('/wisata/json/{id}',[TempatWisata::class,'get_id_json']);

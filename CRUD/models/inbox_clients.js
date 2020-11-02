@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   inbox_clients.init({
-    nama_kontak: DataTypes.STRING,
+    nama_klien: DataTypes.STRING,
     email: DataTypes.STRING,
     pesan: DataTypes.STRING
   }, {

@@ -55,7 +55,7 @@ router.get('/:id',(req,res,next) => {
 //Kirim pesan feedback klien dari web klien
 router.post('/kirim',(req,res) => {
     const pesan = {
-        nama_kontak : req.body.nama_kontak,
+        nama_klien : req.body.nama_klien,
         email   : req.body.email,
         pesan   : req.body.pesan
     };

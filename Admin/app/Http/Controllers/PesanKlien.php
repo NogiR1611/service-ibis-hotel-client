@@ -23,7 +23,7 @@ class PesanKlien extends Controller
             'nama_klien'=> $request->nama_klien,
             'email'=> $request->email,
             'pesan'=>$request->pesan
-        ]);
+        ]); 
 
         return redirect()->back();
     }

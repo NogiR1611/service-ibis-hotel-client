@@ -685,8 +685,8 @@ footer{
 }
 
 .Item-styling img{
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 700px;
     margin:20px 100px;
 }
 
@@ -694,17 +694,55 @@ footer{
     text-align: center;
 }
 
+.img-and-facility{
+    display:grid;
+    grid-template-columns:70% auto;
+}
+
 .lokasi-item{
-    width:100px;
+    text-align: center;
+    width:250px;
     height:100px;
-    padding:10px 10px;
-    background-color: #c28204;
+    border-radius: 8px;
+    padding:20px 10px;
+    margin:30px 0px;
 }
 
 .lokasi-item img{
-    width:15px;
-    height:15px;
+    width:25px;
+    height:25px;
+    margin:0px 30px;
 }
+
+.lokasi-item span{
+    display:block;
+}
+
+#Lokasi{
+    background-color: #c28204;
+}
+
+#Tanggal{
+    background-color: #7df0d1;
+}
+
+#Waktu{
+    background-color: #49afeb;
+}
+
+#Harga{
+    background-color: #ff8308;
+}
+
+#Email{
+    background-color: #85de88;
+}
+
+#Nomor{
+    background-color: #fcd703;
+}
+
+
 
 @media screen and (max-width: 768px){
     header{
@@ -820,5 +858,25 @@ footer{
     .info-hotel{
         padding: 20px 20px;
         margin: 20px 5px;
+    }
+
+    .img-and-facility .image-item{
+        width : 400px;
+        height : 500px;
+        margin : 20px 20px;
+    }
+
+    .lokasi-item{
+        width: 150px;
+        height: 100spx;
+        margin:20px 30px;
+        padding: 20px 10px;
+        font-size: 12px;
+    }
+
+    .lokasi-item img{
+        width: 20px;
+        height: 20px;
+        margin: 0px 20px;
     }
 }
