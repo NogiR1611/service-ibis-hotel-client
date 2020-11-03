@@ -2,6 +2,11 @@ import React,{Component} from "react";
 import {Link} from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import building from "./Components/img/sliders/building_logo.png";
+import breakfast from "./Components/img/sliders/breakfast_logo.png";
+import eatingroom from "./Components/img/sliders/eatingroom_logo.png";
+import meetingroom from "./Components/img/sliders/meetingroom_logo.png";
+import sleepingroom from "./Components/img/sliders/sleepingroom_logo.png";
 import "./Components/style.css";
 import event from "./Components/img/event.png";
 import  wisata from "./Components/img/wisata.png";
@@ -21,19 +26,19 @@ class Home extends Component{
                     <div id="slider">
                         <figure>
                             <div className="slide" id="building">
-                                <h1><b>Hotel yang berada di wilayah strategis</b></h1>
+                                <img src={building} alt="" />
                             </div>
                             <div className="slide" id="breakfast">
-                                <h1><b>menyajikan beragam pilihan varian sarapan untuk anda</b></h1>
+                                <img src={breakfast} alt="" />
                             </div>
                             <div className="slide" id="eatingroom">
-                                <h1><b>Memiliki restoran yang nyaman untuk bersantai</b></h1>
+                                <img src={eatingroom} alt="" />
                             </div>
                             <div className="slide" id="meetingroom">
-                                <h1><b>Memiliki ruang meeting room untuk melakukan berbagai pertemuan</b></h1>
+                                <img src={meetingroom} alt="" />
                             </div>
                             <div className="slide" id="sleepingroom">
-                                <h1><b>Kamar tidur yang nyaman dan menyajikan indahnya pemandangan kota bandung</b></h1>
+                                <img src={sleepingroom} alt="" />
                             </div>
                         </figure>
                     </div>
