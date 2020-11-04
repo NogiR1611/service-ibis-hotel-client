@@ -450,6 +450,10 @@ footer{
     background-color:#1E90FF;
 }
 
+.item_list{
+    padding:0px;
+}
+
 .menu-contact{
     padding:40px 50px;
     display:grid;
@@ -597,10 +601,11 @@ footer{
 .About{
     display:grid;
     grid-template-columns: 30% auto;
-    margin-bottom: 200px;
+    margin-bottom: 120px;
 }
 
 .spesification{
+    justify-self: center;
     display:grid;
     grid-template-rows:repeat(3,auto);
 }
@@ -692,6 +697,18 @@ footer{
 .img-and-facility{
     display:grid;
     grid-template-columns:70% auto;
+    grid-template-areas:
+        "img-item"
+        "location-item";
+}
+
+
+#Location-Item{
+    grid-area: "location-item";
+}
+
+#Img-Item{
+    grid-area: "img-item";
 }
 
 .lokasi-item{
@@ -753,6 +770,10 @@ footer{
         display:block;
         margin: 12px 10px;
     }
+
+    .item_list{
+        padding:0px;
+    }
     
     .Item-styling img{
         margin: 20px 20px;
@@ -769,7 +790,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 768px){
+@media only screen and (max-width: 768px){
     header{
         width: 100%;
     }
@@ -827,7 +848,7 @@ footer{
     .About{
         display:grid;
         grid-template-columns: 30% auto;
-        margin-bottom: 150px;
+        margin-bottom: 120px;
     }
 
     .built-years{
@@ -844,6 +865,10 @@ footer{
         transition : all .3s;
     }
 
+    .item_list{
+        padding:0px;
+    }
+    
     .img-facility img{
         width: 30px;
         height: 30px;
@@ -1018,9 +1043,13 @@ footer{
     .item h3,p{
         margin:0px;
     }
+
+    .item_list{
+        padding:0px;
+    }
 }
 
-@media screen and (max-width:425px){
+@media only screen and (max-width:425px){
     .welcome h3{
         font-size: 22px;
     }
@@ -1069,12 +1098,245 @@ footer{
     }
 
     #contact input{
+        font-size:12px;
         width: 200px;
         height: 20px;
     }
 
     #contact textarea{
+        font-size:12px;
         width: 240px;
         height: 100px;
+    }
+
+    #contact form button{
+        font-size:12px;
+    }
+
+    .menu-contact{
+        padding:40px 30px;
+    }
+    .menu-contact ul h3{
+        font-size:12px;
+    }
+
+    .menu-contact p{
+        font-size: 10px;
+    }
+
+    #menu-sosmed h3{
+        font-size:12px;
+    }
+
+    #menu-sosmed a img{
+        width: 22%;
+        height: 22%;
+        margin:0px 5px;
+    }
+
+    .tentang_kami{
+        font-size: 14px;
+    }
+
+    .spesification{
+        grid-area: "specification";
+        display:grid;
+        grid-template-rows:repeat(3,auto);
+        width: 30%;
+    }
+    
+    .built-years h4,span{
+        font-size: 11px;
+    }
+
+    .info-hotel{
+        grid-area: "info-hotel";
+        margin: 10px 10px;
+    }
+
+    .info-hotel p{
+        font-size: 10px;
+    }
+
+    .info-hotel h3{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .bedroom span{
+        font-size: 11px;
+    }
+
+    .descript-facility span{
+        font-size: 10px;
+        margin: 12px 5px;
+    }
+
+    .img-facility img{
+        width: 23px;
+        height: 23px;
+    }
+
+    .built-years{
+        padding: 10px 10px;
+        margin:10px 10px;
+        width: 70%;
+        height: 65%;
+    }
+
+    .bedroom{
+        padding:10px 8px;
+        margin:10px 10px;
+        width: 70%;
+        height: 80%;
+    }
+
+    .bedroom img{
+        margin: 0px 0px;
+        justify-content: center;
+    }
+
+    .facility{
+        padding:10px 10px;
+        margin:10px 10px;
+        width: 70%;
+        height: 85%;
+    }
+
+    .About{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .Item-styling h1{
+        font-size: 16px;
+    }
+
+    .item_page h3{
+        font-size: 22px;
+    }
+
+    .item_page ul li a{
+        text-align: center;
+    }
+
+    .item_page ul li .item{
+        margin:10px 10px;
+        padding:0px;
+    }
+
+    .item h3{
+        font-size: 22px;
+    }
+
+    .deskripsi p{
+        font-size: 12px;
+    }
+
+    .list-image-item{
+        height: 270px;
+        width: 180px;
+    }
+
+    .img-and-facility{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 70% auto;
+        grid-template-areas: 
+            "img-item"
+            "location-item";
+    }
+
+    .Item-styling .image-item{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+
+    .Item-styling h3{
+        font-size: 18px;
+        margin:0px;
+    }
+
+    .item_list{
+        padding:0px;
+    }
+
+    .Item-styling p{
+        font-size: 12px;
+    }
+
+    #Img-Item{
+        justify-self: center;
+    }
+
+    #Location-Item{
+        justify-self: center;
+        display:grid;
+        grid-template-rows: repeat(2,auto);
+        grid-template-columns: repeat(2,auto);
+    }
+
+    .lokasi-item{
+        width: 120px;
+        height: 90px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+    }
+
+    .lokasi-item img{
+        width: 30%;
+        height: 30%;
+        margin:0px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .fitur{
+        margin: 20px 10px;
+    }
+
+    footer p{
+        font-size: 10px;
+    }
+
+    #contact{
+        padding: 20px 80px;
+    }
+
+    .item_list{
+        padding:0px;
+    }
+
+    .menu-contact #menu-sosmed{
+        padding:0px 30px;
+    }
+}
+
+@media only screen and (max-width:320px){
+    #slider{
+        width: 75%;
+        height: 200px;
+        margin: 20px 20px;
+    }
+    .fitur{
+        margin: 20px 5px;
+        padding: 20px 5px;
+    }
+
+    #contact{
+        padding: 20px 50px;
+    }
+
+    .menu-contact #menu-sosmed{
+        padding:0px 15px;
+    }
+
+    .item_list{
+        padding:0px;
+    }
+
+    .Item-styling{
+        padding:0px 10px;
     }
 }

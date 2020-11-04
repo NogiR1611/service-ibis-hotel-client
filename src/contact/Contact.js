@@ -70,7 +70,7 @@ class Contact extends Component{
                         <h3>Atau silahkan hubungi kontak di bawah ini</h3>
                         <li><p>Tel: +622282602020</p></li>
                         <li><p>Faks: (+62)22/82601896</p></li>
-                        <li><p>Email kontak : H9397-RE@accor.com</p></li>
+                        <li><p>Email: H9397-RE@accor.com</p></li>
                     </ul>
                     <div id="menu-sosmed">
                         <h3>Follow our social media</h3>

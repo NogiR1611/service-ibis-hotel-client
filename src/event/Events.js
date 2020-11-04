@@ -37,17 +37,17 @@ class DeskripsiEvents extends Component{
             <React.Fragment>
                 <Header />
                 <div className="Item-styling">
-                    <h1>Events Yang Akan di adakan di Kota Bandung</h1><br/>
+                    <h1><b>Events Yang akan di adakan di Kota Bandung</b></h1><br/>
                     <h1>{Data.nama_event}</h1>
                     <div className="update">
                         <span>Update : </span><br/>
                         <span>{Data.updatedAt}</span>
                     </div>
                     <div className="img-and-facility">
-                        <div>
+                        <div id="Img-Item">
                             <img src={'http://localhost:8000/img_event/' + Data.foto} className="image-item" alt="" />
                         </div>
-                        <div>
+                        <div id="Location-Item">
                             <div className="lokasi-item" id="Lokasi">
                                 <img src={lokasi} alt="" />
                                 <span><b>Lokasi : </b></span>

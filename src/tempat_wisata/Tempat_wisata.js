@@ -65,17 +65,17 @@ class DeskripsiWisata extends Component{
             <React.Fragment>
                 <Header />
                 <div className="Item-styling">
-                    <h1>Tempat wisata yang Kami rekomendasikan di Bandung</h1>
-                    <h3>{Data.nama_tempat_wisata}</h3><br/>
+                    <h1><b>Tempat wisata yang Kami rekomendasikan di Bandung</b></h1>
+                    <h3>{Data.nama_tempat_wisata}</h3>
                     <div className="update">
                         <span style={update}>Update : </span><br/>
                         <span style={update}>{Data.updatedAt}</span>
                     </div>
                     <div className="img-and-facility">
-                        <div>
+                        <div id="Img-Item">
                             <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />
                         </div>
-                        <div>
+                        <div id="Location-Item">
                             <div className="lokasi-item" id="Lokasi">
                                 <img src={tempat} alt="" />
                                 <span><b>Lokasi : </b></span>
