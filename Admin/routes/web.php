@@ -40,9 +40,10 @@ Route::post('/event/kirim',[Event::class,'post_event']);
 Route::post('/event/update/{id}',[Event::class,'update_event']);
 Route::get('/event/delete/{id}',[Event::class,'delete_event']);
 
-//pesan klien
+//pesan klien 
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
 Route::get('/inbox/{id}',[PesanKlien::class,'get_id_inbox']);
+Route::get('inbox/delete/{id}',[PesanKlien::class,'delete_inbox']);
 Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

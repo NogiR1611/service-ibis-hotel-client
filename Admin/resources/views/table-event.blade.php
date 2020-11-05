@@ -1,12 +1,15 @@
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <title>Tabel Data Event</title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
         <header>
-            <a href="/"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
+            <a href="/index"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
         <div class="card-title">
             <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>

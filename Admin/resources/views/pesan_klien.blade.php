@@ -1,18 +1,39 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <title>Pesan Klien</title>
-        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('./css/style.css') }}">
     </head>
     <body>
         <header>
-            <a href="/"><img src="./image_index/logo-ibis.png"></img></a>
+            <a href="/index"><img src="{{ asset('./img/logo-ibis.png') }}"></img></a>
         </header>
         <container>
-            {{#results}}
-                <p>{{ nama_kontak }}</p>
-                <p>{{ pesan }}</p>
-            {{/results}}
+            <div class="title-inbox">
+                <h3>Kotak Masuk</h3>
+            </div>
+            @foreach($pesan_klien as $pk)
+            <div class="slide-inbox-client">
+                <div class="descript-option">
+                    <div class="descript-sender">
+                        <p><b>Nama Pengirim &emsp;:</b> {{ $pk -> nama_kontak }}</p>
+                        <p><b>Email &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;: </b> {{ $pk -> email}}</p>
+                        <p><b>Tanggal &emsp;&emsp;&emsp;&emsp;&ensp;:</b> {{ $pk -> createdAt}}</p>
+                    </div>
+                    <div class="option">
+                        <a class="btn btn-success" href='/inbox/delete/{{ $pk->id }}' role="button">
+                            <img src="{{ asset('./img/trash.png') }}" class="trash-icon" alt="">
+                        <span>Hapus</span>
+                        </a>
+                    </div>
+                </div>    
+                <p><b>Pesan : </b></p>
+                <p>{{ $pk -> pesan }}</p>
+            </div>
+            @endforeach
         </container>
         <footer>
             <div className="bottom-footer">

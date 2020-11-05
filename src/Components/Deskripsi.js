@@ -15,7 +15,7 @@ class Deskripsi extends Component{
     }
 
     render(){
-        return(
+        return( 
             <p>{this.state.value} ...[]</p>
         );
     }

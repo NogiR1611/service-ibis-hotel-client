@@ -139,8 +139,12 @@ header img{
 
 .table_data,th,td{
   border: 1px solid #999;
-  padding: 8px 20px;
+  padding: 8px 5px;
   font-size: 14px; 
+}
+
+.table_data,th{
+  text-align: center;
 }
 
 .card{
@@ -200,4 +204,75 @@ footer{
 
 .btn{
   margin: 5px 5px;
+}
+
+.list-inbox{
+  margin-bottom: 50px;
+}
+
+.list-inbox ul{
+  padding:0px;
+}
+
+.list-inbox ul li{
+  display: grid;
+  grid-template-columns : 92% auto;
+  list-style: none;
+  border:2px solid black;
+  padding: 20px 20px;
+  margin: 0px 20px;
+}
+
+.list-inbox ul li a{
+  text-decoration: none;
+  color: black;
+  padding:0 auto;
+  list-style-type: none;
+}
+
+.title-inbox{
+  padding:20px 20px;
+  text-align: center;
+}
+
+.descript-option{
+  display: grid;
+  grid-template-columns: 70% auto;
+}
+
+.option{
+  text-align:right;
+}
+
+.slide-inbox-client{
+  width: 80%;
+  height: 70%;
+  padding:20px 40px;
+  margin:30px auto;
+  border: 1px solid black;
+}
+
+.trash-icon{
+  width: 30px;
+  height: 30px;
+}
+
+#pesan{
+  display: none;
+}
+
+#str{
+  display: none;
+}
+
+@media only screen and (max-width:1024px){
+  .card form{
+    padding: 0px 20px;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .Item-menu-inbox{
+    margin: 20px 150px;
+  }
 }

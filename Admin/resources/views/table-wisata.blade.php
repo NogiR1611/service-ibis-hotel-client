@@ -1,12 +1,15 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Tabel Data Wisata</title>
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
-    <body>
+    <body> 
         <header>
-            <a href="/"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
+            <a href="/index"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
         <div class="card-title">
             <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>
@@ -45,7 +48,10 @@
                     <td>{{ $tw->harga }}</td>
                     <td>{{ $tw->lokasi }}</td>
                     <td>{{ $tw->urlimage }}</td>
-                    <td id="str">{{ $tw->deskripsi }}...</td>
+                    <td>
+                        <span id="str">{{ $tw->deskripsi }}</span>
+                        <span id="muncul"></span>
+                    </td>
                     <td>{{ $tw->updatedAt}}</td>
                     <td>
                         <a class="btn btn-primary" href='/tempat-wisata/edit/{{ $tw->id }}' role="button">Edit</a>
@@ -63,11 +69,11 @@
         <script>
             let time = new Date();
             let years = time.getFullYear();
-            document.getElementById("years").innerHTML = years;
-        
             let req = document.getElementById("str").innerHTML;
             let str = req.substr(0,15);
-            document.getElementById("str").innerHTML = str;
+
+            document.getElementById("years").innerHTML = years;
+            document.getElementById("muncul").innerHTML = str + "...";
         </script>
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
