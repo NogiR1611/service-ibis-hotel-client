@@ -275,4 +275,69 @@ footer{
   .Item-menu-inbox{
     margin: 20px 150px;
   }
+
+  .list-inbox ul li{
+    display:grid;
+    grid-template-columns: 88% auto;
+  }
+
+  .slide-inbox-client p{
+    font-size: 14px;
+  }
+
+  .option span{
+    font-size: 14px;
+  }
+
+  .table_data{
+    width: 100%;
+    margin:20px 0px;
+  }
+
+  .table_data thead th .column-primary{
+      width:100%;
+  }
+
+  .table_data thead th:not(.column-primary){
+    display: none;
+  }
+
+  .table_data th[scope="row"]{
+    vertical-align: top;     
+  }
+
+  .table_data td{
+    display: block;
+    text-align: right;
+  }
+
+  .table_data thead th::before{
+    content: attr(data-header);
+  }
+
+  .table_data td::before{
+    float: left;
+    font-weight: bold;
+    content: attr(data-header);
+  }
+
+  .card-title h2{
+    font-size: 18px;
+  }
+
+  .card form label{
+    font-size: 14px;
+  }
+
+  .card form input{
+    font-size: 14px;
+  }
+
+  .card form textarea{
+    font-size: 14px;
+  }
+
+  .card form .button-confirm{
+    font-size: 14px;
+  }
 }

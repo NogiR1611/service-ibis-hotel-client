@@ -31,32 +31,31 @@
         <table class="table_data">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nama tempat wisata</th>
-                    <th>Lokasi</th>
-                    <th>Harga</th>
-                    <th>Foto</th>
-                    <th>Deskripsi</th>
-                    <th>Diperbarui</th>
+                    <th scope="col" class="column-primary" data-header="DATA"></th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nama tempat wisata</th>
+                    <th scope="col">Lokasi</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Diperbarui</th>
+                    <th scope="col" class="column-primary">OPSI</th>
                 </tr>
             </thead>
             @foreach($tempat_wisata as $tw)
             <tbody>
                 <tr>
-                    <td>{{ $tw ->id }}</td>
-                    <td>{{ $tw->nama_tempat_wisata }}</td>
-                    <td>{{ $tw->harga }}</td>
-                    <td>{{ $tw->lokasi }}</td>
-                    <td>{{ $tw->urlimage }}</td>
-                    <td>
-                        <span id="str">{{ $tw->deskripsi }}</span>
-                        <span id="muncul"></span>
-                    </td>
-                    <td>{{ $tw->updatedAt}}</td>
-                    <td>
+                    <td data-header="Id">{{ $tw ->id }}</td>
+                    <td data-header="Nama Tempat Wisata">{{ $tw->nama_tempat_wisata }}</td>
+                    <td data-header="Harga">{{ $tw->harga }}</td>
+                    <td data-header="Lokasi">{{ $tw->lokasi }}</td>
+                    <td data-header="Foto">{{ $tw->urlimage }}</td>
+                    <td data-header="deskripsi">{{ $tw->deskripsi }}</td>
+                    <td data-header="Diperbarui">{{ $tw->updatedAt}}</td>
+                    <th scope="row">
                         <a class="btn btn-primary" href='/tempat-wisata/edit/{{ $tw->id }}' role="button">Edit</a>
                         <a class="btn btn-success" href='/tempat-wisata/delete/{{ $tw->id }}' role="button">Hapus</a>
-                    </td>
+                    </th>
                 </tr>
             </tbody>
             @endforeach

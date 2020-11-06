@@ -31,34 +31,35 @@
         <table class="table_data">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Nama Event</th>
-                    <th>Tempat</th>
-                    <th>Tanggal</th>
-                    <th>Waktu</th>
-                    <th>Harga</th>
-                    <th>Nomor</th>
-                    <th>Email</th>
-                    <th>Foto</th>
-                    <th>Deskripsi</th>
-                    <th>Diperbarui</th>
+                    <th scope="col" class="column-primary" data-header="DATA"></th>
+                    <th scope="col">Nama Event</th>
+                    <th scope="col">Tempat</th>
+                    <th scope="col">Tanggal</th>
+                    <th scope="col">Waktu</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Nomor</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Diperbarui</th>
+                    <th scope="col" class="column-primary">OPSI</th>
                 </tr>
             </thead>
             @foreach($events as $e)
             <tbody>
                 <tr> 
-                    <td>{{ $e -> id }}</td>
-                    <td>{{ $e -> nama_event }}</td>
-                    <td>{{ $e -> tempat }}</td>
-                    <td>{{ $e -> tanggal }}</td>
-                    <td>{{ $e -> waktu }}</td>
-                    <td>{{ $e -> harga }}</td>
-                    <td>{{ $e -> nomor }}</td>
-                    <td>{{ $e -> email }}</td>
-                    <td>{{ $e -> foto }}</td>
-                    <td id="deskripsi">{{ $e -> deskripsi }}</td>
-                    <td>{{ $e -> updatedAt }}</td>
-                    <td>
+                    <td data-header="Id">{{ $e -> id }}</td>
+                    <td data-header="Nama Event">{{ $e -> nama_event }}</td>
+                    <td data-header="Tempat">{{ $e -> tempat }}</td>
+                    <td data-header="Tanggal">{{ $e -> tanggal }}</td>
+                    <td data-header="Waktu">{{ $e -> waktu }}</td>
+                    <td data-header="Harga">{{ $e -> harga }}</td>
+                    <td data-header="Nomor">{{ $e -> nomor }}</td>
+                    <td data-header="Email">{{ $e -> email }}</td>
+                    <td data-header="Foto">{{ $e -> foto }}</td>
+                    <td data-header="Deskripsi" id="deskripsi">{{ $e -> deskripsi }}</td>
+                    <td data-header="Diperbarui">{{ $e -> updatedAt }}</td>
+                    <th scope="row">
                         <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
                         <a class="btn btn-success" href='/event/delete/{{ $e->id }}' role="button">Hapus</a>
                     </td>
