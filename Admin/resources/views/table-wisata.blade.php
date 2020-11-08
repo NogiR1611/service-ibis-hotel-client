@@ -32,7 +32,6 @@
             <thead>
                 <tr>
                     <th scope="col" class="column-primary" data-header="DATA"></th>
-                    <th scope="col">Id</th>
                     <th scope="col">Nama tempat wisata</th>
                     <th scope="col">Lokasi</th>
                     <th scope="col">Harga</th>
@@ -61,7 +60,7 @@
             @endforeach
         </table>
         <footer>
-            <div className="bottom-footer">
+            <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
             </div>
         </footer>

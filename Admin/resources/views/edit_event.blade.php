@@ -41,7 +41,7 @@
         </div>
     </body>
     <footer>
-        <div className="bottom-footer">
+        <div class="bottom-footer">
             <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>

@@ -19,10 +19,10 @@ class DeskripsiEvents extends Component{
 
     componentDidMount(){
         const {id} = this.props.match.params;
-        fetch(`http://localhost:4000/event/json/${id}`,{
+        fetch(`http://localhost:8000/event/json/${id}`,{
             headers : {
                 'Content-Type' : 'application/json',
-                'Access-Allow-Control-Origin' : '*'
+                'Access-Control-Allow-Origin' : '*'
             },
             method : 'GET'
         })
@@ -70,7 +70,7 @@ class DeskripsiEvents extends Component{
                             </div>
                         </div>
                     </div>
-                    <p>{Data.deskripsi}</p>
+                    <p className="rendering-description">{Data.deskripsi}</p>
                     <div className="lokasi-item" id="Email">
                         <img src={email} alt="" />
                         <span><b>Email : </b></span>

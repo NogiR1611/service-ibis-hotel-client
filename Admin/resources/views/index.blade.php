@@ -11,7 +11,7 @@
             <a href="/index"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
         </header>
         <container> 
-            <h1 style="text-align : center;">Selamat Datang di website khusus Admin</h1>
+            <h1 class="title-index" style="text-align : center;">Selamat Datang di website khusus Admin</h1>
             <div class="Item-menu">
                 <h2>Tempat Wisata</h2>
                 <div class="Item-column">
@@ -57,7 +57,7 @@
             </div>
         </container>
         <footer>
-            <div className="bottom-footer">
+            <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
             </div>
         </footer>

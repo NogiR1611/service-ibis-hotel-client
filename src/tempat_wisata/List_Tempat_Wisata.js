@@ -17,7 +17,13 @@ class ListWisata extends Component{
         };
     }
     
-   componentDidMount(){
+    componentWillMount(){
+        this.setState({
+            isLoading : false
+        });
+    }
+
+    componentDidMount(){
         this.fetchListWisata();
     }
 

@@ -16,6 +16,11 @@ class Event extends Controller
         ],200) -> header('Access-Control-Allow-Origin','*');
     } 
 
+    public function get_id_json($id){
+        $events = DB::table('list_events')->where('id',$id)->get();
+        return response() -> json($events) -> header('Access-Control-Allow-Origin','*');
+    }
+
     public function get_event(){
         $table_event = DB::table('list_events')->get();
         return view('table-event',['events'=>$table_event]);

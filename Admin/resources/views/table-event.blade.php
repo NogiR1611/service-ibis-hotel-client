@@ -12,7 +12,7 @@
             <a href="/index"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
         <div class="card-title">
-            <h2>Data Wisata yang telah di input dan ditampilkan pada Situs Klien</h2>
+            <h2>Data Event yang telah di input dan ditampilkan pada Situs Klien</h2>
         </div>
         <!-- menampilkan pesan berhasil di update -->
         @if ($message = Session::get('sukses'))
@@ -62,14 +62,14 @@
                     <th scope="row">
                         <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
                         <a class="btn btn-success" href='/event/delete/{{ $e->id }}' role="button">Hapus</a>
-                    </td>
+                    </th>
                 </tr>
             </tbody>
             @endforeach
         </table>
     </body>
     <footer>
-        <div className="bottom-footer">
+        <div class="bottom-footer">
             <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>

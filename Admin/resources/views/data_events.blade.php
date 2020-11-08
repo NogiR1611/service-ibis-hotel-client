@@ -45,12 +45,12 @@
             <label>Email : </label></br>
             <input type="email" name="email" value="{{ old('email') }}" required="required"></br>
             <label>Deskripsi : </label></br>
-            <textarea cols="80" rows="20" name="deskripsi" value="{{ old('deskripsi') }}" required="required"></textarea></br>
+            <textarea cols="80" rows="20" name="deskripsi" required="required">{{ old('deskripsi') }}</textarea></br>
             <button type="submit" class="button-confirm">Tambahkan</button>
         </form>
     </div>
     <footer>
-        <div className="bottom-footer">
+        <div class="bottom-footer">
             <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>

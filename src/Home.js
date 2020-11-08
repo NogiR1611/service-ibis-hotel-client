@@ -71,4 +71,27 @@ class Home extends Component{
     }
 }
 
+/*
+class Home extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            done : undefined
+        }
+    }
+
+    render(){
+        return(
+            <React.Fragment>
+            {!this.state.done ? (
+                <Loading />
+            ) : (
+                <Dashboard />
+            )}
+            </React.Fragment>
+        );
+    }
+}
+*/
+
 export default Home;

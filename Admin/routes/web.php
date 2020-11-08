@@ -20,7 +20,7 @@ use App\Http\Controllers\Tester;
 */
 Route::get('/',[LoginController::class,'login']);
 Route::get('/index',[IndexController::class,'get_data']);
-  
+   
 //Tempat Wisata
 Route::get('/wisata/json',[TempatWisata::class,'json']);
 Route::get('/wisata/json/{id}',[TempatWisata::class,'get_id_json']);
@@ -33,6 +33,7 @@ Route::get('/tempat-wisata/delete/{id}',[TempatWisata::class,'delete_wisata']);
 
 //Event
 Route::get('event/json',[Event::class,'json']);
+Route::get('event/json/{id}',[Event::class,'get_id_json']);
 Route::get('/event',[Event::class,'get_event'])->name('event');
 Route::get('/event/tambah',[Event::class,'get_form'])->name('tambah-event');
 Route::get('/event/edit/{id}',[Event::class,'edit_form']);

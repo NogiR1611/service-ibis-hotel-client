@@ -449,7 +449,7 @@ footer{
 #contact button:hover{
     background-color:#1E90FF;
 }
-
+ 
 .item_list{
     padding:0px;
 }
@@ -709,6 +709,10 @@ footer{
 
 #Img-Item{
     grid-area: "img-item";
+}
+
+.rendering-description{
+    white-space: pre-line;
 }
 
 .lokasi-item{

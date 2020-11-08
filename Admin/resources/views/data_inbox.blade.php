@@ -26,7 +26,6 @@
             <div class="list-inbox">
                 <ul id="demo">
                     @foreach($pesan_klien as $pk)
-                    </br>
                     <li>
                         <a href="/inbox/{{ $pk->id }}">
                             <span><b>{{ $pk -> email}}</b></span>
@@ -42,7 +41,7 @@
             {{ $pesan_klien->links('vendor.pagination.bootstrap-4') }}
         </container>
         <footer>
-            <div className="bottom-footer">
+            <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
             </div>
         </footer>

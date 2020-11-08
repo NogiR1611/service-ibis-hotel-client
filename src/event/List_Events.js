@@ -13,8 +13,7 @@ class ListEvents extends Component{
             page : 1,
             count : 0,
             pageSize : 3,
-            Description : "",
-            isLoading : true
+            Description : ""
         }
     }
  
@@ -33,7 +32,7 @@ class ListEvents extends Component{
         }
 
         return params;
-    }
+    } 
     
     fetchListEvent = () => {
         const {page,pageSize} = this.state;
@@ -44,8 +43,7 @@ class ListEvents extends Component{
             const {list_events,totalPage} = response.data;
             this.setState({
                 Data : list_events,
-                count : totalPage,
-                isLoading : false
+                count : totalPage
             });
         })
         .catch((err) =>{
@@ -71,11 +69,7 @@ class ListEvents extends Component{
         const color_date = {
             "color" : "#292b29"
         };
-        const {Data,count,page,isLoading} = this.state;
-
-        if(isLoading){
-            return <p>Loading</p>
-        }
+        const {Data,count,page} = this.state;
 
         return(
             <React.Fragment>

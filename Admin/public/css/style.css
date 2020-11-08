@@ -326,18 +326,169 @@ footer{
   }
 
   .card form label{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .card form input{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .card form textarea{
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .card form .button-confirm{
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 425px){
+  .title-index{
+    font-size: 18px;
+  }
+
+  .Item-menu h2{
+    font-size: 16px;
+  }
+
+  .Item a h3{
+    font-size: 14px;
+  }
+
+  .Item-menu-inbox{
+    margin: 20px 75px;
+  }
+
+  .Item-menu-inbox h2{
+    font-size: 16px;
+  }
+
+  footer .bottom-footer p{
+    font-size: 10px;
+  }
+
+  .card form input{
+    width: 250px;
+    font-size: 12px;
+  } 
+
+  .card form textarea{
+    width: 250px;
+    font-size: 12px;
+  }
+
+  .card form .button-confirm{
+    font-size: 10px;
+  }
+
+  .table_data thead tr th{
+    font-size:10px;
+  }
+
+  .table_data tbody tr td{
+    font-size:10px;
+  }
+
+  .table_data tbody tr th a{
+    font-size: 10px;
+  }
+
+  .title-inbox h3{
+    font-size: 14px;
+  }
+
+  .list-inbox ul li{
+    display: grid;
+    grid-template-columns: 80% auto;
+  }
+
+  .list-inbox ul li a{
+    font-size: 10px;
+  }
+
+  .slide-inbox-client{
+    padding: 20px 20px;
+  }
+
+  .slide-inbox-client p{
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  .descript-option .descript-sender p{
+    font-size: 10px;
+    margin: 0px;
+  }
+
+  .option a{
+    padding: 5px 5px;
+  }
+
+  .option a .trash-icon{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+  }
+
+  .option a span{
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .Item-menu{
+    padding: 10px 30px;
+  }
+
+  .Item-menu-inbox{
+    padding: 10px 30px;
+  }
+
+  .card form input{
+    width: 200px;
+  }
+
+  .card form textarea{
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  .Item-menu{
+    padding: 10px 20px;
+  }
+
+  .Item{
+    margin:0px 5px;
+  }
+
+  .Item a h3{
+    font-size: 10px;
+  }
+
+  .Item a img{
+    width: 30px;
+    height: 30px;
+  }
+
+  .Item-menu-inbox{
+    padding: 10px 15px;
+  }
+
+  .card{
+    padding: 15px 15px;
+  }
+
+  .card h2{
+    font-size: 14px;
+  }
+
+  .card form input{
+    width: 150px;
+    height: 15px;
+  }
+
+  .card form textarea{
+    width: 150px;
   }
 }

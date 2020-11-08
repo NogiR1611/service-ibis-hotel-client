@@ -19,9 +19,9 @@
             <div class="slide-inbox-client">
                 <div class="descript-option">
                     <div class="descript-sender">
-                        <p><b>Nama Pengirim &emsp;:</b> {{ $pk -> nama_kontak }}</p>
-                        <p><b>Email &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;: </b> {{ $pk -> email}}</p>
-                        <p><b>Tanggal &emsp;&emsp;&emsp;&emsp;&ensp;:</b> {{ $pk -> createdAt}}</p>
+                        <p><b>Nama Pengirim :</b><br/>{{ $pk -> nama_kontak }}</p>
+                        <p><b>Email :</b><br/> {{ $pk -> email}}</p>
+                        <p><b>Tanggal :</b></br> {{ $pk -> createdAt}}</p>
                     </div>
                     <div class="option">
                         <a class="btn btn-success" href='/inbox/delete/{{ $pk->id }}' role="button">
@@ -29,14 +29,14 @@
                         <span>Hapus</span>
                         </a>
                     </div>
-                </div>    
+                </div><br/>
                 <p><b>Pesan : </b></p>
                 <p>{{ $pk -> pesan }}</p>
             </div>
             @endforeach
         </container>
         <footer>
-            <div className="bottom-footer">
+            <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
             </div>
         </footer>

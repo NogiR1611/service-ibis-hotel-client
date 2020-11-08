@@ -15,7 +15,7 @@ class CreateListEvents extends Migration
     {
         Schema::create('list_events', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_event',50);
+            $table->string('nama_event',100);
             $table->string('tempat',25);
             $table->date('tanggal');
             $table->char('waktu',20);

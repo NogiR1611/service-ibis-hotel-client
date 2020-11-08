@@ -37,12 +37,12 @@
             <label>Foto : </label></br>
             <input type="file" action="/upload" name="urlimage" required="required" value="{{ old('urlimage') }}" id="image"></br>
             <label>Deskripsi : </label></br>
-            <textarea cols="80" rows="20" name="deskripsi" value="{{ old('deskripsi') }}" id="deskripsi"></textarea></br>
+            <textarea cols="80" rows="20" name="deskripsi" id="deskripsi">{{ old('deskripsi') }}</textarea></br>
             <button type="submit" class="button-confirm">Tambahkan</button>
         </form>
     </div>
     <footer>
-        <div className="bottom-footer">
+        <div class="bottom-footer">
             <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>

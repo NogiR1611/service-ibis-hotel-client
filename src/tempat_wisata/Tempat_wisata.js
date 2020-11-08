@@ -88,7 +88,7 @@ class DeskripsiWisata extends Component{
                             </div>
                         </div>
                     </div>
-                    <p>{Data.deskripsi}</p>
+                    <p className="rendering-description">{Data.deskripsi}</p>
                 </div>
                 <Footer />
             </React.Fragment>
