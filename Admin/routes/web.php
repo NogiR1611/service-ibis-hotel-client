@@ -22,6 +22,7 @@ Route::get('/',[LoginController::class,'login']);
 Route::get('/index',[IndexController::class,'get_data']);
    
 //Tempat Wisata
+Route::get('wisata/json/pagination',[Event::class,'pagination']);
 Route::get('/wisata/json',[TempatWisata::class,'json']);
 Route::get('/wisata/json/{id}',[TempatWisata::class,'get_id_json']);
 Route::get('/wisata',[TempatWisata::class,'get_tempat_wisata'])->name('wisata');

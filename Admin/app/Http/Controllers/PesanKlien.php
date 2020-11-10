@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\ModelPesan;
 use Session;
 
 class PesanKlien extends Controller
@@ -20,6 +21,7 @@ class PesanKlien extends Controller
 
     public function post_messages(Request $request){
         //insert data ke database
+        /*
         DB::table('inbox_clients')->insert([
             'nama_kontak'=> $request->nama_kontak,
             'email'=> $request->email,
@@ -27,6 +29,10 @@ class PesanKlien extends Controller
         ]); 
 
         return redirect()->back();
+        */
+        ModelPesan::create($request->all());
+        
+        return redirect()-back();
     }
 
     public function delete_inbox($id){

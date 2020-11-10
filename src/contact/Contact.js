@@ -24,7 +24,7 @@ class Contact extends Component{
     handleChange = (e) => {
         this.setState({
             [e.target.name] : e.target.value
-        })
+        });
     }
 
     postMessageClient = () => {
@@ -34,7 +34,7 @@ class Contact extends Component{
             pesan   : this.state.pesan
         };
 
-        axios.post("http://localhost:4000/pesan/kirim",data)
+        axios.post("http://localhost:8000/inbox/kirim",data)
         .then( data => console.log(data))
         .catch(err => console.log(err));
     }

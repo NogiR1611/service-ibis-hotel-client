@@ -15,8 +15,12 @@ class Deskripsi extends Component{
     }
 
     render(){
+        const red = {
+            "color" : "red"
+        }
+        
         return( 
-            <p>{this.state.value} ...[Show More]</p>
+            <p>{this.state.value} ...<span style={red}>[Show More]</span></p>
         );
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use app\FotoEvent;
+use App\Models\ModelEvent;
 use Session;
 
 class Event extends Controller
@@ -17,8 +18,11 @@ class Event extends Controller
     } 
 
     public function get_id_json($id){
+        /*
         $events = DB::table('list_events')->where('id',$id)->get();
         return response() -> json($events) -> header('Access-Control-Allow-Origin','*');
+        */
+        return ModelEvent::find($id);
     }
 
     public function get_event(){

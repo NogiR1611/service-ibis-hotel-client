@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+  
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use app\Foto;
+use App\Models\ModelWisata;
 use Session;
 
 class TempatWisata extends Controller
@@ -14,11 +15,10 @@ class TempatWisata extends Controller
         return response() -> json([
             'data' => $tempat_wisata
         ],200) -> header('Access-Control-Allow-Origin','*');
-    } 
-
+    }
+    
     public function get_id_json($id){
-        $tempat_wisata = DB::table('list_tempat_wisata')->where('id',$id)->get();
-        return response() -> json($tempat_wisata) -> header('Access-Control-Allow-Origin','*');
+        return ModelWisata::find($id);
     }
 
     public function get_tempat_wisata(){

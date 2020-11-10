@@ -57,7 +57,7 @@
                     <td data-header="Nomor">{{ $e -> nomor }}</td>
                     <td data-header="Email">{{ $e -> email }}</td>
                     <td data-header="Foto">{{ $e -> foto }}</td>
-                    <td data-header="Deskripsi" id="deskripsi">{{ $e -> deskripsi }}</td>
+                    <td data-header="Deskripsi">{{ $e -> deskripsi }}</td>
                     <td data-header="Diperbarui">{{ $e -> updatedAt }}</td>
                     <th scope="row">
                         <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
@@ -80,6 +80,10 @@
     <script>
         let time = new Date();
         let years = time.getFullYear();
+        let str = document.getElementById("str").innerHTML;
+        let munculin = str.substr(0,10);
+        
+        document.getElementById("munculin").innerHTML = munculin + "...";
         document.getElementById("years").innerHTML = years;
     </script>
 </html>
