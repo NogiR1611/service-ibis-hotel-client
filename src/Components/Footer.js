@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import {Link} from "react-router-dom";
+import location from "./img/location.png";
 import "./style.css";
 
 class Footer extends Component{
@@ -8,6 +9,7 @@ class Footer extends Component{
             color: "#fc3f5e",
             fontSize:"15px"
         };
+        
         let time = new Date();
         let years = time.getFullYear();
         
@@ -22,6 +24,12 @@ class Footer extends Component{
                 </div>
                 <div className="middle-footer">
                     <div id="left-middle-footer">
+                        <div className="maps">
+                            <a href="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
+                                <img src={location} alt="" />
+                                Go to Maps
+                            </a>
+                        </div>
                         <a href="https://goo.gl/maps/DKHRMJyk9mtuZPuJA">
                             <p>
                                 Jl. Dr. Djunjunan No.22<br />
@@ -41,7 +49,7 @@ class Footer extends Component{
                 </div>
                 <div id="big-horizontal-border"></div>
                 <div className="bottom-footer">
-                    <p>&copy; Ibis Hotel {years} Made by nogi with <span style={hearts}>&hearts;</span></p> 
+                    <p>&copy; Ibis Hotel {years} Made by Ibis Hotel Pasteur with <span style={hearts}>&hearts;</span></p> 
                 </div>
             </footer>
         );

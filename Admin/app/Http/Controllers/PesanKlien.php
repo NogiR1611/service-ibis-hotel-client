@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\ModelPesan;
+use App\Models\User;
 use Session;
 
 class PesanKlien extends Controller
-{
+{ 
     public function get_inbox(){
         $pesan_klien = DB::table('inbox_clients')->paginate(5);
         return view('data_inbox',['pesan_klien' => $pesan_klien]);
@@ -30,9 +31,12 @@ class PesanKlien extends Controller
 
         return redirect()->back();
         */
-        ModelPesan::create($request->all());
-        
-        return redirect()-back();
+        $input = $request->all();
+        $user = User::create($input);
+        $success['token'] =  $user->createToken('nApp')->accessToken;
+        $success['name'] =  $user->name;
+
+        return response()->json(['success'=>$success], $this->successStatus);
     }
 
     public function delete_inbox($id){

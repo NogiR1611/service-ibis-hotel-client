@@ -22,7 +22,7 @@
                         <p><b>Nama Pengirim :</b><br/>{{ $pk -> nama_kontak }}</p>
                         <p><b>Email :</b><br/> {{ $pk -> email}}</p>
                         <p><b>Tanggal :</b></br> {{ $pk -> createdAt}}</p>
-                    </div>
+                    </div> 
                     <div class="option">
                         <a class="btn btn-success" href='/inbox/delete/{{ $pk->id }}' role="button">
                             <img src="{{ asset('./img/trash.png') }}" class="trash-icon" alt="">

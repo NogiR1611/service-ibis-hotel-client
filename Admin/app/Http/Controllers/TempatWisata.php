@@ -22,7 +22,7 @@ class TempatWisata extends Controller
     }
 
     public function get_tempat_wisata(){
-        $tempat_wisata = DB::table('list_tempat_wisata')->get();
+        $tempat_wisata = DB::table('list_tempat_wisata')->paginate(3);
         return view('table-wisata',['tempat_wisata' => $tempat_wisata]);
     }
  

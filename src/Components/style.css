@@ -390,12 +390,48 @@ footer{
 .middle-footer{
     display:grid;
     grid-template-columns:repeat(2,auto);
+    grid-template-areas: 
+    "left-footer"
+    "right-footer";
 }
 
 #left-middle-footer{
     padding:0px 80px;
     text-align:left;
     color:white;
+    display:grid;
+    grid-area: "left-footer";
+}
+
+#left-middle-footer .maps{
+    border-radius:8px;
+    width:300px;
+    height:200px;
+    background-image: url('./img/map.png');
+}
+
+
+#left-middle-footer .maps a{
+    height:30px;
+    width: 120px;
+    background-color:white;
+    color: #e81022;
+    border: 1px solid #e81022;
+    border-radius: 8px;
+    margin-top: 150px;
+    margin-left: 20px;
+    display: block;
+    padding: auto 0px;
+}
+
+#left-middle-footer .maps a:hover{
+    background-color: #e81022;
+    color:white;
+}
+
+#left-middle-footer .maps a img{
+    width:22px;
+    height:22px;
 }
 
 #left-middle-footer a{
@@ -412,6 +448,11 @@ footer{
     padding-left:450px;
     text-align:left;
     color:white;
+    grid-area: "right-footer";
+}
+
+#right-middle-footer ul{
+    padding: 100px 0px;
 }
 
 #right-middle-footer ul li{
@@ -766,6 +807,11 @@ footer{
     .img-facility img{
         margin-top: 14px;
     }
+
+    #right-middle-footer{
+        padding-left: 300px;
+    }
+
     .descript-facility{
         padding: 0px 15px;
     }
@@ -807,10 +853,14 @@ footer{
         margin:0px 0px;
     }
 
+    #review-facility h1{
+        font-size: 16px;
+    }
+
     #slider{
         overflow:hidden;
         width:100%;
-        height:675px;
+        height:600px;
         margin:50px 0px;
         justify-self:center;
     }
@@ -843,10 +893,54 @@ footer{
         margin-right:100px;
     }
 
+    .fitur a h3{
+        font-size: 16px;
+    }
+
+    .fitur a p{
+        font-size: 13px;
+    }
+
+    footer{
+        font-size: 13px;
+    }
+
+    #left-middle-footer .maps{
+        height: 180px;
+        width: 250px;
+    }
+
+    #left-middle-footer .maps a{
+        width: 100px;
+        vertical-align:center;
+        margin-top: 120px;
+    }
+
+    #left-middle-footer .maps a img{
+        width: 20px;
+        height: 20px;
+    }
     #right-middle-footer{
-        padding-left:150px;
+        padding-left:100px;
         text-align:left;
+        vertical-align:center;
         color:white;
+    }
+
+    .item_page ul li .item h3{
+        font-size: 16px;
+    }
+
+    .item_page ul li .item p{
+        font-size: 12px;
+    }
+
+    .deskripsi span{
+        font-size: 12px;
+    }
+
+    .deskripsi p{
+        font-size: 12px;
     }
 
     .About{
@@ -858,6 +952,10 @@ footer{
     .built-years{
         margin: 20px 20px;
         padding: 20px 20px;
+    }
+
+    .built-years h4{
+        font-size: 16px;
     }
 
     .facility{
@@ -874,8 +972,8 @@ footer{
     }
     
     .img-facility img{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         display: block;
         margin-top: 10px;
         margin-left:0px;
@@ -890,6 +988,7 @@ footer{
     .descript-facility span{
         display: block;
         margin: 15px 5px;
+        font-size: 10px;
     }
 
     .bedroom{
@@ -914,6 +1013,9 @@ footer{
         margin: 20px 5px;
     }
 
+    .info-hotel{
+        font-size: 12px;
+    }
     .img-and-facility .image-item{
         width : 400px;
         height : 500px;
@@ -969,8 +1071,11 @@ footer{
         font-size: 12px;
     }
 
+    footer #right-middle-footer{
+        padding-left: 0px;
+    }
+
     footer #right-middle-footer ul{
-        margin-right: 30px;
         padding-left: 0px;
     }
 
@@ -1079,13 +1184,18 @@ footer{
     }
 
     #left-middle-footer{
-        padding: 20px 30px;
+        padding: 0px 0px;
+        justify-self: center;
+        text-align: center;
     }
 
     #right-middle-footer{
-        padding-top:20px;
-        padding-bottom:20px;
-        padding-left:90px;
+        padding-left: 0px;
+    }
+
+    #right-middle-footer ul {
+        text-align: center;
+        margin-right:0px;
     }
 
     #descript-contact h3{
@@ -1146,7 +1256,7 @@ footer{
         grid-area: "specification";
         display:grid;
         grid-template-rows:repeat(3,auto);
-        width: 30%;
+        width: 40%;
     }
     
     .built-years h4,span{
@@ -1182,17 +1292,19 @@ footer{
     }
 
     .built-years{
-        padding: 10px 10px;
+        padding: 10px 6px;
         margin:10px 10px;
         width: 70%;
         height: 65%;
+        text-align: center;
     }
 
     .bedroom{
-        padding:10px 8px;
+        padding:10px 6px;
         margin:10px 10px;
         width: 70%;
         height: 80%;
+        text-align: center;
     }
 
     .bedroom img{
@@ -1200,11 +1312,36 @@ footer{
         justify-content: center;
     }
 
+    .bedroom span{
+        display: block;
+    }
+
     .facility{
         padding:10px 10px;
         margin:10px 10px;
         width: 70%;
         height: 85%;
+    }
+
+    .fitur{
+        margin: 20px 10px;
+    }
+
+    #left-middle-footer .maps{
+        height: 120px;
+        width: 180px;
+    }
+
+    #left-middle-footer .maps a img{
+        width: 18px;
+        height: 18px;
+    }
+
+    #left-middle-footer .maps a{
+        margin-top: 80px;
+        width: 80px;
+        height: 20px;
+        font-size: 10px;
     }
 
     .About{
@@ -1270,6 +1407,11 @@ footer{
         font-size: 12px;
     }
 
+    .middle-footer {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
     #Img-Item{
         justify-self: center;
     }
@@ -1300,6 +1442,10 @@ footer{
         margin: 20px 10px;
     }
 
+    .fitur a p{
+        font-size: 10px;
+    }
+
     footer p{
         font-size: 10px;
     }
@@ -1314,6 +1460,14 @@ footer{
 
     .menu-contact #menu-sosmed{
         padding:0px 30px;
+    }
+
+    #right-middle-footer ul {
+        padding:20px 0px;
+    }
+
+    #left-middle-footer .maps{
+        background-image: url('./img/map2.png');
     }
 }
 

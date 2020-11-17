@@ -26,7 +26,7 @@ class Event extends Controller
     }
 
     public function get_event(){
-        $table_event = DB::table('list_events')->get();
+        $table_event = DB::table('list_events')->paginate(3);
         return view('table-event',['events'=>$table_event]);
     }
 

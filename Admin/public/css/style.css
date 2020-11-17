@@ -1,3 +1,7 @@
+section{
+  margin-bottom: 200px;
+}
+
 .signin-and-signup{
   display:grid;
   grid-template-columns: 40% auto;
@@ -7,6 +11,7 @@
 #login h4 a{
   color:#DC143C;
 }
+
 .button-signin-and-signup{
   width:100%;
   margin:20px 0px;
@@ -134,7 +139,7 @@ header img{
   margin-top : 50px;
   margin-left : 10px;
   margin-right : 10px;
-  margin-bottom : 200px;
+  margin-bottom : 50px;
 }
 
 .table_data,th,td{
