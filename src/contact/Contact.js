@@ -4,9 +4,11 @@ import Footer from "../Components/Footer";
 import instagram from "../Components/img/instagram.png";
 import facebook from "../Components/img/facebook.png";
 import twitter from "../Components/img/twitter.png";
+import gif_loading from "../Components/img/loading_button.gif";
+import PesanService from "./pesan.service";
 import SuccessMessages from "../Components/Successmessages";
 import ErrorMessages from "../Components/Errormessages";
-import PesanService from "./pesan.service";
+import "../Components/style.css";
 
 class Contact extends Component{
         state = {
@@ -14,7 +16,8 @@ class Contact extends Component{
             email : "",
             password : "",
             c_password : "",
-            alert_messages : ""
+            alert_messages : "",
+            isLoading : false
         }
 
     postMessageClient = (event) => {
@@ -28,10 +31,19 @@ class Contact extends Component{
 
         console.log(this.state.name,this.state.email);
         
-        
         PesanService.create(data)
-        .then( res => this.setState({alert_messages : "sukses"}))
-        .catch(err => this.setState({alert_messages : "gagal"}));
+        .then( res => {
+            this.setState({alert_messages : "sukses",isLoading : true })
+            setTimeout(() => {
+                this.setState({ isLoading: false });
+            }, 2000);
+        })
+        .catch(err => {
+            this.setState({alert_messages : "gagal",isLoading : true })
+            setTimeout(() => {
+                this.setState({ isLoading: false });
+            }, 2000);
+        });
         /*
         $.ajax({
             headers: {
@@ -54,7 +66,7 @@ class Contact extends Component{
     }
 
     render(){
-        const {name,email,password,c_password} = this.state;
+        const {name,email,password,c_password,isLoading,alert_messages} = this.state;
         return(
             <React.Fragment>
                 <Header />
@@ -66,9 +78,9 @@ class Contact extends Component{
                         yang diberikan kami,Silahkan hubungi kontak kami.
                     </p>
                 </div>
-                {this.state.alert_messages === "sukses"?<SuccessMessages />:null}
-                {this.state.alert_messages === "gagal"?<ErrorMessages />:null}
                 <div id="contact">
+                    {alert_messages === "sukses"?<SuccessMessages />:null}
+                    {alert_messages === "gagal"?<ErrorMessages />:null}
                     <form onSubmit={event => this.postMessageClient(event)}>
                         <label>Nama : </label><br />
                         <input type="text"
@@ -103,15 +115,21 @@ class Contact extends Component{
                             value={password}
                             onChange={event => this.setState({password : event.target.value})}
                             required="required"
-                        />
-                        <label>Konfirmasi Password Anda : </label>
+                        /><br />
+                        <label>Konfirmasi Password Anda : </label><br />
                         <input type="password"
                             name="c_password"
                             value={c_password}
                             onChange={event => this.setState({c_password : event.target.value})}
                             required="required"
-                        />
-                        <button className="klik_send_contact" type="submit">Kirim</button>
+                        /><br/>
+                        <button className="klik_send_contact" type="submit" disabled={isLoading}>
+                            {isLoading && (
+                                <img src={gif_loading} style={{ width : "30px",height:"30px"}} className="loading" alt="" />
+                            )}
+                            {isLoading}
+                            {!isLoading && <span>Kirim</span>}
+                        </button>
                     </form>
                 </div>
                 <div id="big-horizontal-border" />

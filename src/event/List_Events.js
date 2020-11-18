@@ -21,7 +21,7 @@ class ListEvents extends Component{
         this.fetchListEvent();
     }
 
-    getRequestParams = (page,pageSize) =>{
+    getRequestParams = (page,pageSize) => {
         let params = {};
 
         if(page){

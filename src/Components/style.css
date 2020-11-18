@@ -486,10 +486,6 @@ footer{
     background-color: #00CED1;
     border:1px solid gray;
 }
-
-#contact button:hover{
-    background-color:#1E90FF;
-}
  
 .item_list{
     padding:0px;

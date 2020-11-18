@@ -4,40 +4,14 @@ import Footer from "../Components/Footer";
 import tempat from "../Components/img/location.png";
 import harga from "../Components/img/price.png";
 import '../Components/style.css';
-/*
-class TempatWisata extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            list_wisata : this.props.render_list_wisata(this.props.id)
-        }
-    }
-    
-    render(){
-        let judul = this.state.list_wisata.nama_tempat_wisata;
-        let lokasi = this.state.list_wisata.lokasi;
-        let harga = this.state.list_wisata.harga;
-        let urlimage = this.state.list_wisata.urlimage;
-        let deskripsi = this.state.list_wisata.deskripsi;
-        
-        return(
-            <container>
-                <h1>{judul}</h1>
-                <img src={'http://localhost:4000/images' + urlimage} />
-                <h4>{lokasi}</h4>
-                <h4>{harga}</h4>
-                <p>{deskripsi}</p>
-            </container>
-        )
-    }
-}
-*/
+import gif_loading from "../Components/img/loading_button.gif";
 
 class DeskripsiWisata extends Component{
     constructor(props){
         super(props)
         this.state = {
-            Data : []
+            Data : [],
+            isLoading : false
         }
     }
 
@@ -51,11 +25,16 @@ class DeskripsiWisata extends Component{
             method : 'GET'
         })
         .then(res => res.json())
-        .then(data => this.setState({Data : data}))
+        .then(data => {
+            this.setState({Data : data,isLoading : true})
+            setTimeout(() => {
+                this.setState({ isLoading: false });
+            }, 2000);
+        })
     }
 
     render(){
-        let Data = this.state.Data;
+        let {Data,isLoading} = this.state;
         const update = {
             "margin" : "0px",
             "justify-self" : "center"
@@ -73,7 +52,11 @@ class DeskripsiWisata extends Component{
                     </div>
                     <div className="img-and-facility">
                         <div id="Img-Item">
-                            <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />
+                            {isLoading && (
+                                <img src={gif_loading} className="loading" alt="" />
+                            )}
+                            {isLoading}
+                            {!isLoading && <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />}
                         </div>
                         <div id="Location-Item">
                             <div className="lokasi-item" id="Lokasi">

@@ -8,12 +8,14 @@ import waktu from "../Components/img/time.png";
 import harga from "../Components/img/price.png";
 import email from "../Components/img/email.png";
 import nomor from "../Components/img/telephone.png";
+import gif_loading from "../Components/img/loading_button.gif";
 
 class DeskripsiEvents extends Component{
     constructor(props){
         super(props)
         this.state = {
-            Data : []
+            Data : [],
+            isLoading : false
         }
     }
 
@@ -27,12 +29,17 @@ class DeskripsiEvents extends Component{
             method : 'GET'
         })
         .then(res => res.json())
-        .then(data => this.setState({Data : data}))
+        .then(data => {
+            this.setState({Data : data,isLoading : true })
+            setTimeout(() => {
+                this.setState({ isLoading: false });
+            }, 2000);
+        })
         .catch(err => console.log(err))
     }
 
     render(){
-        let Data = this.state.Data;
+        let {Data,isLoading} = this.state;
         return(
             <React.Fragment>
                 <Header />
@@ -45,7 +52,11 @@ class DeskripsiEvents extends Component{
                     </div>
                     <div className="img-and-facility">
                         <div id="Img-Item">
-                            <img src={'http://localhost:8000/img_event/' + Data.foto} className="image-item" alt="" />
+                            {isLoading && (
+                                <img src={gif_loading} className="loading" alt="" />
+                            )}
+                            {isLoading}
+                            {!isLoading && <img src={'http://localhost:8000/img_event/' + Data.foto} className="image-item" alt="" />}
                         </div>
                         <div id="Location-Item">
                             <div className="lokasi-item" id="Lokasi">

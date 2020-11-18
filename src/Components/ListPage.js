@@ -10,7 +10,7 @@ class ListPage extends Component{
                 <ul className='item_list'>
                     {this.props.list_item}
                 </ul>
-                     
+                       
                 <Pagination
                     count={this.props.count}
                     page={this.props.page}
