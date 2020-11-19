@@ -8,7 +8,7 @@ import waktu from "../Components/img/time.png";
 import harga from "../Components/img/price.png";
 import email from "../Components/img/email.png";
 import nomor from "../Components/img/telephone.png";
-import gif_loading from "../Components/img/loading_button.gif";
+import {Shimmer} from "react-shimmer";
 
 class DeskripsiEvents extends Component{
     constructor(props){
@@ -53,7 +53,7 @@ class DeskripsiEvents extends Component{
                     <div className="img-and-facility">
                         <div id="Img-Item">
                             {isLoading && (
-                                <img src={gif_loading} className="loading" alt="" />
+                                <div className="image-item"><Shimmer width={400} height={500} /></div>
                             )}
                             {isLoading}
                             {!isLoading && <img src={'http://localhost:8000/img_event/' + Data.foto} className="image-item" alt="" />}

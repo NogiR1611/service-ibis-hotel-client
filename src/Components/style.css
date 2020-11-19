@@ -608,9 +608,9 @@ footer{
     background-color: #e6ebe7;
 }
 
-.item_page ul li img{
+.item_page ul li .list-image-item{
     display: inline-block;
-    margin: 0px 0px;
+    margin: 10px 0px;
 }
 
 .item_page ul li .item{
@@ -923,6 +923,11 @@ footer{
         color:white;
     }
 
+    .item_page ul li .shimmer-list-img{
+        width: 120px;
+        height: 120px;
+    }
+
     .item_page ul li .item h3{
         font-size: 16px;
     }
@@ -1131,7 +1136,7 @@ footer{
         font-size: 12px;
     }
 
-    .item_page ul li img{
+    .item_page ul li .list-image-item{
         display: inline-block;
         margin-bottom: 15px;
     }

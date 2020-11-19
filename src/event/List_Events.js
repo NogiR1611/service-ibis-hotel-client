@@ -4,6 +4,7 @@ import Deskripsi from "../Components/Deskripsi";
 import Header from "../Components/Header";
 import ListPage from "../Components/ListPage";
 import Footer from "../Components/Footer";
+import {Shimmer} from 'react-shimmer';
 
 class ListEvents extends Component{
     constructor(props){
@@ -13,7 +14,8 @@ class ListEvents extends Component{
             page : 1,
             count : 0,
             pageSize : 3,
-            Description : ""
+            Description : "",
+            isLoading : false
         }
     }
  
@@ -43,8 +45,12 @@ class ListEvents extends Component{
             const {list_events,totalPage} = response.data;
             this.setState({
                 Data : list_events,
-                count : totalPage
+                count : totalPage,
+                isLoading : true
             });
+            setTimeout(() => {
+                this.setState({ isLoading: false });
+            }, 2000);
         })
         .catch((err) =>{
             console.log(err)
@@ -69,7 +75,7 @@ class ListEvents extends Component{
         const color_date = {
             "color" : "#292b29"
         };
-        const {Data,count,page} = this.state;
+        const {Data,count,page,isLoading} = this.state;
 
         return(
             <React.Fragment>
@@ -80,14 +86,20 @@ class ListEvents extends Component{
                         <li key={index}> 
                             <span style={border_list} />
                             <a href={'/event/' + element.id} className='link-item'>
-                                <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt="" />
+                                {isLoading === true?
+                                    <div className="list-image-item"><Shimmer height={120} width={120}/></div>:
+                                    <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt="" />
+                                }
                                 <div className='item'>
-                                    <h3>{element.nama_event}</h3>
-                                    <p><b>Tanggal</b> : {element.tanggal}</p>
-                                    <p><b>Tempat</b> : {element.tempat}</p>
+                                    <h3>{isLoading === true?<Shimmer height={240} width={40} /> : element.nama_event}</h3>
+                                    <p><b>Tanggal</b> : {isLoading === true?<Shimmer height={240} width={40}/>:element.tanggal}</p>
+                                    <p><b>Tempat</b> : {isLoading === true?<Shimmer height={240} width={40}/>:element.tempat}</p>
                                 </div>
                                 <div className='deskripsi'>
-                                    <span style={color_date}>{element.createdAt}</span><Deskripsi deskripsi={element.deskripsi}/>
+                                    <span style={color_date}>
+                                        {isLoading === true?<Shimmer height={240} width={40} />:element.createdAt}
+                                    </span>
+                                    {isLoading === true?<Shimmer height={720} width={25}/>:<Deskripsi deskripsi={element.deskripsi}/>}
                                 </div>
                             </a>
                             <span style={border_list} />
