@@ -613,16 +613,29 @@ footer{
     margin: 10px 0px;
 }
 
+.title-list-shimmer{
+    padding:0px 400px;
+}
+
+.shimmer{
+    width: 180px;
+    height: 180px;
+}
+
+.title-and-date{
+    padding:0px;
+}
+
 .item_page ul li .item{
     display:inline-block;
     color: black;
-    margin: 10px 15px;
-    padding: 10px 0px;
+    margin: 0px 15px;
+    padding: 0px 0px;
 }
 
 .list-image-item{
-    height: 120px;
-    width: 120px;
+    height: 180px;
+    width: 180px;
 }
 
 .deskripsi{
@@ -631,6 +644,9 @@ footer{
     margin: 0;
 }
 
+.deskripsi-date{
+    margin: 10px 0px;
+}
 .deskripsi p{
     margin: 0;
 }
@@ -1017,11 +1033,6 @@ footer{
     .info-hotel{
         font-size: 12px;
     }
-    .img-and-facility .image-item{
-        width : 400px;
-        height : 500px;
-        margin : 20px 20px;
-    }
 
     .Item-styling h1{
         font-size: 28px;
@@ -1160,6 +1171,9 @@ footer{
 }
 
 @media only screen and (max-width:425px){
+    .alert{
+        font-size: 12px;
+    }
     .welcome h3{
         font-size: 22px;
     }
@@ -1365,6 +1379,7 @@ footer{
     .item_page ul li .item{
         margin:10px 10px;
         padding:0px;
+        grid-area: "item";
     }
 
     .item h3{
@@ -1375,7 +1390,9 @@ footer{
         font-size: 12px;
     }
 
-    .list-image-item{
+    .item_page ul li .list-image-item{
+        display:block;
+        margin:0px auto;
         height: 270px;
         width: 180px;
     }
@@ -1389,7 +1406,7 @@ footer{
             "location-item";
     }
 
-    .Item-styling .image-item{
+    .Item-styling img{
         width: 100%;
         height: 100%;
         margin: 0px;

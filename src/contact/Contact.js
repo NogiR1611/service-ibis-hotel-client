@@ -12,10 +12,9 @@ import "../Components/style.css";
 
 class Contact extends Component{
         state = {
-            name : "",
+            nama_kontak : "",
             email : "",
-            password : "",
-            c_password : "",
+            pesan : "",
             alert_messages : "",
             isLoading : false
         }
@@ -23,13 +22,10 @@ class Contact extends Component{
     postMessageClient = (event) => {
         event.preventDefault();
         const data = {
-            name : this.state.name,
+            nama_kontak : this.state.nama_kontak,
             email : this.state.email,
-            password : this.state.password,
-            c_password : this.state.c_password
+            pesan : this.state.pesan
         };
-
-        console.log(this.state.name,this.state.email);
         
         PesanService.create(data)
         .then( res => {
@@ -46,27 +42,22 @@ class Contact extends Component{
         });
         /*
         $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
             url: 'http://localhost:8000/inbox/kirim',
             dataType : 'json',
             type: 'POST',
-            data: {
-                data : data,
-                _token : $('meta[name="csrf-token"]').attr('content')
-            },
+            data: data,
             success:function() {
-                this.setState({alert_messages : "sukses"})
-            },
-            error:function(){
-                this.setState({alert_messages : "gagal"})
+                this.setState({isLoading:true,alert_messages : "sukses"})
+                setTimeout(() => {
+                    this.setState({ isLoading: false });
+                }, 2000);
             }
-            */
+        })
+        */
     }
 
     render(){
-        const {name,email,password,c_password,isLoading,alert_messages} = this.state;
+        const {nama_kontak,email,pesan,isLoading,alert_messages} = this.state;
         return(
             <React.Fragment>
                 <Header />
@@ -84,45 +75,26 @@ class Contact extends Component{
                     <form onSubmit={event => this.postMessageClient(event)}>
                         <label>Nama : </label><br />
                         <input type="text"
-                            name="nama_kontak"
-                            value={name}
-                            onChange={event => this.setState({name : event.target.value})}
+                            onChange={event => this.setState({nama_kontak : event.target.value})}
                             required="required"
+                            value={nama_kontak}
                         /><br />
                         <label>email anda : </label><br />
                         <input type="email"
-                            name="email"
-                            value={email}
                             onChange={event => this.setState({email : event.target.value})}
                             placeholder="Contoh:example@gmail.com"
+                            value={email}
                             required="required"
                         /><br/>
-                        {/*}}
                         <label>Pesan : </label><br />
                         <textarea
                             cols="40"
                             rows="5"
-                            name="pesan"
                             value={pesan}
                             onChange={event => this.setState({pesan : event.target.value})}
                             placeholder="Silahkan isi pesan anda disini"
                             required="required">
                         </textarea><br />
-                        */}
-                        <label>Password Anda : </label><br />
-                        <input type="password"
-                            name="password"
-                            value={password}
-                            onChange={event => this.setState({password : event.target.value})}
-                            required="required"
-                        /><br />
-                        <label>Konfirmasi Password Anda : </label><br />
-                        <input type="password"
-                            name="c_password"
-                            value={c_password}
-                            onChange={event => this.setState({c_password : event.target.value})}
-                            required="required"
-                        /><br/>
                         <button className="klik_send_contact" type="submit" disabled={isLoading}>
                             {isLoading && (
                                 <img src={gif_loading} style={{ width : "30px",height:"30px"}} className="loading" alt="" />

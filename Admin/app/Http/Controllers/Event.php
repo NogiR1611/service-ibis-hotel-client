@@ -10,6 +10,11 @@ use Session;
 
 class Event extends Controller
 { 
+    public function pagination(){
+        $events = DB::table('list_events')->paginate(3);
+        return response()->json($events);
+    }
+
     public function json(){
         $events = DB::table('list_events')->get();
         return response() -> json([
@@ -101,9 +106,5 @@ class Event extends Controller
     public function delete_event($id){
         DB::table('list_events')->where('id',$id)->delete();
         return redirect()->back();
-    }
-
-    public function berhasil(){
-
     }
 }

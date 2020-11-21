@@ -17,7 +17,7 @@
         <form action='/inbox/kirim' method='post'>
             {{ csrf_field() }}
             <label>Nama : </label></br>
-            <input type="text" name="nama_klien" required="required"></br>
+            <input type="text" name="nama_kontak" required="required"></br>
             <label>Email : </label></br>
             <input type="email" name="email" required="required"></br>
             <label>Pesan : </label></br>

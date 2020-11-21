@@ -22,7 +22,7 @@ Route::get('/',[LoginController::class,'login']);
 Route::get('/index',[IndexController::class,'get_data']);
    
 //Tempat Wisata
-Route::get('wisata/json/pagination',[Event::class,'pagination']);
+Route::get('/wisata/pagination',[TempatWisata::class,'pagination']);
 Route::get('/wisata/json',[TempatWisata::class,'json']);
 Route::get('/wisata/json/{id}',[TempatWisata::class,'get_id_json']);
 Route::get('/wisata',[TempatWisata::class,'get_tempat_wisata'])->name('wisata');
@@ -33,6 +33,7 @@ Route::post('/tempat-wisata/update/{id}',[TempatWisata::class,'update_tempat_wis
 Route::get('/tempat-wisata/delete/{id}',[TempatWisata::class,'delete_wisata']);
 
 //Event
+Route::get('/event/pagination',[Event::class,'pagination']);
 Route::get('event/json',[Event::class,'json']);
 Route::get('event/json/{id}',[Event::class,'get_id_json']);
 Route::get('/event',[Event::class,'get_event'])->name('event');
@@ -42,9 +43,11 @@ Route::post('/event/kirim',[Event::class,'post_event']);
 Route::post('/event/update/{id}',[Event::class,'update_event']);
 Route::get('/event/delete/{id}',[Event::class,'delete_event']);
 ///pesan klien 
+Route::get('/inbox/form',[PesanKlien::class,'get_form']);
 Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');
 Route::get('/inbox/{id}',[PesanKlien::class,'get_id_inbox']);
 Route::get('inbox/delete/{id}',[PesanKlien::class,'delete_inbox']);
+Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -8,7 +8,7 @@ import waktu from "../Components/img/time.png";
 import harga from "../Components/img/price.png";
 import email from "../Components/img/email.png";
 import nomor from "../Components/img/telephone.png";
-import {Shimmer} from "react-shimmer";
+import Shimmer from "react-shimmer-effect";
 
 class DeskripsiEvents extends Component{
     constructor(props){
@@ -53,7 +53,9 @@ class DeskripsiEvents extends Component{
                     <div className="img-and-facility">
                         <div id="Img-Item">
                             {isLoading && (
-                                <div className="image-item"><Shimmer width={400} height={500} /></div>
+                                <Shimmer>
+                                    <div className={"image-item"}/>
+                                </Shimmer>
                             )}
                             {isLoading}
                             {!isLoading && <img src={'http://localhost:8000/img_event/' + Data.foto} className="image-item" alt="" />}

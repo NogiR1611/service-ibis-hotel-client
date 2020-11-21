@@ -1,19 +1,20 @@
 import React,{Component} from "react";
-import ListEventService from "./event.service";
+import axios from "axios";
 import Deskripsi from "../Components/Deskripsi";
 import Header from "../Components/Header";
 import ListPage from "../Components/ListPage";
 import Footer from "../Components/Footer";
-import {Shimmer} from 'react-shimmer';
+import "../Components/style.css";
 
 class ListEvents extends Component{
     constructor(props){
         super(props)
         this.state = {
             Data : [],
-            page : 1,
-            count : 0,
-            pageSize : 3,
+            activePage : 0,
+            itemCountPerPage : 0,
+            totalItemsCount : 0,
+            pageRangeDisplayed : 5,
             Description : "",
             isLoading : false
         }
@@ -23,6 +24,7 @@ class ListEvents extends Component{
         this.fetchListEvent();
     }
 
+    /*
     getRequestParams = (page,pageSize) => {
         let params = {};
 
@@ -34,19 +36,25 @@ class ListEvents extends Component{
         }
 
         return params;
-    } 
+    }
+    */
     
     fetchListEvent = () => {
+        /*
         const {page,pageSize} = this.state;
         const params = this.getRequestParams(page,pageSize);
 
         ListEventService.getAll(params)
+        */
+
+        axios.get('http://localhost:8000/event/pagination?page='+this.state.activePage)
         .then(response => {
-            const {list_events,totalPage} = response.data;
+            const {data,current_page,per_page,total} = response.data;
             this.setState({
-                Data : list_events,
-                count : totalPage,
-                isLoading : true
+                Data : data,
+                activePage : current_page,
+                itemsCountPerPage : per_page,
+                totalItemsCount : total 
             });
             setTimeout(() => {
                 this.setState({ isLoading: false });
@@ -57,6 +65,7 @@ class ListEvents extends Component{
         });
     }
 
+    /*
     handlePageChange = (event,value) => {
         this.setState(
         {
@@ -67,6 +76,17 @@ class ListEvents extends Component{
         }
     )
     }
+    */
+   handlePageChange = (pageNumber) => {
+        axios.get('http://localhost:8000/event/pagination?page='+pageNumber)
+        .then(res => {
+            const {data,current_page} = res.data;
+            this.setState({
+                Data : data,
+                activePage : current_page
+            })
+        });
+   }
 
     render(){
         const border_list = {
@@ -75,7 +95,7 @@ class ListEvents extends Component{
         const color_date = {
             "color" : "#292b29"
         };
-        const {Data,count,page,isLoading} = this.state;
+        const {Data} = this.state;
 
         return(
             <React.Fragment>
@@ -86,27 +106,24 @@ class ListEvents extends Component{
                         <li key={index}> 
                             <span style={border_list} />
                             <a href={'/event/' + element.id} className='link-item'>
-                                {isLoading === true?
-                                    <div className="list-image-item"><Shimmer height={120} width={120}/></div>:
-                                    <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt="" />
-                                }
+                                <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt=""/>
                                 <div className='item'>
-                                    <h3>{isLoading === true?<Shimmer height={240} width={40} /> : element.nama_event}</h3>
-                                    <p><b>Tanggal</b> : {isLoading === true?<Shimmer height={240} width={40}/>:element.tanggal}</p>
-                                    <p><b>Tempat</b> : {isLoading === true?<Shimmer height={240} width={40}/>:element.tempat}</p>
+                                    <h3>{element.nama_event}</h3>
+                                    <p><b>Tanggal</b> : {element.tanggal}</p>
+                                    <p><b>Tempat</b> : {element.tempat}</p>
                                 </div>
                                 <div className='deskripsi'>
-                                    <span style={color_date}>
-                                        {isLoading === true?<Shimmer height={240} width={40} />:element.createdAt}
-                                    </span>
-                                    {isLoading === true?<Shimmer height={720} width={25}/>:<Deskripsi deskripsi={element.deskripsi}/>}
+                                    <span style={color_date}>{element.createdAt}</span>
+                                    <Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
                             </a>
                             <span style={border_list} />
                         </li>
                     )}
-                    count={count}
-                    page={page}
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={this.state.itemsCountPerPage}
+                    totalItemsCount={this.state.totalItemsCount}
+                    pageRangeDisplayed={this.state.pageRangeDisplayed}
                     onChange={this.handlePageChange}
                 />
                 <Footer />

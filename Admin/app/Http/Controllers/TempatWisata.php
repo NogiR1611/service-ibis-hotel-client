@@ -10,6 +10,11 @@ use Session;
 
 class TempatWisata extends Controller
 {
+    public function pagination(){
+        $tempat_wisata = DB::table('list_tempat_wisata')->paginate(3);
+        return response()->json($tempat_wisata);
+    }
+
     public function json(){
         $tempat_wisata = DB::table('list_tempat_wisata')->get();
         return response() -> json([
