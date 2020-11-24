@@ -8,6 +8,7 @@ import waktu from "../Components/img/time.png";
 import harga from "../Components/img/price.png";
 import email from "../Components/img/email.png";
 import nomor from "../Components/img/telephone.png";
+import gmap from "../Components/img/gmap.png";
 import Shimmer from "react-shimmer-effect";
 
 class DeskripsiEvents extends Component{
@@ -81,19 +82,24 @@ class DeskripsiEvents extends Component{
                                 <span><b>Harga : </b></span>
                                 <span>{Data.harga}</span>
                             </div>
+                            <div className="lokasi-item" id="Map">
+                                <img src={gmap} alt="" />
+                                <span><b>Lihat Map : </b></span>
+                                <span></span>
+                            </div>
+                            <div className="lokasi-item" id="Email">
+                                <img src={email} alt="" />
+                                <span><b>Email : </b></span>
+                                <span>{Data.email}</span>
+                            </div>
+                        <div className="lokasi-item" id="Nomor">
+                            <img src={nomor} alt="" />
+                            <span><b>Nomor : </b></span>
+                            <span>{Data.nomor}</span> 
+                        </div>
                         </div>
                     </div>
                     <p className="rendering-description">{Data.deskripsi}</p>
-                    <div className="lokasi-item" id="Email">
-                        <img src={email} alt="" />
-                        <span><b>Email : </b></span>
-                        <span>{Data.email}</span>
-                    </div>
-                    <div className="lokasi-item" id="Nomor">
-                        <img src={nomor} alt="" />
-                        <span><b>Nomor : </b></span>
-                        <span>{Data.nomor}</span> 
-                    </div>
                 </div>
                 <Footer />
             </React.Fragment>

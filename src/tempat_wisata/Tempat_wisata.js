@@ -3,8 +3,9 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import tempat from "../Components/img/location.png";
 import harga from "../Components/img/price.png";
+import gmap from "../Components/img/gmap.png";
 import '../Components/style.css';
-import gif_loading from "../Components/img/loading_button.gif";
+import gif_loading from "../Components/img/loading_img.gif";
 
 class DeskripsiWisata extends Component{
     constructor(props){
@@ -68,6 +69,12 @@ class DeskripsiWisata extends Component{
                                 <img src={harga} alt="" />
                                 <span><b>Harga : </b></span>
                                 <span>{Data.harga}</span>
+                            </div>
+                             
+                             <div className="lokasi-item" id="Map">
+                                <img src={gmap} alt="" />
+                                <span><b>Lihat Map : </b></span>
+                                <span>{}</span>
                             </div>
                         </div>
                     </div>

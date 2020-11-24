@@ -789,26 +789,37 @@ footer{
 
 #Lokasi{
     background-color: #c28204;
+    grid-area: "lokasi";
 }
 
 #Tanggal{
     background-color: #7df0d1;
+    grid-area: "tanggal";
 }
 
 #Waktu{
     background-color: #49afeb;
+    grid-area: "waktu";
 }
 
 #Harga{
     background-color: #ff8308;
+    grid-area: "harga";
+}
+
+#Map{
+    background-color: #e6ebe8;
+    grid-area: "map";
 }
 
 #Email{
     background-color: #85de88;
+    grid-area: "email";
 }
 
 #Nomor{
     background-color: #fcd703;
+    grid-area: "nomor";
 }
 
 @media screen and (max-width: 1024px){
@@ -1006,6 +1017,29 @@ footer{
         display: block;
         margin: 15px 5px;
         font-size: 10px;
+    }
+
+    .img-and-facility{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2,auto);
+        grid-template-areas: 
+            "img-item"
+            "location-item";
+    }
+
+    .Item-styling{
+        padding: 0px auto;
+    }
+
+    .Item-styling img{
+        justify-self: center;
+    }
+
+    #Location-Item{
+        display: grid;
+        grid-template-columns:repeat(3,auto);
+        grid-auto-rows: repeat(3,auto);
     }
 
     .bedroom{
@@ -1245,6 +1279,7 @@ footer{
     .menu-contact{
         padding:40px 30px;
     }
+
     .menu-contact ul h3{
         font-size:12px;
     }
@@ -1359,6 +1394,7 @@ footer{
         font-size: 10px;
     }
 
+
     .About{
         display: grid;
         grid-template-columns: auto;
@@ -1400,15 +1436,15 @@ footer{
     .img-and-facility{
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 70% auto;
+        grid-template-rows: repeat(2,auto);
         grid-template-areas: 
             "img-item"
             "location-item";
     }
 
     .Item-styling img{
-        width: 100%;
-        height: 100%;
+        width: 350px;
+        height: 500px;
         margin: 0px;
     }
 
@@ -1437,7 +1473,7 @@ footer{
     #Location-Item{
         justify-self: center;
         display:grid;
-        grid-template-rows: repeat(2,auto);
+        grid-template-rows: repeat(4,auto);
         grid-template-columns: repeat(2,auto);
     }
 
@@ -1476,6 +1512,12 @@ footer{
         padding:0px;
     }
 
+    .Item-styling #Img-Item img{
+        width: 300px;
+        height: 500px;
+        margin: 0px;
+    }
+
     .menu-contact #menu-sosmed{
         padding:0px 30px;
     }
@@ -1496,8 +1538,8 @@ footer{
         margin: 20px 20px;
     }
     .fitur{
-        margin: 20px 5px;
-        padding: 20px 5px;
+        margin: 30px 15px;
+        padding: 15px 5px;
     }
 
     #contact{
@@ -1506,6 +1548,12 @@ footer{
 
     .menu-contact #menu-sosmed{
         padding:0px 15px;
+    }
+
+    .Item-styling #Img-Item img{
+        width: 250px;
+        height: 380px;
+        margin: 0px;
     }
 
     .item_list{

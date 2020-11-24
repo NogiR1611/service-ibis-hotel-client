@@ -1,9 +1,9 @@
 import React,{Component} from "react";
-import ListWisataService from "./list_wisata.service";
 import Header from "../Components/Header";
 import ListPage from "../Components/ListPage";
 import Footer from "../Components/Footer";
 import Deskripsi from "../Components/Deskripsi";
+import Axios from "axios";
 
 class ListWisata extends Component{
     constructor(props){
@@ -11,22 +11,19 @@ class ListWisata extends Component{
         this.state = {
             Items : [],
             description : "",
-            page : 1,
-            count : 0,
-            pageSize : 3
+            activePage : 0,
+            itemCountPerPage : 0,
+            totalItemsCount : 0,
+            pageRangeDisplayed : 5,
+            Description : ""
         };
     }
     
-    componentWillMount(){
-        this.setState({
-            isLoading : false
-        });
-    }
-
     componentDidMount(){
         this.fetchListWisata();
     }
 
+    /*
     getRequestParams = (page,pageSize) =>{
         let params = {};
 
@@ -39,17 +36,22 @@ class ListWisata extends Component{
 
         return params;
     }
+    */
  
     fetchListWisata = () => {
+        /*
         const {page, pageSize} = this.state;
         const params = this.getRequestParams(page, pageSize);
- 
-        ListWisataService.getAll(params)
+        */
+
+        Axios.get('http://localhost:8000/wisata/pagination?page=' + this.state.activePage)
         .then(response => {
-            const {list_wisata,totalPage} = response.data;
+            const {data,current_page,per_page,total} = response.data;
             this.setState({
-                Items : list_wisata,
-                count : totalPage
+                Items : data,
+                activePage : current_page,
+                itemsCountPerPage : per_page,
+                totalItemsCount : total 
             });
         })
         .catch((err) =>{
@@ -57,6 +59,7 @@ class ListWisata extends Component{
         });
     }
 
+    /*
     handlePageChange = (event,value) => {
         this.setState(
         {
@@ -67,7 +70,7 @@ class ListWisata extends Component{
         }
     )
     }
-
+    */
     render(){
         const color_date={
             "color" : "#292b29"
@@ -75,7 +78,7 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-       let {Items,count,page} = this.state;
+       let {Items} = this.state;
 
         return(
             <React.Fragment>    
@@ -98,9 +101,11 @@ class ListWisata extends Component{
                             </a>
                         </li>
                     )}
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={this.state.itemsCountPerPage}
+                    totalItemsCount={this.state.totalItemsCount}
+                    pageRangeDisplayed={this.state.pageRangeDisplayed}
                     onChange={this.handlePageChange}
-                    count={count}
-                    page={page}
                 />
                 <Footer />
             </React.Fragment>

@@ -6,7 +6,7 @@ class ListPage extends Component{
     render(){
         return(
             <div className='item_page'>
-                <div className="title-item-page">
+                <div className="title-item-page"> 
                     <h3>{this.props.title}</h3>
                 </div>
                 <ul className='item_list'>
