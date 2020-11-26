@@ -10,6 +10,7 @@ class ListWisata extends Component{
         super(props)
         this.state = {
             Items : [],
+            isNull : false,
             description : "",
             activePage : 0,
             itemCountPerPage : 0,
@@ -53,6 +54,10 @@ class ListWisata extends Component{
                 itemsCountPerPage : per_page,
                 totalItemsCount : total 
             });
+
+            if(data === null){
+                this.setState({ isNull : true });
+            }
         })
         .catch((err) =>{
             console.log(err)
@@ -78,11 +83,13 @@ class ListWisata extends Component{
         const border_list = {
             "border" : "1px solid black"
         };
-       let {Items} = this.state;
+       let {Items,isNull} = this.state;
 
         return(
             <React.Fragment>    
                 <Header />
+                {isNull === true ?
+                <p>Kosong</p>:
                 <ListPage 
                     title="Tempat Wisata Terpopuler di Wilayah Bandung dan sekitarnya"
                     list_item={Items.map( (element,index) =>
@@ -106,7 +113,7 @@ class ListWisata extends Component{
                     totalItemsCount={this.state.totalItemsCount}
                     pageRangeDisplayed={this.state.pageRangeDisplayed}
                     onChange={this.handlePageChange}
-                />
+                />}
                 <Footer />
             </React.Fragment>
         );
