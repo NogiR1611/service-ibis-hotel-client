@@ -14,7 +14,7 @@ import listBarang from "./List_barang";
 class Routes extends Component{
     render(){
         return(
-            <Router basename="/ibishotel-with-react">
+            <Router>
                 <Route exact path="/" component={Home} />
                 <Route path="/Login" component={Login} />
                 <Route path="/About" component={About} />
