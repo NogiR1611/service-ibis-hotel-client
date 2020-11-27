@@ -1,7 +1,7 @@
 {
   "name": "service-ibis-hotel",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "https://nogir1611.github.io/ibishotel-with-react",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
