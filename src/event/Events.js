@@ -85,7 +85,7 @@ class DeskripsiEvents extends Component{
                             <div className="lokasi-item" id="Map">
                                 <img src={gmap} alt="" />
                                 <span><b>Lihat Map : </b></span>
-                                <span></span>
+                                <span><a href={Data.urlmap}>Klik disini</a></span>
                             </div>
                             <div className="lokasi-item" id="Email">
                                 <img src={email} alt="" />
