@@ -46,12 +46,12 @@ class Home extends Component{
                 <div id="big-horizontal-border" />
                 <section id="col-fitur">
                     <div className="fitur" id="event">
-                        <Link to="/List-Event">
-                            <h3>Event terkini di kota bandung</h3>
+                        <Link to="/List-Promosi">
+                            <h3>Promosi yang kami adakan Saat ini</h3>
                             <img src={event} alt="" />
                             <p>
-                                Ketahui beragam job fair,lomba,pameran,seminar dan workshop
-                                terkini yang ada di kota bandung
+                                Dapatkan promosi besar-besaran yang kami
+                                adakan yuk Kapan lagi coba <span>&#128513;</span>
                             </p>
                         </Link>
                     </div>

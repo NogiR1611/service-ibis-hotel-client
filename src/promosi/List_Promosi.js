@@ -6,7 +6,7 @@ import ListPage from "../Components/ListPage";
 import Footer from "../Components/Footer";
 import "../Components/style.css";
 
-class ListEvents extends Component{
+class ListPromosi extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -47,7 +47,7 @@ class ListEvents extends Component{
         ListEventService.getAll(params)
         */
 
-        axios.get('http://localhost:8000/event/pagination?page='+this.state.activePage)
+        axios.get('http://localhost:8000/promosi/pagination?page='+this.state.activePage)
         .then(response => {
             const {data,current_page,per_page,total} = response.data;
             this.setState({
@@ -101,16 +101,14 @@ class ListEvents extends Component{
             <React.Fragment>
                 <Header />
                 <ListPage 
-                    title="Jadwal Event Terbaru di Kota Bandung"
+                    title="Promo yang Kami hadirkan saat ini"
                     list_item={Data.map( (element,index) =>
                         <li key={index}> 
                             <span style={border_list} />
-                            <a href={'/event/' + element.id} className='link-item'>
-                                <img src={'http://localhost:8000/img_event/' + element.foto} className="list-image-item" alt=""/>
+                            <a href={'/promosi/' + element.id} className='link-item'>
+                                <img src={'http://localhost:8000/img_promotion/' + element.foto} className="list-image-item" alt=""/>
                                 <div className='item'>
-                                    <h3>{element.nama_event}</h3>
-                                    <p><b>Tanggal</b> : {element.tanggal}</p>
-                                    <p><b>Tempat</b> : {element.tempat}</p>
+                                    <h3>{element.judul_promosi}</h3>
                                 </div>
                                 <div className='deskripsi'>
                                     <span style={color_date}>{element.createdAt}</span>
@@ -132,4 +130,4 @@ class ListEvents extends Component{
     }
 }
 
-export default ListEvents;
+export default ListPromosi;
