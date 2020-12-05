@@ -314,7 +314,7 @@ header img{
 
 #col-fitur{
     display:grid;
-    grid-template-columns:repeat(2,auto);
+    grid-template-columns:repeat(3,auto);
 }
 
 .fitur{
@@ -488,7 +488,10 @@ footer{
 }
  
 .item_list{
-    padding:0px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
 }
 
 .menu-contact{
@@ -588,11 +591,11 @@ footer{
     font-size: 28px;
 }
 
-.item_page ul li{
+.item_page .item_list li{
     list-style-type: none;
     display: grid;
-    margin: 30px 0px;
-    padding: 20px 0px;
+    margin: 0px 0px;
+    padding: 20px 50px;
     text-decoration: none;
 }   
 
@@ -604,13 +607,75 @@ footer{
     transition: all .3s;
 }
 
+.item_page ul li .link-item{
+    padding: 10px 30px;
+    margin: 20px 0px;
+    border: 1px solid #6b6766;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    transition: all .3s;
+}
+
+.item_page ul li .link-item:hover{
+    box-shadow: 1px 1px 1px 1px #6b6766;
+    background-color: white;
+}
+
+.facility-meeting{
+    padding:0px;
+    color: black;
+}
+
+.item_meeting_list .item_meeting{
+    list-style-type: none;
+    display: grid;
+    margin: 0px 0px;
+    padding: 20px 50px;
+}
+
+.item h3{
+    color: black;
+}
+
+.item_page .item_meeting .link-item {
+    padding: 10px 30px;
+    margin: 20px 0px;
+    border: 1px solid #6b6766;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    transition: all .3s;
+}
+
+.item_page .item_meeting .link-item:hover{
+    box-shadow: 1px 1px 1px 1px #6b6766;
+    background-color: white;
+}
+
+.item_meeting_list{
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+}
+
+.item_meeting_list .facility-meeting li{
+    list-style-type: square;
+    color: black;
+}
+
 .item_page ul li a:hover{
     background-color: #e6ebe7;
 }
 
 .item_page ul li .list-image-item{
-    display: inline-block;
-    margin: 10px 0px;
+    display: block;
+    margin: 10px auto;
+    height: 250px;
+    width: 250px;
 }
 
 .title-list-shimmer{
@@ -627,19 +692,14 @@ footer{
 }
 
 .item_page ul li .item{
-    display:inline-block;
+    display: block;
     color: black;
-    margin: 0px 15px;
+    margin: 0px auto;
     padding: 0px 0px;
 }
 
-.list-image-item{
-    height: 180px;
-    width: 180px;
-}
-
-.deskripsi{
-    display: block;
+.link-item .deskripsi{
+    display: inline-block;
     color: black;
     margin: 0;
 }
@@ -748,16 +808,52 @@ footer{
 }
 
 .img-and-facility{
-    display:grid;
+    display: grid;
 }
 
+.note-promotion{
+    margin-top: 25px;
+}
+
+.note-promotion img{
+    height:20px;
+    width:20px;
+    margin:0;
+    float:left;
+}
+
+.note-promotion span{
+    float:left;
+}
+
+.note-promotion .arrow_down{
+    float: right;
+}
+
+.note-promotion button{
+    padding-right: 5px;
+    width: 450px;
+    border-radius: 8px;
+    background-color: #f2faed;
+}
 
 #Location-Item{
-    grid-area: "location-item";
+    display: grid;
+    grid-template-columns: repeat(3,auto);
 }
 
 #Img-Item{
     justify-self: center;
+    width: 600px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Img-Item .loading{
+    height: 100px;
+    width: 100px;
 }
 
 .rendering-description{
@@ -838,6 +934,24 @@ footer{
     .descript-facility span{
         display:block;
         margin: 12px 10px;
+    }
+
+    .item_page .item_list li{
+        list-style-type: none;
+        display: grid;
+        margin: 0px 0px;
+        padding: 20px 10px;
+        text-decoration: none;
+    }
+
+    .item_page ul li .link-item {
+        padding: 10px 10px;
+        margin: 20px 0px;
+        border: 1px solid #6b6766;
+        border-radius: 8px;
+        text-decoration: none;
+        background-color: white;
+        transition: all .3s;
     }
 
     .item_list{

@@ -78,7 +78,7 @@ class ListPromosi extends Component{
     }
     */
    handlePageChange = (pageNumber) => {
-        axios.get('http://localhost:8000/event/pagination?page='+pageNumber)
+        axios.get('http://localhost:8000/promosi/pagination?page='+pageNumber)
         .then(res => {
             const {data,current_page} = res.data;
             this.setState({
@@ -89,9 +89,6 @@ class ListPromosi extends Component{
    }
 
     render(){
-        const border_list = {
-            "border" : "1px solid black"
-        };
         const color_date = {
             "color" : "#292b29"
         };
@@ -104,7 +101,6 @@ class ListPromosi extends Component{
                     title="Promo yang Kami hadirkan saat ini"
                     list_item={Data.map( (element,index) =>
                         <li key={index}> 
-                            <span style={border_list} />
                             <a href={'/promosi/' + element.id} className='link-item'>
                                 <img src={'http://localhost:8000/img_promotion/' + element.foto} className="list-image-item" alt=""/>
                                 <div className='item'>
@@ -115,7 +111,6 @@ class ListPromosi extends Component{
                                     <Deskripsi deskripsi={element.deskripsi}/>
                                 </div>
                             </a>
-                            <span style={border_list} />
                         </li>
                     )}
                     activePage={this.state.activePage}

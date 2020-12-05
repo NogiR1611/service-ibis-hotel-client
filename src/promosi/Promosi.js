@@ -2,7 +2,9 @@ import React,{Component} from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../Components/style.css";
-import Shimmer from "react-shimmer-effect";
+import gif_loading from "../Components/img/loading_img.gif";
+import note from "../Components/img/note.png";
+import arrow_down from "../Components/img/arrow_down.png";
 
 class DeskripsiPromosi extends Component{
     constructor(props){
@@ -34,6 +36,7 @@ class DeskripsiPromosi extends Component{
 
     render(){
         let {Data,isLoading} = this.state;
+
         return(
             <React.Fragment>
                 <Header />
@@ -49,29 +52,27 @@ class DeskripsiPromosi extends Component{
                     <div className="img-and-facility">
                         <div id="Img-Item">
                             {isLoading && (
-                                <Shimmer>
-                                    <div className={"image-item"}/>
-                                </Shimmer>
+                                <img src={gif_loading} className="loading" alt="" />
                             )}
                             {isLoading}
                             {!isLoading && <img src={'http://localhost:8000/img_promotion/' + Data.foto} className="image-item" style={{"height" : `${Data.imgheight}px`,"width" : `${Data.imgwidth}px`}} alt="" />}
                         </div>
                     </div>
-                    <div className="">
-                        <h4>Periode</h4>
-                        <p className="rendering-description">{Data.periode}</p>
+                    <div className="note-promotion">
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Periode</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <p id="rendering-description" className="rendering-description">{Data.periode}</p>
                     </div>
-                    <div className="">
-                        <h4>Persyaratan & Ketentuan</h4>
-                        <p className="rendering-description">{Data.syarat}</p>
+                    <div className="note-promotion">
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Ketentuan & Persyaratan</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <p id="rendering-description" className="rendering-description">{Data.syarat}</p>
                     </div>
-                    <div className="">
-                        <h4>Deskripsi</h4>
-                        <p className="rendering-description">{Data.deskripsi}</p>
+                    <div className="note-promotion">
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Deskripsi</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <p id="rendering-description" className="rendering-description">{Data.deskripsi}</p>
                     </div>
-                    <div className="">
-                        <h4>Info Lebih Lanjut</h4>
-                        <p className="rendering-description">{Data.kontak}</p>
+                    <div className="note-promotion">
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Info Lebih Lanjut</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <p id="rendering-description" className="rendering-description">{Data.kontak}</p>
                     </div>
                 </div>
                 <Footer />

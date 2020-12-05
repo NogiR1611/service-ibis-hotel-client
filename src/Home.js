@@ -8,8 +8,9 @@ import eatingroom from "./Components/img/sliders/eatingroom_logo.png";
 import meetingroom from "./Components/img/sliders/meetingroom_logo.png";
 import sleepingroom from "./Components/img/sliders/sleepingroom_logo.png";
 import "./Components/style.css";
-import event from "./Components/img/event.png";
-import  wisata from "./Components/img/wisata.png";
+import meeting from "./Components/img/event.png";
+import wisata from "./Components/img/wisata.png";
+import promosi from "./Components/img/promotion.png";
  
 class Home extends Component{
     render(){
@@ -45,10 +46,10 @@ class Home extends Component{
                 </div>
                 <div id="big-horizontal-border" />
                 <section id="col-fitur">
-                    <div className="fitur" id="event">
+                    <div className="fitur" id="promosi">
                         <Link to="/List-Promosi">
                             <h3>Promosi yang kami adakan Saat ini</h3>
-                            <img src={event} alt="" />
+                            <img src={promosi} alt="" />
                             <p>
                                 Dapatkan promosi besar-besaran yang kami
                                 adakan yuk Kapan lagi coba <span>&#128513;</span>
@@ -61,6 +62,15 @@ class Home extends Component{
                             <img src={wisata} alt="" />
                             <p>
                                 Ketahui beragam tempat wisata unik dan menarik di seluruh bandung
+                            </p>
+                        </Link>
+                    </div>
+                    <div className="fitur" id="paket_meeting">
+                        <Link to="/Paket-meeting">
+                            <h3>Paket Pertemuan Yang Kami sediakan untuk Anda</h3>
+                            <img src={meeting} alt="" />
+                            <p>
+                                Gunakan Paket Pertemuan kami dengan budget minim dan banyak fasilitas
                             </p>
                         </Link>
                     </div>

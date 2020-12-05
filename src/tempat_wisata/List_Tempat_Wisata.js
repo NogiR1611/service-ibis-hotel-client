@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 import ListPage from "../Components/ListPage";
 import Footer from "../Components/Footer";
 import Deskripsi from "../Components/Deskripsi";
-import Axios from "axios";
+import axios from "axios";
 
 class ListWisata extends Component{
     constructor(props){
@@ -45,7 +45,7 @@ class ListWisata extends Component{
         const params = this.getRequestParams(page, pageSize);
         */
 
-        Axios.get('http://localhost:8000/wisata/pagination?page=' + this.state.activePage)
+        axios.get('http://localhost:8000/wisata/pagination?page=' + this.state.activePage)
         .then(response => {
             const {data,current_page,per_page,total} = response.data;
             this.setState({
@@ -76,12 +76,20 @@ class ListWisata extends Component{
     )
     }
     */
+   handlePageChange = (pageNumber) => {
+    axios.get('http://localhost:8000/wisata/pagination?page='+pageNumber)
+    .then(res => {
+        const {data,current_page} = res.data;
+        this.setState({
+            Items : data,
+            activePage : current_page
+        })
+    });
+    }
+
     render(){
         const color_date={
             "color" : "#292b29"
-        };
-        const border_list = {
-            "border" : "1px solid black"
         };
        let {Items,isNull} = this.state;
 
@@ -94,7 +102,6 @@ class ListWisata extends Component{
                     title="Tempat Wisata Terpopuler di Wilayah Bandung dan sekitarnya"
                     list_item={Items.map( (element,index) =>
                         <li key={index}>
-                            <span style={border_list} />
                             <a href={'/tempat-wisata/' + element.id} className='link-item'>
                                 <img src={'http://localhost:8000/img_wisata/' + element.urlimage} className="list-image-item" alt="" />
                                 <div className='item'>
