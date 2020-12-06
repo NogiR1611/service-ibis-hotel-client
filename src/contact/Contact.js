@@ -19,6 +19,10 @@ class Contact extends Component{
             isLoading : false
         }
 
+    componentDidMount(){
+        window.scrollTo(0,0);
+    }
+    
     postMessageClient = (event) => {
         event.preventDefault();
         const data = {

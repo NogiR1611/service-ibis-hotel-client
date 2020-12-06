@@ -9,6 +9,7 @@ import DeskripsiWisata from "./tempat_wisata/Tempat_wisata";
 import Promosi from "./promosi/List_Promosi";
 import MeetingPackage from "./meeting_package/ListMeeting";
 import DeskripsiPromosi from "./promosi/Promosi";
+import "./FontAwesomeIcon";
 
 class Routes extends Component{
     render(){

@@ -586,6 +586,34 @@ footer{
     padding: 30px 30px;
 }
 
+#Bg-meeting{
+    background-image: url(./img/bg/meeting1.jpg);
+    background-size: 100%;
+    animation-name: mymove;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes mymove {
+    0% { background-image: url(./img/bg/meeting1.jpg); }
+    50% { background-image: url(./img/bg/meeting2.jpg); }
+    100% { background-image: url(./img/bg/meetingroom.jpg); }
+}
+
+@-moz-keyframes mymove {
+    0% { background-image: url(./img/bg/meeting1.jpg); }
+    50% { background-image: url(./img/bg/meeting2.jpg); }
+    100% { background-image: url(./img/bg/meetingroom.jpg); }
+}
+
+@keyframes mymove {
+    0% { background-image: url(./img/bg/meeting1.jpg); }
+    50% { background-image: url(./img/bg/meeting2.jpg); }
+    100% { background-image: url(./img/bg/meetingroom.jpg); }
+}
+
 .item_page h1{
     text-align: center;
     font-size: 28px;
@@ -610,7 +638,7 @@ footer{
 .item_page ul li .link-item{
     padding: 10px 30px;
     margin: 20px 0px;
-    border: 1px solid #6b6766;
+    border: 1px solid black;
     border-radius: 8px;
     text-decoration: none;
     background-color: white;
@@ -619,7 +647,7 @@ footer{
 }
 
 .item_page ul li .link-item:hover{
-    box-shadow: 1px 1px 1px 1px #6b6766;
+    box-shadow: 1px 2px 2px 1px black;
     background-color: white;
 }
 
@@ -642,7 +670,7 @@ footer{
 .item_page .item_meeting .link-item {
     padding: 10px 30px;
     margin: 20px 0px;
-    border: 1px solid #6b6766;
+    border: 1px solid white;
     border-radius: 8px;
     text-decoration: none;
     background-color: white;
@@ -651,8 +679,32 @@ footer{
 }
 
 .item_page .item_meeting .link-item:hover{
-    box-shadow: 1px 1px 1px 1px #6b6766;
+    box-shadow: 2px 3px 3px 2px black;
     background-color: white;
+}
+
+#Title-meeting h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#Title-meeting p{
+    margin:0;
+    text-align: center;
+    color: #ebc41a;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+#Title-meeting .main-price{
+    font-size: 16px;
+}
+
+#Title-meeting .coret-price{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    color: #ebc41a;
 }
 
 .item_meeting_list{
@@ -662,9 +714,16 @@ footer{
     grid-template-rows: auto;
 }
 
+.item_meeting_list .facility-meeting li:before{
+    content: '✓';
+    color: #39cdfa;
+    font-weight: 700;
+    margin:0 5px;
+}
+
 .item_meeting_list .facility-meeting li{
-    list-style-type: square;
-    color: black;
+    list-style-type: none;
+    color: #747b7f;
 }
 
 .item_page ul li a:hover{
@@ -678,13 +737,50 @@ footer{
     width: 250px;
 }
 
+.daftar-paket-meeting{
+    padding:5px 10px;
+    margin:15px 20px;
+    color:white;
+    background-color: #e81022;
+    cursor:pointer;
+    border-radius:8px;
+    transition:all .3s;
+}
+
+.daftar-paket-meeting:hover{
+    text-decoration: none;
+    color: #e81022;
+    background-color: white;
+    border: 1px solid black;
+}
+
 .title-list-shimmer{
     padding:0px 400px;
 }
 
-.shimmer{
-    width: 180px;
-    height: 180px;
+.title-item-page h3{
+    color: white;
+    font-weight: 700;
+}
+
+#For-meeting-package{
+    color:white;
+}
+
+#For-meeting-package ul h3{
+    font-weight:600;
+    font-size: 24px;
+    text-align:left;
+}
+
+#For-meeting-package #menu-sosmed h3{
+    text-align: center;
+    font-weight:600;
+    font-size: 24px;  
+}
+
+#For-meeting-package ul li{
+    font-weight: 600;
 }
 
 .title-and-date{

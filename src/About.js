@@ -10,6 +10,10 @@ import roomService from "./Components/img/room-service.png";
 import "./Components/style.css";
 
 class About extends Component{
+    componentDidMount(){
+        window.scrollTo(0,0);
+    }
+
     render(){
         const title = {
             "text-align" : "center",

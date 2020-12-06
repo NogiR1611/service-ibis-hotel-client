@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import {Link} from "react-router-dom";
 import location from "./img/location.png";
 import "./style.css";
-
+ 
 class Footer extends Component{
     render(){
         const hearts = {

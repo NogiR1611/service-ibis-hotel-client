@@ -67,7 +67,7 @@ class Home extends Component{
                     </div>
                     <div className="fitur" id="paket_meeting">
                         <Link to="/Paket-meeting">
-                            <h3>Paket Pertemuan Yang Kami sediakan untuk Anda</h3>
+                            <h3>Paket Meeting yang Kami sediakan untuk Anda</h3>
                             <img src={meeting} alt="" />
                             <p>
                                 Gunakan Paket Pertemuan kami dengan budget minim dan banyak fasilitas
