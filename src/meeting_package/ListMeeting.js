@@ -1,9 +1,6 @@
 import React,{Component} from "react";
 import Header from "../Components/Header";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import instagram from "../Components/img/instagram.png";
-import facebook from "../Components/img/facebook.png";
-import twitter from "../Components/img/twitter.png";
 import Footer from "../Components/Footer";
 import "../Components/style.css";
 
@@ -78,13 +75,13 @@ class ListMeeting extends Component{
                         <div id="menu-sosmed">
                             <h3>Follow our social media</h3>
                             <a href="https://www.instagram.com/ibisbandungpasteur/">
-                                <FontAwesomeIcon icon={['fab','facebook-square']} size="2x" color="black" />
+                                <FontAwesomeIcon icon={['fab','instagram-square']} size="2x" color="black" />
                             </a>
                             <a href="https://web.facebook.com/ibisBandungPasteur/">
-                                <img src={facebook} className="" alt="" />
+                                <FontAwesomeIcon icon={['fab','facebook-square']} size="2x" color="black" />
                             </a>
                             <a href="https://twitter.com/ibisBDGpasteur">
-                                <img src={twitter} className="" alt="" />
+                                <FontAwesomeIcon icon={['fab','twitter-square']} size="2x" color="black" />
                             </a>
                         </div>
                     </div>

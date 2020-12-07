@@ -57,7 +57,7 @@ class DeskripsiWisata extends Component{
                                 <img src={gif_loading} className="loading" alt="" />
                             )}
                             {isLoading}
-                            {!isLoading && <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} style={{"height" : `${Data.height} px`,"width" : `${Data.width} px`}} className="image-item" alt="" />}
+                            {!isLoading && <img src={'http://localhost:8000/img_wisata/' + Data.urlimage} className="image-item" alt="" />}
                         </div>
                         <div id="Location-Item">
                             <div className="lokasi-item" id="Lokasi">

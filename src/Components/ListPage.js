@@ -7,7 +7,7 @@ class ListPage extends Component{
         return(
             <div className='item_page'>
                 <div className="title-item-page"> 
-                    <h3>{this.props.title}</h3>
+                    <h3 id="Promo-and-wisata">{this.props.title}</h3>
                 </div>
                 <ul className='item_list'>
                     {this.props.list_item}

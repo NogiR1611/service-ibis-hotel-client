@@ -48,7 +48,7 @@ class Home extends Component{
                 <section id="col-fitur">
                     <div className="fitur" id="promosi">
                         <Link to="/List-Promosi">
-                            <h3>Promosi yang kami adakan Saat ini</h3>
+                            <h3>Promosi yang Kami adakan Saat ini</h3>
                             <img src={promosi} alt="" />
                             <p>
                                 Dapatkan promosi besar-besaran yang kami
@@ -58,7 +58,7 @@ class Home extends Component{
                     </div>
                     <div className="fitur" id="wisata">
                         <Link to="/List-wisata">
-                            <h3>Tempat wisata terdekat di kota bandung</h3>
+                            <h3>Tempat Wisata terdekat di Kota Bandung</h3>
                             <img src={wisata} alt="" />
                             <p>
                                 Ketahui beragam tempat wisata unik dan menarik di seluruh bandung

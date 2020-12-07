@@ -665,6 +665,7 @@ footer{
 
 .item h3{
     color: black;
+    font-size: 24px;
 }
 
 .item_page .item_meeting .link-item {
@@ -758,6 +759,10 @@ footer{
     padding:0px 400px;
 }
 
+#Promo-and-wisata{
+    color: black;
+}
+
 .title-item-page h3{
     color: white;
     font-weight: 700;
@@ -804,6 +809,7 @@ footer{
     margin: 10px 0px;
 }
 .deskripsi p{
+    text-align: justify;
     margin: 0;
 }
 
@@ -1052,8 +1058,12 @@ footer{
 
     .item_list{
         padding:0px;
+    }   
+
+    .Item-styling h1{
+        font-size: 30px;
     }
-    
+
     .Item-styling img{
         margin: 20px 20px;
     }
@@ -1152,6 +1162,10 @@ footer{
         color:white;
     }
 
+    .Item-styling h1,h3{
+        font-size: 24px;
+    }
+
     .item_page ul li .shimmer-list-img{
         width: 120px;
         height: 120px;
@@ -1201,6 +1215,15 @@ footer{
         padding:0px;
     }
     
+    #Promo-and-wisata{
+        font-size: 20px;
+    }
+
+    .item_page ul li .list-image-item{
+        height:150px;
+        width:150px;
+    }
+
     .img-facility img{
         width: 20px;
         height: 20px;
@@ -1268,10 +1291,6 @@ footer{
 
     .info-hotel{
         font-size: 12px;
-    }
-
-    .Item-styling h1{
-        font-size: 28px;
     }
 
     .Item-styling h3{
@@ -1383,15 +1402,20 @@ footer{
         font-size: 12px;
     }
 
+    .item_page ul li .item h3 {
+        margin: 5px auto;
+    }
+
     .item_page ul li .list-image-item{
-        display: inline-block;
-        margin-bottom: 15px;
+        display: block;
+        margin:5px auto;
     }
 
     .item_page ul li .item{
-        display:inline-block;
+        display:block;
         color: black;
-        padding: 15px 0px;
+        padding: 10px 0px;
+        margin:0 auto;
     }
 
     .item h3,p{
@@ -1429,6 +1453,17 @@ footer{
 
     .fitur h3{
         font-size : 14px;
+    }
+
+    .fitur a h3{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #col-fitur{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3,auto);
     }
 
     #left-middle-footer{
@@ -1573,7 +1608,7 @@ footer{
     }
 
     .fitur{
-        margin: 20px 10px;
+        margin: 20px 40px;
     }
 
     #left-middle-footer .maps{
@@ -1623,13 +1658,14 @@ footer{
 
     .deskripsi p{
         font-size: 12px;
+        text-align: justify;
     }
 
     .item_page ul li .list-image-item{
         display:block;
         margin:0px auto;
-        height: 270px;
-        width: 180px;
+        height: 200px;
+        width: 275px;
     }
 
     .img-and-facility{
@@ -1648,16 +1684,20 @@ footer{
     }
 
     .Item-styling h3{
-        font-size: 18px;
+        font-size: 16px;
         margin:0px;
     }
 
     .item_list{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(6,auto);
         padding:0px;
     }
 
     .Item-styling p{
         font-size: 12px;
+        margin: 10px 0px;
     }
 
     .middle-footer {
@@ -1667,6 +1707,13 @@ footer{
 
     #Img-Item{
         justify-self: center;
+        width: 330px;
+        height: 550px;
+    }
+    
+    #Img-Item .loading{
+        height: 50px;
+        width: 50px;
     }
 
     #Location-Item{
@@ -1699,6 +1746,12 @@ footer{
         font-size: 10px;
     }
 
+    #Img-Item{
+        justify-self: center;
+        width: 270px;
+        height: 330px;
+    }
+
     footer p{
         font-size: 10px;
     }
@@ -1711,10 +1764,15 @@ footer{
         padding:0px;
     }
 
-    .Item-styling #Img-Item img{
-        width: 300px;
-        height: 500px;
+    .Item-styling #Img-Item .image-item{
+        width: 270px;
+        height: 300px;
         margin: 0px;
+    }
+
+    .item_page ul li .list-image-item{
+        width: 240px;
+        height: 160px;
     }
 
     .menu-contact #menu-sosmed{
@@ -1740,7 +1798,7 @@ footer{
         margin: 30px 15px;
         padding: 15px 5px;
     }
-
+    
     #contact{
         padding: 20px 50px;
     }
@@ -1749,10 +1807,15 @@ footer{
         padding:0px 15px;
     }
 
-    .Item-styling #Img-Item img{
+    .Item-styling #Img-Item .image-item{
         width: 250px;
-        height: 380px;
+        height: 300px;
         margin: 0px;
+    }
+
+    .item_page ul li .list-image-item{
+        width: 200px;
+        height: 160px;
     }
 
     .item_list{
@@ -1760,6 +1823,6 @@ footer{
     }
 
     .Item-styling{
-        padding:0px 10px;
+        padding: 10px 10px;
     }
 }
