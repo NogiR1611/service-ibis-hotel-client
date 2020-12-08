@@ -318,13 +318,12 @@ header img{
 }
 
 .fitur{
-    border:1px solid gray;
+    box-shadow: 2px 4px 10px #706e69;
     background-color:white;
     margin:20px 20px;
     padding:20px 20px;
     text-align: center;
     border-radius: 5%;
-    box-shadow:0px 2px 2px 0px black;
     transition:all .3s;
 }
 
@@ -337,12 +336,7 @@ header img{
 .fitur:hover {
     background-color: #F8F8FF;
     cursor:pointer;
-    box-shadow:1px 4px 4px 1px black;
-}
-
-.fitur:hover a img{
-    width:125px;
-    height:125px;
+    box-shadow: 2px 8px 22px rgba(17,26,104,.2);
 }
 
 .fitur a img{
@@ -586,6 +580,216 @@ footer{
     padding: 30px 30px;
 }
 
+/*untuk meeting paket*/
+.slider{
+    display: flex;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.slides{
+    width: 300%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.sliding{
+    width: 800px;
+    transition: 2s;
+}
+
+.sliding img{
+    width: 800px;
+    height: 500px;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: 480px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #e81022;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right:40px;
+}
+
+.manual-btn:hover{
+    background-color: #e81022;
+}
+
+#radio1:checked ~ .first{
+    margin-left:0;
+}
+
+#radio2:checked ~ .first{
+    margin-left:-800px;
+}
+
+#radio3:checked ~ .first{
+    margin-left:-1600px;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 480px;
+}
+
+.navigation-auto div{
+    border: 2px solid #e81022;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #e81022;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #e81022;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #e81022;
+}
+
+/*untuk home*/
+.slider-home{
+    display: flex;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.slides-home{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides-home input{
+    display: none;
+}
+
+.sliding-home{
+    width: 800px;
+    transition: 2s;
+}
+
+.sliding-home img{
+    width: 800px;
+    height: 500px;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: 480px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-bg{
+    border: 2px solid #e81022;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-bg:not(:last-child){
+    margin-right:40px;
+}
+
+.manual-bg:hover{
+    background-color: #e81022;
+}
+
+#bg1:checked ~ .first{
+    margin-left:0;
+}
+
+#bg2:checked ~ .first{
+    margin-left:-800px;
+}
+
+#bg3:checked ~ .first{
+    margin-left:-1600px;
+}
+
+#bg4:checked ~ .first{
+    margin-left:-2400px;
+}
+
+#bg5:checked ~ .first{
+    margin-left:-3200px;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 480px;
+}
+
+.navigation-auto div{
+    border: 2px solid #e81022;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#bg1:checked ~ .navigation-auto .auto-bg1{
+    background-color: #e81022;
+}
+
+#bg2:checked ~ .navigation-auto .auto-bg2{
+    background-color: #e81022;
+}
+
+#bg3:checked ~ .navigation-auto .auto-bg3{
+    background-color: #e81022;
+}
+
+#bg4:checked ~ .navigation-auto .auto-bg4{
+    background-color: #e81022;
+}
+
+#bg5:checked ~ .navigation-auto .auto-bg5{
+    background-color: #e81022;
+}
+/*
 #Bg-meeting{
     background-image: url(./img/bg/meeting1.jpg);
     background-size: 100%;
@@ -597,21 +801,25 @@ footer{
 }
 
 @-webkit-keyframes mymove {
-    0% { background-image: url(./img/bg/meeting1.jpg); }
-    50% { background-image: url(./img/bg/meeting2.jpg); }
-    100% { background-image: url(./img/bg/meetingroom.jpg); }
+    0% { background-image: url(./img/bg/meeting1.jpg); animation-delay: 3s; }
+    50% { background-image: url(./img/bg/meeting2.jpg); animation-delay: 3s; }
+    100% { background-image: url(./img/bg/meetingroom.jpg); animation-delay: 3s; }
 }
 
 @-moz-keyframes mymove {
-    0% { background-image: url(./img/bg/meeting1.jpg); }
-    50% { background-image: url(./img/bg/meeting2.jpg); }
-    100% { background-image: url(./img/bg/meetingroom.jpg); }
+    0% { background-image: url(./img/bg/meeting1.jpg); animation-delay: 3s; }
+    100% { background-image: url(./img/bg/meetingroom.jpg); animation-delay: 3s; }
+    50% { background-image: url(./img/bg/meeting2.jpg); animation-delay: 3s; }
 }
 
 @keyframes mymove {
-    0% { background-image: url(./img/bg/meeting1.jpg); }
-    50% { background-image: url(./img/bg/meeting2.jpg); }
-    100% { background-image: url(./img/bg/meetingroom.jpg); }
+    0% { background-image: url(./img/bg/meeting1.jpg); animation-delay: 3s; }
+    50% { background-image: url(./img/bg/meeting2.jpg); animation-delay: 3s; }
+    100% { background-image: url(./img/bg/meetingroom.jpg); animation-delay: 3s; }
+}
+*/
+.margin-icon{
+    margin: 0px 10px;
 }
 
 .item_page h1{
@@ -671,7 +879,7 @@ footer{
 .item_page .item_meeting .link-item {
     padding: 10px 30px;
     margin: 20px 0px;
-    border: 1px solid white;
+    box-shadow: 0px 4px 10px #706e69;
     border-radius: 8px;
     text-decoration: none;
     background-color: white;
@@ -680,8 +888,9 @@ footer{
 }
 
 .item_page .item_meeting .link-item:hover{
-    box-shadow: 2px 3px 3px 2px black;
+    box-shadow: 2px 8px 22px rgba(17,26,104,.2);
     background-color: white;
+    cursor: pointer;
 }
 
 #Title-meeting h3{
@@ -764,12 +973,12 @@ footer{
 }
 
 .title-item-page h3{
-    color: white;
+    color: #454442;
     font-weight: 700;
 }
 
 #For-meeting-package{
-    color:white;
+    color:#4f4b41;
 }
 
 #For-meeting-package ul h3{
@@ -1025,6 +1234,14 @@ footer{
         margin-top: 14px;
     }
 
+    .note_promotion .dropbtn{
+        margin: 0px 10px;
+    }
+    .note-promotion .arrow_down {
+        float: right;
+        margin: 0px 5px;
+    }
+
     #right-middle-footer{
         padding-left: 300px;
     }
@@ -1064,7 +1281,7 @@ footer{
         font-size: 30px;
     }
 
-    .Item-styling img{
+    .Item-styling .image-item{
         margin: 20px 20px;
     }
 
@@ -1162,7 +1379,7 @@ footer{
         color:white;
     }
 
-    .Item-styling h1,h3{
+    .Item-styling h1,h2,h3{
         font-size: 24px;
     }
 
@@ -1273,6 +1490,211 @@ footer{
         margin : 20px 20px;
         transition: all .3s;
     }
+
+    .item_page .item_meeting .link-item {
+        padding: 10px 10px;
+        margin: 20px 0px;
+    }
+
+    #For-meeting-package ul h3{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #For-meeting-package ul li {
+        font-size: 14px;
+    }
+
+    #For-meeting-package #menu-sosmed h3{
+        font-size: 16px;
+    }
+
+    .item_meeting_list .item_meeting {
+        list-style-type: none;
+        display: grid;
+        margin: 0px 0px;
+        padding: 20px 20px;
+    }
+
+    #Title-meeting h3{
+        font-size: 18px;
+    }
+
+    #Title-meeting p{
+        font-size: 16px;
+    }
+    
+    #Title-meeting .coret-price{
+        font-size: 12px;
+    }
+
+    .item_meeting_list .facility-meeting li{
+        font-size: 12px;
+    }
+
+    /* untuk home */
+    .slider-home{
+        width: 400px;
+        height: 300px;
+    }
+
+    .slides-home{
+        height: 300px;
+    }
+
+    .sliding-home{
+        width: 400px;
+    }
+
+    .sliding-home img{
+        width: 400px;
+        height: 300px;
+    }
+
+    .navigation-auto{
+        width: 400px;
+        margin-top: 270px;
+    }
+
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-manual{
+        width: 400px;
+        margin-top: 270px;
+    }
+
+    .manual-bg:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-auto div {
+        border: 1px solid #e81022;
+    }
+
+    .manual-bg{
+        border: 1px solid #e81022;
+    }
+
+    #bg1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #bg2:checked ~ .first{
+        margin-left:-400px;
+    }
+    
+    #bg3:checked ~ .first{
+        margin-left:-800px;
+    }
+    
+    #bg4:checked ~ .first{
+        margin-left:-1200px;
+    }
+    
+    #bg5:checked ~ .first{
+        margin-left:-1600px;
+    }
+
+    /*untuk paket meeting*/
+    .slider{
+        display: flex;
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    
+    .slides{
+        width: 300%;
+        height: 300px;
+        display: flex;
+    }
+    
+    .slides input{
+        display: none;
+    }
+    
+    .sliding{
+        width: 400px;
+        transition: 2s;
+    }
+    
+    .sliding img{
+        width: 400px;
+        height: 300px;
+    }
+    
+    .navigation-manual{
+        position: absolute;
+        width: 400px;
+        margin-top: 270px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .manual-btn{
+        border: 2px solid #e81022;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+    
+    .manual-btn:not(:last-child){
+        margin-right:10px;
+    }
+    
+    .manual-btn:hover{
+        background-color: #e81022;
+    }
+    
+    #radio1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #radio2:checked ~ .first{
+        margin-left:-400px;
+    }
+    
+    #radio3:checked ~ .first{
+        margin-left:-800px;
+    }
+    
+    .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 400px;
+        justify-content: center;
+        margin-top: 270px;
+    }
+    
+    .navigation-auto div{
+        border: 2px solid #e81022;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+    
+    #radio1:checked ~ .navigation-auto .auto-btn1{
+        background-color: #e81022;
+    }
+    
+    #radio2:checked ~ .navigation-auto .auto-btn2{
+        background-color: #e81022;
+    }
+    
+    #radio3:checked ~ .navigation-auto .auto-btn3{
+        background-color: #e81022;
+    }
+
+    /*untuk meeting paket*/
     
     .bedroom:hover{
         box-shadow: 1px 3px 3px 1px black;
@@ -1323,7 +1745,7 @@ footer{
 
     #review-facility h1{
         font-size: 28px;
-        margin:0px 30px;
+        margin:10px 30px;
     }
 
     #slider{
@@ -1348,6 +1770,71 @@ footer{
 
     .menu-contact h3{
         font-size: 15px;
+    }
+
+    /* untuk home */
+    .slider-home{
+        width: 400px;
+        height: 300px;
+    }
+
+    .slides-home{
+        height: 300px;
+    }
+
+    .sliding-home{
+        width: 400px;
+    }
+
+    .sliding-home img{
+        width: 400px;
+        height: 300px;
+    }
+
+    .navigation-auto{
+        width: 400px;
+        margin-top: 270px;
+    }
+
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-manual{
+        width: 400px;
+        margin-top: 270px;
+    }
+
+    .manual-bg:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-auto div {
+        border: 1px solid #e81022;
+    }
+
+    .manual-bg{
+        border: 1px solid #e81022;
+    }
+
+    #bg1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #bg2:checked ~ .first{
+        margin-left:-400px;
+    }
+    
+    #bg3:checked ~ .first{
+        margin-left:-800px;
+    }
+    
+    #bg4:checked ~ .first{
+        margin-left:-1200px;
+    }
+    
+    #bg5:checked ~ .first{
+        margin-left:-1600px;
     }
 
     .menu-contact p{
@@ -1431,6 +1918,7 @@ footer{
     .alert{
         font-size: 12px;
     }
+
     .welcome h3{
         font-size: 22px;
     }
@@ -1447,6 +1935,175 @@ footer{
         justify-self:center;
     }
 
+    .item_meeting_list {
+        padding: 0px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 33% 33% 33%;
+    }
+
+    /*Page home*/
+    .slider-home{
+        width: 400px;
+        height: 300px;
+    }
+
+    .slides-home{
+        height: 300px;
+    }
+
+    .sliding-home{
+        width: 400px;
+    }
+
+    .sliding-home img{
+        width: 400px;
+        height: 300px;
+    }
+
+    .navigation-auto{
+        width: 400px;
+        margin-top: 270px;
+    }
+
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-manual{
+        width: 400px;
+        margin-top: 270px;
+    }
+
+    .manual-bg:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-auto div {
+        border: 2px solid #e81022;
+    }
+
+    .manual-bg{
+        border: 2px solid #e81022;
+    }
+
+    #bg1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #bg2:checked ~ .first{
+        margin-left:-400px;
+    }
+    
+    #bg3:checked ~ .first{
+        margin-left:-800px;
+    }
+    
+    #bg4:checked ~ .first{
+        margin-left:-1200px;
+    }
+    
+    #bg5:checked ~ .first{
+        margin-left:-1600px;
+    }
+
+    /*untuk meeting*/
+    .slider{
+        display: flex;
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    
+    .slides{
+        width: 300%;
+        height: 300px;
+        display: flex;
+    }
+    
+    .slides input{
+        display: none;
+    }
+    
+    .sliding{
+        width: 400px;
+        transition: 2s;
+    }
+    
+    .sliding img{
+        width: 400px;
+        height: 300px;
+    }
+    
+    .navigation-manual{
+        position: absolute;
+        width: 400px;
+        margin-top: 270px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .manual-btn{
+        border: 2px solid #e81022;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+    
+    .manual-btn:not(:last-child){
+        margin-right:10px;
+    }
+    
+    .manual-btn:hover{
+        background-color: #e81022;
+    }
+    
+    #radio1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #radio2:checked ~ .first{
+        margin-left:-400px;
+    }
+    
+    #radio3:checked ~ .first{
+        margin-left:-800px;
+    }
+    
+    .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 400px;
+        justify-content: center;
+        margin-top: 270px;
+    }
+    
+    .navigation-auto div{
+        border: 2px solid #e81022;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+    
+    #radio1:checked ~ .navigation-auto .auto-btn1{
+        background-color: #e81022;
+    }
+    
+    #radio2:checked ~ .navigation-auto .auto-btn2{
+        background-color: #e81022;
+    }
+    
+    #radio3:checked ~ .navigation-auto .auto-btn3{
+        background-color: #e81022;
+    }
+    /*end*/
     .fitur p{
         font-size: 10px;
     }
@@ -1496,7 +2153,7 @@ footer{
 
     #contact input{
         font-size:12px;
-        width: 200px;
+        width: 300px;
         height: 20px;
     }
 
@@ -1511,7 +2168,23 @@ footer{
     }
 
     .menu-contact{
-        padding:40px 30px;
+        padding:40px 10px;
+    }
+
+    .item_page {
+        padding: 30px 10px;
+    }
+
+    #For-meeting-package ul h3{
+        font-size: 14px;
+    }
+
+    #For-meeting-package #menu-sosmed h3{
+        font-size: 14px;
+    }
+
+    .menu-contact #menu-sosmed {
+        padding: 0px 20px;
     }
 
     .menu-contact ul h3{
@@ -1530,6 +2203,14 @@ footer{
         width: 22%;
         height: 22%;
         margin:0px 5px;
+    }
+
+    .item_meeting_list .item_meeting{
+        padding: 20px 50px;
+    }
+
+    .menu-contact {
+        padding: 40px 0px;
     }
 
     .tentang_kami{
@@ -1608,7 +2289,7 @@ footer{
     }
 
     .fitur{
-        margin: 20px 40px;
+        margin: 20px 60px;
     }
 
     #left-middle-footer .maps{
@@ -1664,7 +2345,7 @@ footer{
     .item_page ul li .list-image-item{
         display:block;
         margin:0px auto;
-        height: 200px;
+        height: 390px;
         width: 275px;
     }
 
@@ -1677,10 +2358,18 @@ footer{
             "location-item";
     }
 
-    .Item-styling img{
+    .Item-styling .image-item{
         width: 350px;
-        height: 500px;
+        height: 496px;
         margin: 0px;
+    }
+
+    .note-promotion button{
+        width: 350px;
+    }
+
+    .Item-styling h2{
+        font-size: 16px;
     }
 
     .Item-styling h3{
@@ -1731,15 +2420,20 @@ footer{
     }
 
     .lokasi-item img{
-        width: 30%;
-        height: 30%;
+        width: 25px;
+        height: 25px;
         margin:0px;
     }
 }
 
 @media only screen and (max-width: 375px){
     .fitur{
-        margin: 20px 10px;
+        margin: 20px 40px;
+    }
+
+    .fitur a img {
+        width: 100px;
+        height: 100px;
     }
 
     .fitur a p{
@@ -1751,6 +2445,167 @@ footer{
         width: 270px;
         height: 330px;
     }
+
+    .welcome {
+        padding: 5px 20px;
+        text-align: center;
+    }
+
+    #review-facility {
+        margin: 20px 0px;
+    }
+
+    /* Untuk slider home */
+    .slider-home{
+        width: 300px;
+        height: 200px;
+    }
+
+    .slides-home{
+        height: 200px;
+    }
+
+    .sliding-home{
+        width: 300px;
+    }
+
+    .sliding-home img{
+        width: 300px;
+        height: 200px;
+    }
+
+    .navigation-auto{
+        width: 300px;
+        margin-top: 180px;
+    }
+
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-manual{
+        width: 300px;
+        margin-top: 180px;
+    }
+
+    .manual-bg:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-auto div {
+        border: 2px solid #e81022;
+    }
+
+    .manual-bg{
+        border: 2px solid #e81022;
+    }
+
+    #bg1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #bg2:checked ~ .first{
+        margin-left:-300px;
+    }
+    
+    #bg3:checked ~ .first{
+        margin-left:-600px;
+    }
+    
+    #bg4:checked ~ .first{
+        margin-left:-900px;
+    }
+    
+    #bg5:checked ~ .first{
+        margin-left:-1200px;
+    }
+
+    .navigation-manual{
+        position: absolute;
+        width: 300px;
+        margin-top: 180px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .manual-btn{
+        border: 2px solid #e81022;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    /*untuk meeting*/
+    .slider{
+        display: flex;
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    
+    .slides{
+        width: 300%;
+        height: 200px;
+        display: flex;
+    }
+    
+    .slides input{
+        display: none;
+    }
+    
+    .sliding{
+        width: 300px;
+        transition: 2s;
+    }
+    
+    .sliding img{
+        width: 300px;
+        height: 200px;
+    }
+    
+    .manual-btn{
+        border: 2px solid #e81022;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+    
+    .manual-btn:not(:last-child){
+        margin-right:10px;
+    }
+    
+    .manual-btn:hover{
+        background-color: #e81022;
+    }
+    
+    #radio1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #radio2:checked ~ .first{
+        margin-left:-300px;
+    }
+    
+    #radio3:checked ~ .first{
+        margin-left:-600px;
+    }
+    
+    #radio1:checked ~ .navigation-auto .auto-btn1{
+        background-color: #e81022;
+    }
+    
+    #radio2:checked ~ .navigation-auto .auto-btn2{
+        background-color: #e81022;
+    }
+    
+    #radio3:checked ~ .navigation-auto .auto-btn3{
+        background-color: #e81022;
+    }
+    /*end*/
 
     footer p{
         font-size: 10px;
@@ -1775,6 +2630,10 @@ footer{
         height: 160px;
     }
 
+    .note-promotion button {
+        width: 280px;
+    }
+
     .menu-contact #menu-sosmed{
         padding:0px 30px;
     }
@@ -1795,16 +2654,88 @@ footer{
         margin: 20px 20px;
     }
     .fitur{
-        margin: 30px 15px;
+        margin: 30px 30px;
         padding: 15px 5px;
     }
     
+    .slider-home{
+        width: 300px;
+        height: 200px;
+    }
+
+    .slides-home{
+        height: 200px;
+    }
+
+    .sliding-home{
+        width: 300px;
+    }
+
+    .sliding-home img{
+        width: 300px;
+        height: 200px;
+    }
+
+    .navigation-auto{
+        width: 300px;
+        margin-top: 180px;
+    }
+
+    .navigation-auto div:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-manual{
+        width: 300px;
+        margin-top: 180px;
+    }
+
+    .manual-bg:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .navigation-auto div {
+        border: 2px solid #e81022;
+    }
+    .manual-bg{
+        border: 2px solid #e81022;
+    }
+
+    #bg1:checked ~ .first{
+        margin-left:0;
+    }
+    
+    #bg2:checked ~ .first{
+        margin-left:-300px;
+    }
+    
+    #bg3:checked ~ .first{
+        margin-left:-600px;
+    }
+    
+    #bg4:checked ~ .first{
+        margin-left:-900px;
+    }
+    
+    #bg5:checked ~ .first{
+        margin-left:-1200px;
+    }
+
+    .fitur a img{
+        width: 80px;
+        height: 80px;
+    }
+
     #contact{
         padding: 20px 50px;
     }
 
+    .item_page h3 {
+        font-size: 16px;
+    }
+
     .menu-contact #menu-sosmed{
-        padding:0px 15px;
+        padding:0px 10px;
     }
 
     .Item-styling #Img-Item .image-item{
@@ -1824,5 +2755,9 @@ footer{
 
     .Item-styling{
         padding: 10px 10px;
+    }
+
+    .Item-styling h2{
+        font-size: 14px;
     }
 }

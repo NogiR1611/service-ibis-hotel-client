@@ -2,11 +2,22 @@ import React,{Component} from "react";
 import Header from "../Components/Header";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Footer from "../Components/Footer";
+import bg1 from "../Components/img/bg/meeting1.jpg";
+import bg2 from "../Components/img/bg/meeting2.jpg";
+import bg3 from "../Components/img/bg/meetingroom.jpg";
 import "../Components/style.css";
 
 class ListMeeting extends Component{
     componentDidMount(){
         window.scrollTo(0,0);
+        var counter = 1;
+        setInterval(() => {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 3){
+                counter = 1;
+            }
+        },5000);
     }
 
     render(){
@@ -19,7 +30,7 @@ class ListMeeting extends Component{
                     </div>
                     <div className='item_meeting_list'>
                         <div className="item_meeting">
-                            <a href='#' className='link-item'>
+                            <div className='link-item'>
                                 <div className='item' id='Title-meeting'>
                                     <h3>Half Day Paket Meeting</h3>
                                     <p>IDR 200.000/<span className="main-price">Pax</span></p>
@@ -31,14 +42,14 @@ class ListMeeting extends Component{
                                     <li>1x Coffee Break</li>
                                     <li>1x Makan Siang atau Malam</li>
                                 </ul>
-                            </a>
+                            </div>
                         </div>
                         <div className="item_meeting">
-                            <a href='#' className='link-item'>
+                            <div className='link-item'>
                                 <div className='item' id='Title-meeting'>
                                     <h3>Full Day Paket Meeting</h3>
                                     <p>IDR 260.000/<span className="main-price">Pax</span></p>
-                                    <span className="coret-price"><s>IDR 230.000/Pax</s></span>
+                                    <span className="coret-price"><s>IDR 290.000/Pax</s></span>
                                 </div>
                                 <ul className='facility-meeting'>
                                     <li>Minimal 25 Pax</li>
@@ -46,14 +57,14 @@ class ListMeeting extends Component{
                                     <li>2x coffee break</li>
                                     <li>1x Makan Siang atau Malam</li>
                                 </ul>
-                            </a>
+                            </div>
                         </div>
                         <div className="item_meeting">
-                            <a href='#' className='link-item'>
+                            <div href='' className='link-item'>
                                 <div className='item' id='Title-meeting'>
                                     <h3>Full Board Paket Meeting</h3>
                                     <p>IDR 360.000/<span className="main-price">Pax</span></p>
-                                    <span className="coret-price"><s>IDR 230.000/Pax</s></span>
+                                    <span className="coret-price"><s>IDR 400.000/Pax</s></span>
                                 </div>
                                 <ul className='facility-meeting'>
                                     <li>Minimal 25 Pax</li>
@@ -61,7 +72,33 @@ class ListMeeting extends Component{
                                     <li>2x coffee break</li>
                                     <li>2x Makan Siang atau Malam</li>
                                 </ul>
-                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="slider">
+                        <div className="slides">
+                            <input type="radio" name="radio-btn" id="radio1" />
+                            <input type="radio" name="radio-btn" id="radio2" />
+                            <input type="radio" name="radio-btn" id="radio3" />
+                            <div className="sliding first">
+                                <img src={bg1} alt="" />
+                            </div>
+                            <div className="sliding">
+                                <img src={bg2} alt="" />
+                            </div>
+                            <div className="sliding">
+                                <img src={bg3} alt="" />
+                            </div>
+                            <div className="navigation-auto">
+                                <div className="auto-btn1"></div>
+                                <div className="auto-btn2"></div>
+                                <div className="auto-btn3"></div>
+                            </div>
+                        </div>
+                        <div className="navigation-manual">
+                            <label htmlFor="radio1" className="manual-btn" />
+                            <label htmlFor="radio2" className="manual-btn" />
+                            <label htmlFor="radio3" className="manual-btn" />
                         </div>
                     </div>
                     <div id="big-horizontal-border" />
@@ -75,13 +112,13 @@ class ListMeeting extends Component{
                         <div id="menu-sosmed">
                             <h3>Follow our social media</h3>
                             <a href="https://www.instagram.com/ibisbandungpasteur/">
-                                <FontAwesomeIcon icon={['fab','instagram-square']} size="2x" color="black" />
+                                <span className="margin-icon"><FontAwesomeIcon icon={['fab','instagram-square']} size="2x" color="black" /></span>
                             </a>
                             <a href="https://web.facebook.com/ibisBandungPasteur/">
-                                <FontAwesomeIcon icon={['fab','facebook-square']} size="2x" color="black" />
+                                <span className="margin-icon"><FontAwesomeIcon icon={['fab','facebook-square']} size="2x" color="black" /></span>
                             </a>
                             <a href="https://twitter.com/ibisBDGpasteur">
-                                <FontAwesomeIcon icon={['fab','twitter-square']} size="2x" color="black" />
+                                <span className="margin-icon"><FontAwesomeIcon icon={['fab','twitter-square']} size="2x" color="black" /></span>
                             </a>
                         </div>
                     </div>

@@ -13,6 +13,17 @@ import wisata from "./Components/img/wisata.png";
 import promosi from "./Components/img/promotion.png";
  
 class Home extends Component{
+    componentDidMount(){
+        var counter = 1;
+        setInterval(() => {
+            document.getElementById('bg' + counter).checked=true;
+            counter++;
+            if(counter > 5){
+                counter = 1;
+            }
+        },5000);
+    }
+
     render(){
         return(
             <section>
@@ -24,6 +35,45 @@ class Home extends Component{
                     <div id="review-facility">
                         <h1>Semoga anda menikmati pelayanan dan fasilitas yang kami berikan untuk anda</h1>
                     </div>
+                    <div className="slider-home">
+                        <div className="slides-home">
+                            <input type="radio" name="radio-btn" id="bg1" />
+                            <input type="radio" name="radio-btn" id="bg2" />
+                            <input type="radio" name="radio-btn" id="bg3" />
+                            <input type="radio" name="radio-btn" id="bg4" />
+                            <input type="radio" name="radio-btn" id="bg5" />
+                            <div className="sliding-home first">
+                                <img src={building} alt="" />
+                            </div>
+                            <div className="sliding-home">
+                                <img src={breakfast} alt="" />
+                            </div>
+                            <div className="sliding-home">
+                                <img src={eatingroom} alt="" />
+                            </div>
+                            <div className="sliding-home">
+                                <img src={meetingroom} alt="" />
+                            </div>
+                            <div className="sliding-home">
+                                <img src={sleepingroom} alt="" />
+                            </div>
+                            <div className="navigation-auto">
+                                <div className="auto-bg1"></div>
+                                <div className="auto-bg2"></div>
+                                <div className="auto-bg3"></div>
+                                <div className="auto-bg4"></div>
+                                <div className="auto-bg5"></div>
+                            </div>
+                        </div>
+                        <div className="navigation-manual">
+                            <label for="bg1" className="manual-bg" />
+                            <label for="bg2" className="manual-bg" />
+                            <label for="bg3" className="manual-bg" />
+                            <label for="bg4" className="manual-bg" />
+                            <label for="bg5" className="manual-bg" />
+                        </div>
+                    </div>
+                    {/*
                     <div id="slider">
                         <figure>
                             <div className="slide" id="building">
@@ -43,6 +93,7 @@ class Home extends Component{
                             </div>
                         </figure>
                     </div>
+                    */}
                 </div>
                 <div id="big-horizontal-border" />
                 <section id="col-fitur">
@@ -52,7 +103,7 @@ class Home extends Component{
                             <img src={promosi} alt="" />
                             <p>
                                 Dapatkan promosi besar-besaran yang kami
-                                adakan yuk Kapan lagi coba <span>&#128513;</span>
+                                adakan yuk Kapan lagi coba <span role="img" aria-label="emoji">&#128513;</span>
                             </p>
                         </Link>
                     </div>

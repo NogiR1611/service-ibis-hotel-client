@@ -59,19 +59,19 @@ class DeskripsiPromosi extends Component{
                         </div>
                     </div>
                     <div className="note-promotion">
-                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Periode</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} className="dropbtn" alt="" /><span><b>Periode</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
                         <p id="rendering-description" className="rendering-description">{Data.periode}</p>
                     </div>
                     <div className="note-promotion">
-                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Ketentuan & Persyaratan</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} className="dropbtn" alt="" /><span><b>Ketentuan & Persyaratan</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
                         <p id="rendering-description" className="rendering-description">{Data.syarat}</p>
                     </div>
                     <div className="note-promotion">
-                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Deskripsi</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} className="dropbtn" alt="" /><span><b>Deskripsi</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
                         <p id="rendering-description" className="rendering-description">{Data.deskripsi}</p>
                     </div>
                     <div className="note-promotion">
-                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} alt="" /><span><b>Info Lebih Lanjut</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
+                        <button className="dropbtn" onClick={this.myDropDown}><img src={note} className="dropbtn" alt="" /><span><b>Info Lebih Lanjut</b></span><img src={arrow_down} className="arrow_down" alt="" /></button>
                         <p id="rendering-description" className="rendering-description">{Data.kontak}</p>
                     </div>
                 </div>
