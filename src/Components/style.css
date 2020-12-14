@@ -789,35 +789,47 @@ footer{
 #bg5:checked ~ .navigation-auto .auto-bg5{
     background-color: #e81022;
 }
-/*
-#Bg-meeting{
-    background-image: url(./img/bg/meeting1.jpg);
-    background-size: 100%;
-    animation-name: mymove;
-    animation-duration: 18s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate;
+
+.button-slide{
+    text-align:center;
 }
 
-@-webkit-keyframes mymove {
-    0% { background-image: url(./img/bg/meeting1.jpg); animation-delay: 3s; }
-    50% { background-image: url(./img/bg/meeting2.jpg); animation-delay: 3s; }
-    100% { background-image: url(./img/bg/meetingroom.jpg); animation-delay: 3s; }
+.left-slide img{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: -400px;
+    margin-top: -280px;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 50%;
 }
 
-@-moz-keyframes mymove {
-    0% { background-image: url(./img/bg/meeting1.jpg); animation-delay: 3s; }
-    100% { background-image: url(./img/bg/meetingroom.jpg); animation-delay: 3s; }
-    50% { background-image: url(./img/bg/meeting2.jpg); animation-delay: 3s; }
+.left-slide{
+    border-radius: 50%;
 }
 
-@keyframes mymove {
-    0% { background-image: url(./img/bg/meeting1.jpg); animation-delay: 3s; }
-    50% { background-image: url(./img/bg/meeting2.jpg); animation-delay: 3s; }
-    100% { background-image: url(./img/bg/meetingroom.jpg); animation-delay: 3s; }
+.left-slide img:hover{
+    background-color: #e81022;
+    border-radius: 50%;
 }
-*/
+
+.right-slide img{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: 360px;
+    margin-top: -280px;
+    cursor: pointer;
+    transition:all .3s;
+    border-radius: 50%;
+}
+
+.right-slide img:hover{
+    background-color: #e81022;
+    border-radius: 50%;
+}
+
 .margin-icon{
     margin: 0px 10px;
 }

@@ -13,17 +13,6 @@ import wisata from "./Components/img/wisata.png";
 import promosi from "./Components/img/promotion.png";
  
 class Home extends Component{
-    componentDidMount(){
-        var counter = 1;
-        setInterval(() => {
-            document.getElementById('bg' + counter).checked=true;
-            counter++;
-            if(counter > 5){
-                counter = 1;
-            }
-        },3000);
-    }
-
     render(){
         return(
             <section>
@@ -35,65 +24,40 @@ class Home extends Component{
                     <div id="review-facility">
                         <h1>Semoga anda menikmati pelayanan dan fasilitas yang kami berikan untuk anda</h1>
                     </div>
-                    <div className="slider-home">
-                        <div className="slides-home">
-                            <input type="radio" name="radio-btn" id="bg1" />
-                            <input type="radio" name="radio-btn" id="bg2" />
-                            <input type="radio" name="radio-btn" id="bg3" />
-                            <input type="radio" name="radio-btn" id="bg4" />
-                            <input type="radio" name="radio-btn" id="bg5" />
-                            <div className="sliding-home first">
-                                <img src={building} alt="" />
+                    <div className="slider-home carousel slide" data-ride="carousel" id="carouselExampleControls">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1" className="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                        </ol>
+                        <div className="slides-home carousel-inner">
+                            <div className="sliding-home carousel-item active" data-interval="4000">
+                                <img src={building} className="d-block w-100" alt="" />
                             </div>
-                            <div className="sliding-home">
-                                <img src={breakfast} alt="" />
+                            <div className="sliding-home carousel-item" data-interval="4000">
+                                <img src={breakfast} className="d-block w-100" alt="" />
                             </div>
-                            <div className="sliding-home">
-                                <img src={eatingroom} alt="" />
+                            <div className="sliding-home carousel-item" data-interval="4000">
+                                <img src={eatingroom} className="d-block w-100" alt="" />
                             </div>
-                            <div className="sliding-home">
-                                <img src={meetingroom} alt="" />
+                            <div className="sliding-home carousel-item" data-interval="4000">
+                                <img src={meetingroom} className="d-block w-100" alt="" />
                             </div>
-                            <div className="sliding-home">
-                                <img src={sleepingroom} alt="" />
-                            </div>
-                            <div className="navigation-auto">
-                                <div className="auto-bg1"></div>
-                                <div className="auto-bg2"></div>
-                                <div className="auto-bg3"></div>
-                                <div className="auto-bg4"></div>
-                                <div className="auto-bg5"></div>
+                            <div className="sliding-home carousel-item" data-interval="4000">
+                                <img src={sleepingroom} className="d-block w-100" alt="" />
                             </div>
                         </div>
-                        <div className="navigation-manual">
-                            <label for="bg1" className="manual-bg" />
-                            <label for="bg2" className="manual-bg" />
-                            <label for="bg3" className="manual-bg" />
-                            <label for="bg4" className="manual-bg" />
-                            <label for="bg5" className="manual-bg" />
-                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    {/*
-                    <div id="slider">
-                        <figure>
-                            <div className="slide" id="building">
-                                <img src={building} alt="" />
-                            </div>
-                            <div className="slide" id="breakfast">
-                                <img src={breakfast} alt="" />
-                            </div>
-                            <div className="slide" id="eatingroom">
-                                <img src={eatingroom} alt="" />
-                            </div>
-                            <div className="slide" id="meetingroom">
-                                <img src={meetingroom} alt="" />
-                            </div>
-                            <div className="slide" id="sleepingroom">
-                                <img src={sleepingroom} alt="" />
-                            </div>
-                        </figure>
-                    </div>
-                    */}
                 </div>
                 <div id="big-horizontal-border" />
                 <section id="col-fitur">
@@ -131,28 +95,5 @@ class Home extends Component{
         );
     }
 }
-
-/*
-class Home extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            done : undefined
-        }
-    }
-
-    render(){
-        return(
-            <React.Fragment>
-            {!this.state.done ? (
-                <Loading />
-            ) : (
-                <Dashboard />
-            )}
-            </React.Fragment>
-        );
-    }
-}
-*/
 
 export default Home;

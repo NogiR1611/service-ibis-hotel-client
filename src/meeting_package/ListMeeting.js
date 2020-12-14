@@ -8,18 +8,6 @@ import bg3 from "../Components/img/bg/meetingroom.jpg";
 import "../Components/style.css";
 
 class ListMeeting extends Component{
-    componentDidMount(){
-        window.scrollTo(0,0);
-        var counter = 1;
-        setInterval(() => {
-            document.getElementById('radio' + counter).checked = true;
-            counter++;
-            if(counter > 3){
-                counter = 1;
-            }
-        },5000);
-    }
-
     render(){
         return(
             <React.Fragment>
@@ -75,31 +63,31 @@ class ListMeeting extends Component{
                             </div>
                         </div>
                     </div>
-                    <div className="slider">
-                        <div className="slides">
-                            <input type="radio" name="radio-btn" id="radio1" />
-                            <input type="radio" name="radio-btn" id="radio2" />
-                            <input type="radio" name="radio-btn" id="radio3" />
-                            <div className="sliding first">
+                    <div className="slider carousel slide" data-ride="carousel" id="carouselExampleControls">
+                        <ol className="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div className="slides carousel-inner">
+                            <div className="sliding carousel-item active" data-interval="4000">
                                 <img src={bg1} alt="" />
                             </div>
-                            <div className="sliding">
+                            <div className="sliding carousel-item" data-interval="4000">
                                 <img src={bg2} alt="" />
                             </div>
-                            <div className="sliding">
+                            <div className="sliding carousel-item" data-interval="4000">
                                 <img src={bg3} alt="" />
                             </div>
-                            <div className="navigation-auto">
-                                <div className="auto-btn1"></div>
-                                <div className="auto-btn2"></div>
-                                <div className="auto-btn3"></div>
-                            </div>
                         </div>
-                        <div className="navigation-manual">
-                            <label htmlFor="radio1" className="manual-btn" />
-                            <label htmlFor="radio2" className="manual-btn" />
-                            <label htmlFor="radio3" className="manual-btn" />
-                        </div>
+                        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                     <div id="big-horizontal-border" />
                     <div className="menu-contact" id="For-meeting-package">
