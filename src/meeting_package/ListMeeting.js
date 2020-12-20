@@ -8,6 +8,10 @@ import bg3 from "../Components/img/bg/meetingroom.jpg";
 import "../Components/style.css";
 
 class ListMeeting extends Component{
+    componendDidMount(){
+        window.scrollTo(0, 0);
+    }
+    
     render(){
         return(
             <React.Fragment>

@@ -13,6 +13,10 @@ import wisata from "./Components/img/wisata.png";
 import promosi from "./Components/img/promotion.png";
  
 class Home extends Component{
+    componendDidMount(){
+        window.scrollTo(0, 0);
+    }
+    
     render(){
         return(
             <section>
