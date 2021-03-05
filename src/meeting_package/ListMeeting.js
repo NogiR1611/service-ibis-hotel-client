@@ -8,7 +8,7 @@ import bg3 from "../Components/img/bg/meetingroom.jpg";
 import "../Components/style.css";
 
 class ListMeeting extends Component{
-    componendDidMount(){
+    componentDidMount(){
         window.scrollTo(0, 0);
     }
     
