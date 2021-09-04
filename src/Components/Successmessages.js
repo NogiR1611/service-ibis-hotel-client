@@ -10,4 +10,4 @@ export default class SuccessMessages extends Component{
         </React.Fragment>       
         );
     }
-}
+} 
